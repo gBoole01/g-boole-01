@@ -8,7 +8,7 @@ export default function Layout({
     children: React.ReactNode;
 }) {
     return (
-        <>
+        <div className="container mx-auto font-sans">
             <Head>
                 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
                 <title>gBoole01</title>
@@ -32,6 +32,6 @@ export default function Layout({
             <Header />
             <main>{children}</main>
             <Footer />
-        </>
+        </div>
     )
 }
