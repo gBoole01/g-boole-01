@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
 import Layout from '../components/layout';
 
-const Home: NextPage = () => (
+const Legals: NextPage = () => (
     <Layout>
-      <h1>Accueil</h1>
+      <h1>Mentions Légales</h1>
     </Layout>
   )
 
-export default Home
+export default Legals

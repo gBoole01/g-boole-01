@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
 import Layout from '../components/layout';
 
-const Home: NextPage = () => (
+const Contact: NextPage = () => (
     <Layout>
-      <h1>Accueil</h1>
+      <main><h1>Contact test</h1></main>
     </Layout>
   )
 
-export default Home
+export default Contact

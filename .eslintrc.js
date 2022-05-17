@@ -16,5 +16,6 @@ module.exports = {
       project: ['./tsconfig.json'],
   },
   rules: {
+      'import/extensions': ['error', 'never'],
   },
 };
