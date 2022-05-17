@@ -1,9 +1,15 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import Layout from '../components/layout';
 
 const About: NextPage = () => (
     <Layout>
-      <main><h1>About test</h1></main>
+      <h1>A propos</h1>
+      <p>Vous pouvez consulter mon CV en cliquant sur&nbsp;
+        <Link href="/resume">
+          <a>ce lien</a>
+        </Link>
+      </p>
     </Layout>
   )
 
