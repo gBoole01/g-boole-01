@@ -1,9 +1,15 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import Layout from '../components/layout';
 
 const Resume: NextPage = () => (
     <Layout>
-      <main><h1>Resume test</h1></main>
+      <h1>Curriculum Vitae</h1>
+      <p> Si vous le souhaitez, vous pouvez conserver mon CV au format PDF en cliquant sur&nbsp;
+        <Link href="/">
+          <a>ce lien</a>
+        </Link>
+      </p>
     </Layout>
   )
 
