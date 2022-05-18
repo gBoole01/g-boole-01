@@ -10,6 +10,11 @@ const Resume: NextPage = () => (
           <a>ce lien</a>
         </Link>
       </p>
+      <p>Ou vous pouvez également me contacter en cliquant sur &nbsp;
+        <Link href="/contact">
+          <a>ce lien</a>
+        </Link> 
+      </p>
     </Layout>
   )
 
