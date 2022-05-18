@@ -1,14 +1,40 @@
-import type { NextPage } from 'next';
 import Link from 'next/link';
 import Layout from '../components/layout';
+import { getAllPosts } from '../lib/getPosts';
+import PostType from '../types/Post'
 
-const Blog: NextPage = () => (
+type Props = {
+  allPosts: PostType[];
+}
+
+export default function Blog({ allPosts }: Props) {
+  return (
     <Layout>
-      <h1>Blog test</h1>
-      <Link href="/blog/article">
-        <a>Article 1</a>
-      </Link>
+      <h1>Articles les plus récents</h1>
+      <ul>
+        {allPosts.map(({ slug, date, title }) => (
+          <li key={slug}>
+            <Link href={`/blog/${slug}`}>
+              <a>{title}</a>
+            </Link>
+            &nbsp;-&nbsp;
+            <small>{date}</small>
+          </li>
+        ))}
+      </ul>
     </Layout>
-  )
+  );
+}
 
-export default Blog
+export const getStaticProps = async () => {
+  const allPosts = getAllPosts([
+    'title',
+    'date',
+    'content',
+    'slug',
+  ]);
+
+  return {
+    props: { allPosts }
+  };
+}
