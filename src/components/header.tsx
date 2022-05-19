@@ -8,7 +8,7 @@ export default function Header() {
                 <a>
                     <Image
                         priority
-                        src="/images/logo.jpg"
+                        src="/images/logo-512.png"
                         height={150}
                         width={150}
                         alt="Website Logo"
