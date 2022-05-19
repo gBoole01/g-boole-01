@@ -18,7 +18,7 @@ export default function Post({ post }: Props) {
             <article>
                 <h1>{post.title}</h1>
                 <small>{post.date}</small>
-                <div>{post.content}</div>
+                <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </article>
             <Link href="/blog">
                 <a>Retour au blog</a>
