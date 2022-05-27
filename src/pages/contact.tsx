@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 
 const Contact: NextPage = () => (
     <Layout>
-      <main><h1>Contact test</h1></main>
+      <h1>Contact</h1>
     </Layout>
   )
 
