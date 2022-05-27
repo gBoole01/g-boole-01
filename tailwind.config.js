@@ -2,11 +2,13 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: {
-      'blue-1': '#0072b1',
-      'blue-2': '#4cbffc',
+      'blue-1': '#0072B1',
+      'blue-2': '#4CBFFC',
+      'blue-3': "#9BDBFD",
       'gray-1': '#404040',
       'gray-2': '#666666',
-      'gray-3': '#8c8c8c',
+      'gray-3': '#8C8C8C',
+      'gray-4': "#CCCCCC",
       'white': '#FFFFFF'
     },
     fontFamily: {
