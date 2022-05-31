@@ -21,7 +21,7 @@ export default function Header() {
             before:h-px
         ">
             <nav>
-                <ul className="pt-5 px-9 flex items-center justify-between after:content-[''] after:absolute after:left-1/2 after:bg-blue-2 after:w-0.5 after:h-12">
+                <ul className="pt-5 px-9 text-blue-1 flex items-center justify-between after:content-[''] after:absolute after:left-1/2 after:bg-blue-2 after:w-0.5 after:h-12">
                     <li className="w-1/5">
                         <Link href="/">
                             <a>
@@ -49,7 +49,15 @@ export default function Header() {
                     </div>
                     <li className="w-1/5 text-right">
                         <Link href="/contact">
-                            <a>Mail</a>
+                            <a>
+                                <Image
+                                    priority
+                                    src="/images/email.png"
+                                    height={35}
+                                    width={35}
+                                    alt="gBoole01 Logo"
+                                />
+                            </a>
                         </Link>
                     </li>
                 </ul>

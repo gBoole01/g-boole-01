@@ -13,7 +13,7 @@ export default function Post({ post }: Props) {
     return (
         <Layout>
             <Head>
-                <title>{post.title}</title>
+                <title>{post.title} | gBoole01</title>
             </Head>
             <article>
                 <h1>{post.title}</h1>
