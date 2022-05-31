@@ -36,19 +36,43 @@ export default function Footer() {
                             <a
                                 href="https://github.com/gBoole01"
                                 target="_blank"                        
-                                >GH</a>
+                            >
+                                <Image
+                                    priority
+                                    src="/images/github.png"
+                                    height={15}
+                                    width={15}
+                                    alt="github logo"
+                                />        
+                            </a>
                         </li>
                         <li>
                             <a
-                                href="https://github.com/gBoole01"
+                                href="https://stackoverflow.com"
                                 target="_blank"                        
-                                >SO</a>
+                            >
+                                <Image
+                                    priority
+                                    src="/images/stack-overflow.svg"
+                                    height={15}
+                                    width={15}
+                                    alt="stack overflow logo"
+                                />
+                            </a>
                         </li>
                         <li>
                             <a
-                                href="https://github.com/gBoole01"
+                                href="https://buymeacoffee.com"
                                 target="_blank"                        
-                                >BMAC</a>
+                            >
+                                <Image
+                                    priority
+                                    src="/images/buy-me-a-coffee.png"
+                                    height={15}
+                                    width={12}
+                                    alt="buy me a coffee logo"
+                                />                
+                            </a>
                         </li>
                     </div>
                 </div>
