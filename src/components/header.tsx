@@ -49,7 +49,15 @@ export default function Header() {
                     </div>
                     <li className="w-1/5 text-right">
                         <Link href="/contact">
-                            <a>Mail</a>
+                            <a>
+                                <Image
+                                    priority
+                                    src="/images/email.png"
+                                    height={35}
+                                    width={35}
+                                    alt="gBoole01 Logo"
+                                />
+                            </a>
                         </Link>
                     </li>
                 </ul>
