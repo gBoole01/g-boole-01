@@ -1,9 +1,15 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import Head from 'next/head';
+import Image from 'next/image';
 import Layout from '../components/layout';
 
 const Resume: NextPage = () => (
     <Layout>
+      <Head>
+        <title>Curriculum Vitae | gBoole01</title>
+      </Head>
+
       <h1>Curriculum Vitae</h1>
       <p>Pour des raisons de confidentialités, les noms des personnes, écoles, et entreprises ne sont pas communiqués.</p>
       <p>Si vous souhaitez en apprendre plus sur moi, n'hésitez pas à me contacter !</p>
@@ -76,7 +82,13 @@ const Resume: NextPage = () => (
       <p>Développeur Web & Web Mobile</p>
       <h3>2021 : Certification Qualité Web</h3>
       <p>Opquast - Niveau Expert</p>
-      <p>OPQUAST BADGE GOES HERE !</p>
+      <Image
+        priority
+        src="/images/opquast-expert-badge.png"
+        height={38}
+        width={50}
+        alt="opquast expert badge"
+      />
       <h2>Interêts</h2>
       <ul>
         <li>Open Source</li>
