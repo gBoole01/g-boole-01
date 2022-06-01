@@ -1,15 +1,16 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
 import Layout from '../../components/layout';
-import { getAllPosts, getPostBySlug } from '../../lib/getPosts';
-import markdownToHtml from '../../lib/markdownToHtml';
+import { getAllPosts, getPostBySlug, getRandomPost } from '../../lib/getPosts';
 import PostType from '../../types/Post';
 
 type Props = {
     post: PostType;
+    randomPost: PostType;
 }
 
-export default function Post({ post }: Props) {
+export default function Post({ post, randomPost }: Props) {
     return (
         <Layout>
             <Head>
@@ -17,12 +18,35 @@ export default function Post({ post }: Props) {
             </Head>
             <article>
                 <h1>{post.title}</h1>
-                <small>{post.date}</small>
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                <p>Le { post.date } - {post.duration } min de lecture</p>
+                <Image
+                    priority
+                    src={`/images/blog/${post.image}`}
+                    width={213}
+                    height={120}
+                />
+                <div>{ post.content }</div>
             </article>
-            <Link href="/blog">
-                <a>Retour au blog</a>
+            <h2>Cet article pourrait vous plaire</h2>
+            <h2>{ randomPost.title }</h2>
+            <p>Le { randomPost.date } - { randomPost.duration } min de lecture</p>
+            <Image
+              src={`/images/blog/${randomPost.image}`}
+              width={90}
+              height={90}
+            />
+            <p>{ randomPost.content }</p>
+            <Link href={`/blog/${randomPost.slug}`}>
+              <a>
+                Lire la suite
+                <Image
+                  src="/images/arrow-right.svg"
+                  height={20}
+                  width={20}
+                />
+              </a>
             </Link>
+
         </Layout>
     )
 };
@@ -37,17 +61,25 @@ export const getStaticProps = async ({ params }: Params) => {
     const post = getPostBySlug(params.slug, [
         'title',
         'date',
+        'post',
+        'image',
         'slug',
         'content',
     ]);
-    const content = await markdownToHtml(post.content || '')
+
+    const randomPost = getRandomPost(params.slug, [
+        'title',
+        'date',
+        'post',
+        'image',
+        'slug',
+        'content',
+    ]);
 
     return {
         props: {
-            post: {
-                ...post,
-                content,
-            },
+            post,
+            randomPost
         },
     };
 }
