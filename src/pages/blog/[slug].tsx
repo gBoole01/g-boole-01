@@ -46,7 +46,6 @@ export default function Post({ post, randomPost }: Props) {
                 />
               </a>
             </Link>
-
         </Layout>
     )
 };
