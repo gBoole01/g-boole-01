@@ -57,7 +57,7 @@ const Resume: NextPage = () => (
       <p>Agence Web</p>
       <ul>
         <li>Maintenance de sites WordPress et PrestaShop des clients de l'Agence</li>
-        <li>Développement d'un module PrestaShop dédié de vente de vinbs en primeur</li>
+        <li>Développement d'un module PrestaShop dédié de vente de vins en primeur</li>
         <li>Mise à niveau et refonte visuelle d'un site PrestaShop (1.7) et de ses modules dédiés (parrainage, présentation de domaines viticoles, ventes privées, etc..)</li>
         <li>Maintenance et développement de nouvelles fonctionnalités d'une application de réservation de restaurant et de système CRM</li>
       </ul>
@@ -65,6 +65,7 @@ const Resume: NextPage = () => (
       <p>Agence Web - Stage</p>
       <ul>
         <li>Développpement d'un module WordPress dédié de profils utilisateurs</li>
+        <li>Développpement d'un module WordPress dédié d'adhésion à une association</li>
         <li>Intégration visuelle de contenus</li>
         <li>Développpement d'une application de suivi de compétition sportive</li>
       </ul>
