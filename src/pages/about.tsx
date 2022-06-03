@@ -2,11 +2,12 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../components/layout';
+import { SITENAME } from '../lib/constants';
 
 const About: NextPage = () => (
     <Layout>
       <Head>
-        <title>A Propos | gBoole01</title>
+        <title>À Propos | {SITENAME}</title>
       </Head>
 
       <h1>Qui suis-je ?</h1>
