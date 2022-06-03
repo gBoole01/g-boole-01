@@ -5,6 +5,7 @@ type PostType = {
     image: string;
     slug: string;
     title: string;
+    excerpt: string;
 };
 
 export default PostType;

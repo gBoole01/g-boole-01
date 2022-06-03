@@ -44,7 +44,7 @@ export function getAllPosts(fields: string[] = []) {
     return posts;
 }
 
-export function getLastNPosts(n: number, fields: string[] = []) {
+export function getLatestPosts(n: number, fields: string[] = []) {
     const slugs = getPostSlugs();
     const posts = slugs
         .map(slug => getPostBySlug(slug, fields))
@@ -55,11 +55,13 @@ export function getLastNPosts(n: number, fields: string[] = []) {
     return posts;
 }
 
-export function getRandomPost(excludedSlug: string, fields: string[] = []) {
-    const slugs = getPostSlugs();
-    const filteredSlugs = slugs.filter(slug => slug !== `${excludedSlug}.md`);
-    const randomSlug = filteredSlugs[Math.floor(Math.random()*filteredSlugs.length)]
+export function getRandomPost(excludedSlug?: string, fields: string[] = []) {
+    let slugs = getPostSlugs();
+    if (excludedSlug) {
+        slugs = slugs.filter(slug => slug !== `${excludedSlug}.md`);
+    }
 
+    const randomSlug = slugs[Math.floor(Math.random()*slugs.length)]
     const post = getPostBySlug(randomSlug, fields);
 
     return post;

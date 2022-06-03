@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function Header() {
-    return (
+const Header = () => (
         <header className="
             relative
             after:content-['']
@@ -43,7 +42,7 @@ export default function Header() {
                         </li>
                         <li>
                             <Link href="/about">
-                                <a>A Propos</a>
+                                <a>À Propos</a>
                             </Link>
                         </li>
                     </div>
@@ -64,4 +63,5 @@ export default function Header() {
             </nav>
         </header>
     )
-}
+
+export default Header;

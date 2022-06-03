@@ -1,103 +1,105 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { SOCIAL_LINKS } from '../lib/constants';
 
-export default function Footer() {
-    return (
-        <footer>
-            <ul className="bg-gray-4 px-9 pt-2.5 grid grid-cols-3 grid-rows-3 items-center justify-items-center text-center text-xs text-blue-1 underline">
+const Footer = () => (
+    <footer>
+        <ul className="bg-gray-4 px-9 pt-2.5 grid grid-cols-3 grid-rows-3 items-center justify-items-center text-center text-xs text-blue-1 underline">
+            <li>
+                <Link href="/">
+                    <a>Accueil</a>
+                </Link>
+            </li>
+            <li>
+                <Link href="/blog">
+                    <a>Blog</a>
+                </Link>
+            </li>
+            <li>
+                <Link href="/contact">
+                    <a>Contact</a>
+                </Link>
+            </li>
+            <li>
+                <Link href="/about">
+                    <a>À Propos</a>
+                </Link>
+            </li>
+            <li>
+                <Link href="/resume">
+                    <a>Curriculum Vitae</a>
+                </Link>
+            </li>
+            <div className="flex items-center gap-1 bg-white rounded-md px-2 py-px">
                 <li>
-                    <Link href="/">
-                        <a>Accueil</a>
-                    </Link>
+                    <a
+                        href={SOCIAL_LINKS.github}
+                        target="_blank"
+                        className="flex"
+                    >
+                        <Image
+                            priority
+                            src="/images/github.png"
+                            height={15}
+                            width={15}
+                            alt="github logo"
+                        />        
+                    </a>
                 </li>
                 <li>
-                    <Link href="/blog">
-                        <a>Blog</a>
-                    </Link>
+                    <a
+                        href={SOCIAL_LINKS.stackoverflow}
+                        target="_blank"
+                        className="flex"
+                    >
+                        <Image
+                            priority
+                            src="/images/stack-overflow.svg"
+                            height={15}
+                            width={15}
+                            alt="stack overflow logo"
+                        />
+                    </a>
                 </li>
                 <li>
-                    <Link href="/contact">
-                        <a>Contact</a>
-                    </Link>
+                    <a
+                        href={SOCIAL_LINKS.buymeacoffee}
+                        target="_blank"
+                        className="flex"                        
+                    >
+                        <Image
+                            priority
+                            src="/images/buy-me-a-coffee.png"
+                            height={15}
+                            width={12}
+                            alt="buy me a coffee logo"
+                        />                
+                    </a>
                 </li>
-                <li>
-                    <Link href="/about">
-                        <a>A propos</a>
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/resume">
-                        <a>Curriculum Vitae</a>
-                    </Link>
-                </li>
-                <div>
-                    <div className="flex bg-white">
-                        <li>
-                            <a
-                                href="https://github.com/gBoole01"
-                                target="_blank"                        
-                            >
-                                <Image
-                                    priority
-                                    src="/images/github.png"
-                                    height={15}
-                                    width={15}
-                                    alt="github logo"
-                                />        
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://stackoverflow.com"
-                                target="_blank"                        
-                            >
-                                <Image
-                                    priority
-                                    src="/images/stack-overflow.svg"
-                                    height={15}
-                                    width={15}
-                                    alt="stack overflow logo"
-                                />
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://buymeacoffee.com"
-                                target="_blank"                        
-                            >
-                                <Image
-                                    priority
-                                    src="/images/buy-me-a-coffee.png"
-                                    height={15}
-                                    width={12}
-                                    alt="buy me a coffee logo"
-                                />                
-                            </a>
-                        </li>
-                    </div>
-                </div>
-                <li className="text-xs col-start-2">
-                    <Link href="/legals">
-                        <a>Mentions Légales</a>
-                    </Link>
-                </li>
-
-            </ul>
-            <div className="py-2 bg-gray-3 text-white text-xs flex gap-1 items-center justify-center">
-                <p>
-                    Copyright &copy; { new Date().getFullYear()} gBoole01 
-                </p>
-                <Image
-                    priority
-                    src="/images/logo-512-small.png"
-                    height={15}
-                    width={15}
-                    alt="gBoole01 Logo"
-                />
-                <p>
-                    All Rights Reserved 
-                </p>      
             </div>
-        </footer>
-    )
-}
+            <li className="text-[0.60rem] col-start-2">
+                <Link href="/legals">
+                    <a>Mentions Légales</a>
+                </Link>
+            </li>
+
+        </ul>
+        <div className="py-2 bg-gray-3 text-white text-[0.60rem] flex gap-1 items-center justify-center">
+            <p>
+                Copyright &copy; { new Date().getFullYear()} gBoole01 
+            </p>
+            <Image
+                priority
+                src="/images/logo-512-small.png"
+                height={15}
+                width={15}
+                alt="gBoole01 Logo"
+            />
+            <p>
+                All Rights Reserved 
+            </p>      
+        </div>
+    </footer>
+)
+
+export default Footer;
