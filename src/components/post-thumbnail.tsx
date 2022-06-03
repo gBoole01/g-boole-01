@@ -10,7 +10,7 @@ type Props = {
     slug: string
 }
 
-const PostThumbail = ({
+const PostThumbnail = ({
     title,
     date,
     duration,
@@ -39,4 +39,4 @@ const PostThumbail = ({
     </section>
 )
 
-export default PostThumbail;
+export default PostThumbnail;

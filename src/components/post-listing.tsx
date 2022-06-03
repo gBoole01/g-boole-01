@@ -1,5 +1,5 @@
 import PostType from "../types/Post";
-import PostThumbail from './post-thumbnail';
+import PostThumbnail from './post-thumbnail';
 
 type Props = {
   posts: PostType[];
@@ -11,7 +11,7 @@ const PostListing = ({
     <ul className="flex flex-col gap-4">
       {posts.map(({ slug, excerpt, date, duration, image, title }) => (
         <li key={slug}>
-          <PostThumbail 
+          <PostThumbnail 
             title={title}
             date={date}
             duration={duration}

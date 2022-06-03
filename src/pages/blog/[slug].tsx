@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import Head from 'next/head';
-import Image from 'next/image';
+import PostLayout from '../../components/post-layout';
 import Layout from '../../components/layout';
+import SuggestedPost from '../../components/suggested-post';
 import { getAllPosts, getPostBySlug, getRandomPost } from '../../lib/getPosts';
 import PostType from '../../types/Post';
 
@@ -16,36 +16,21 @@ export default function Post({ post, randomPost }: Props) {
             <Head>
                 <title>{post.title} | gBoole01</title>
             </Head>
-            <article>
-                <h1>{post.title}</h1>
-                <p>Le { post.date } - {post.duration } min de lecture</p>
-                <Image
-                    priority
-                    src={`/images/blog/${post.image}`}
-                    width={213}
-                    height={120}
-                />
-                <div>{ post.content }</div>
-            </article>
-            <h2>Cet article pourrait vous plaire</h2>
-            <h2>{ randomPost.title }</h2>
-            <p>Le { randomPost.date } - { randomPost.duration } min de lecture</p>
-            <Image
-              src={`/images/blog/${randomPost.image}`}
-              width={90}
-              height={90}
+            <PostLayout
+                title={post.title}
+                date={post.date}
+                duration={post.duration}
+                image={post.image}
+                content={post.content}
             />
-            <p>{ randomPost.content }</p>
-            <Link href={`/blog/${randomPost.slug}`}>
-              <a>
-                Lire la suite
-                <Image
-                  src="/images/arrow-right.svg"
-                  height={20}
-                  width={20}
-                />
-              </a>
-            </Link>
+            <SuggestedPost
+                title={randomPost.title}
+                date={randomPost.date}
+                duration={randomPost.duration}
+                image={randomPost.image}
+                excerpt={randomPost.excerpt}
+                slug={randomPost.slug}
+            />
         </Layout>
     )
 };
@@ -72,7 +57,7 @@ export const getStaticProps = async ({ params }: Params) => {
         'post',
         'image',
         'slug',
-        'content',
+        'excerpt',
     ]);
 
     return {
