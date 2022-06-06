@@ -9,10 +9,10 @@ type Props = {
 const Layout = ({ 
     children
 }: Props) => (
-        <div className="container mx-auto font-sans">
+        <div className="container min-h-screen flex flex-col mx-auto font-sans text-sm text-gray-1">
             <Meta />
             <Header />
-            <main className="px-9">{children}</main>
+            <main className="px-9 grow">{children}</main>
             <Footer />
         </div>
     )
