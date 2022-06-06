@@ -30,7 +30,7 @@ const PostThumbnail = ({
                 />
             </div>
             <div className="flex flex-col">
-                <p className="text-gray-1 text-sm col-span-2">{excerpt.slice(0,90)}...</p>
+                <p className="col-span-2">{excerpt.slice(0,90)}...</p>
                 <div className="self-end">
                     <ReadMore slug={slug} />
                 </div>
