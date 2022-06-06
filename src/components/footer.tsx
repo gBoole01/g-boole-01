@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { SOCIAL_LINKS } from '../lib/constants';
 
 const Footer = () => (
-    <footer>
+    <footer className="shrink-0">
         <ul className="bg-gray-4 px-9 pt-2.5 grid grid-cols-3 grid-rows-3 items-center justify-items-center text-center text-xs text-blue-1 underline">
             <li>
                 <Link href="/">
