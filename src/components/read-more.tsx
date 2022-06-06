@@ -9,7 +9,7 @@ const ReadMore = ({
     slug
 }: Props) => (
     <Link href={`/blog/${slug}`}>
-        <a className="text-blue-1 text-xs flex gap-1 items-center border-b">
+        <a className="text-blue-1 visited:text-gray-3 text-xs flex gap-1 items-center border-b">
             Lire la suite
             <Image
                 src="/images/arrow-right.svg"
