@@ -4,6 +4,7 @@ import Layout from '../../components/layout';
 import SuggestedPost from '../../components/suggested-post';
 import { getAllPosts, getPostBySlug, getRandomPost } from '../../lib/getPosts';
 import PostType from '../../types/Post';
+import { SITENAME } from '../../lib/constants';
 
 type Props = {
     post: PostType;
@@ -14,7 +15,7 @@ export default function Post({ post, randomPost }: Props) {
     return (
         <Layout>
             <Head>
-                <title>{post.title} | gBoole01</title>
+                <title>{post.title} | {SITENAME}</title>
             </Head>
             <PostLayout
                 title={post.title}
