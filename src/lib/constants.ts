@@ -11,6 +11,6 @@ export const LEGALS_PROPS = {
 
 export const SOCIAL_LINKS = {
   github: 'https://github.com/gBoole01',
-  stackoverflow: 'https://stackoverflow.com',
-  buymeacoffee: 'https://buymeacoffee.com',
+  stackoverflow: 'https://stackoverflow.com/users/19291891/gboole01',
+  buymeacoffee: 'https://www.buymeacoffee.com/gBoole01',
 }
