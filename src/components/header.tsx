@@ -1,7 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
-const Header = () => (
+const Header = () => {
+    const router = useRouter();
+    
+    return (
         <header className="
             relative
             after:content-['']
@@ -37,12 +41,12 @@ const Header = () => (
                     <div className="w-3/5 grid grid-cols-2 gap-5">
                         <li className="text-right">
                             <Link href="/blog">
-                                <a>Blog</a>
+                                <a className={router.pathname === "/blog" ? "font-bold" : ""}>Blog</a>
                             </Link>
                         </li>
                         <li>
                             <Link href="/about">
-                                <a>À Propos</a>
+                                <a className={router.pathname === "/about" ? "font-bold" : ""}>À Propos</a>
                             </Link>
                         </li>
                     </div>
@@ -63,5 +67,6 @@ const Header = () => (
             </nav>
         </header>
     )
+}
 
 export default Header;
