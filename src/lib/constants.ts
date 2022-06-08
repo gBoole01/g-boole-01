@@ -1,4 +1,11 @@
-export const SITENAME = 'gBoole01 💻';
+export const SITE_PROPS = {
+    siteName: 'gBoole01 💻',
+    title: 'gBoole01 💻',
+    description: 'Site Web de gBoole01',
+    url: 'https://g-boole-01.vercel.app',
+    locale: 'fr',
+    author: 'gBoole01',
+};
 
 export const LEGALS_PROPS = {
   siteUrl: 'g-boole-01.com',
