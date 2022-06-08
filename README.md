@@ -10,6 +10,7 @@ It's a Next.js project.
 - Next.js
 - TypeScript
 - PostCSS & Tailwind CSS
+- Tailwind styled components
 - Strict Mode for TypeScript and React18
 - Linter with ESLint
 - Code Formatter with Prettier
@@ -17,3 +18,4 @@ It's a Next.js project.
 - Lint-staged for running linters on Git staged files
 - Lint git commit with Commitlint
 - Testing with Jest and React Testing Library
+- Next-sitemap
