@@ -6,9 +6,28 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const { body } = req;
     const { name, email, message } = body;
 
-    if (!name) { res.status(401).json({ data: 'No name provided'}) }
-    if (!email) { res.status(401).json({ data: 'No email provided'}) }
-    if (!message) { res.status(401).json({ data: 'No message provided'}) }
+    const errors = {
+        name: false,
+        email: false,
+        message: false,
+    };
+    let isValid = true;
+
+    if (name.length <= 0) {
+        errors.name = true;
+        isValid = false;
+    }
+
+    if (email.length <= 0) {
+        errors.email = true;
+        isValid = false;
+    }
+
+    if (message.length <= 0) {
+        errors.message = true;
+        isValid = false;
+    }
+    if (!isValid) { res.status(401).json({ error: true, errors }) }
 
     const transporter = getMailTransport();
     const response = await transporter.sendMail({
@@ -20,7 +39,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         headers: {}
     });
 
-    if (!response) { res.status(500).json({ data: 'Something went wrong while sending message'}) }
+    if (!response) { res.status(500).json({ error: true }) }
 
     res.status(200).json({ data: 'OK'});
 }

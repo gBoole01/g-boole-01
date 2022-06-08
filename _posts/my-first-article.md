@@ -42,52 +42,33 @@ Ordered
 
 Inline `code`
 
-```
-export default function Nextra({ Component, pageProps }) {
-  return (
-    <>
-      <Head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="RSS"
-          href="/feed.xml"
+```jsx
+const PostLayout = ({
+    title,
+    date,
+    duration,
+    image,
+    content,
+}: Props) => (
+    <article className="flex flex-col mt-6 py-2 relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-r-lg after:right-0 after:left-[-2.25rem] after:top-0 after:bottom-1/2">
+        <h1 className="text-2xl text-blue-1 font-bold uppercase">{title}</h1>
+        <p className="text-gray-3 italic">Le { date } - {duration } min de lecture</p>
+        <div className="self-center">
+            <Image
+                priority
+                src={`/images/blog/${image}`}
+                width={213}
+                height={120}
+                />
+        </div>
+        <div 
+            className={markdownStyles.markdown}
+            dangerouslySetInnerHTML={{ __html: content}}
         />
-        <link
-          rel="preload"
-          href="/fonts/Inter-roman.latin.var.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-      </Head>
-      <Component {...pageProps} />
-    </>
-  )
-}
+    </article>
+)
 ```
-
-## Tables
-
-| **Option** | **Description**                                                                                                             |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------- |
-| First      | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. |
-| Second     | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. |
-| Third      | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. |
-
 ## Links
 
 - [Next.js](https://nextjs.org)
-- [Nextra](https://nextra.vercel.app/)
 - [Vercel](http://vercel.com)
-
-### Footnotes
-
-- Footnote [^1].
-- Footnote [^2].
-
-[^1]: Footnote **can have markup**
-
-and multiple paragraphs.
-
-[^2]: Footnote text.

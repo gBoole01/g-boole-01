@@ -54,3 +54,6 @@
     @apply mr-4;
 }
 
+.markdown a {
+    @apply text-blue-1 visited:text-gray-3 underline;
+}
