@@ -19,3 +19,4 @@ It's a Next.js project.
 - Lint git commit with Commitlint
 - Testing with Jest and React Testing Library
 - Next-sitemap
+- HTML tag `<code></code>` syntax highlighting with Prism
