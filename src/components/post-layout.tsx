@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import markdownStyles from '../styles/markdown.module.css'
 
 type Props = {
     title: string;
@@ -26,7 +27,10 @@ const PostLayout = ({
                 height={120}
                 />
         </div>
-        <div className="pt-3">{ content }</div>
+        <div 
+            className={markdownStyles.markdown}
+            dangerouslySetInnerHTML={{ __html: content}}
+        />
     </article>
 )
 

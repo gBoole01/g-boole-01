@@ -4,6 +4,7 @@ import SuggestedPost from '../../components/suggested-post';
 import { getAllPosts, getPostBySlug, getRandomPost } from '../../lib/getPosts';
 import PostType from '../../types/Post';
 import Meta from '../../components/meta';
+import markdownToHTML from '../../lib/markdownToHTML';
 
 type Props = {
     post: PostType;
@@ -55,6 +56,7 @@ export const getStaticProps = async ({ params }: Params) => {
         'content',
         'excerpt',
     ]);
+    const content = await markdownToHTML(post.content || '');
 
     const randomPost = getRandomPost(params.slug, [
         'title',
@@ -68,7 +70,10 @@ export const getStaticProps = async ({ params }: Params) => {
 
     return {
         props: {
-            post,
+            post: {
+                ...post,
+                content,
+            },
             randomPost
         },
     };
