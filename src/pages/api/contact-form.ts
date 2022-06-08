@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { SITENAME } from '../../lib/constants';
+import { SITE_PROPS } from '../../lib/constants';
 import getMailTransport from '../../lib/getMailTransport';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -14,7 +14,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const response = await transporter.sendMail({
         from: `"${name}" <${email}>`,
         to: process.env.SMTP_CONTACT_MAILBOX,
-        subject: `Demande de contact depuis ${SITENAME}`,
+        subject: `Demande de contact depuis ${SITE_PROPS.siteName}`,
         text: message,
         html: `<div>${message}</div>`,
         headers: {}

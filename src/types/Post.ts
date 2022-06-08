@@ -1,6 +1,7 @@
 type PostType = {
     content: string;
-    date: string;
+    publicationDate: string;
+    modificationDate: string;
     duration: string;
     image: string;
     slug: string;

@@ -1,10 +1,9 @@
-import Head from 'next/head';
 import PostLayout from '../../components/post-layout';
 import Layout from '../../components/layout';
 import SuggestedPost from '../../components/suggested-post';
 import { getAllPosts, getPostBySlug, getRandomPost } from '../../lib/getPosts';
 import PostType from '../../types/Post';
-import { SITENAME } from '../../lib/constants';
+import Meta from '../../components/meta';
 
 type Props = {
     post: PostType;
@@ -14,25 +13,28 @@ type Props = {
 export default function Post({ post, randomPost }: Props) {
     return (
         <Layout>
-            <Head>
-                <title>{post.title} | {SITENAME}</title>
-            </Head>
+            <Meta
+                title={post.title}
+                description={post.excerpt}
+                post={post}
+            />
+
             <PostLayout
                 title={post.title}
-                date={post.date}
+                date={post.publicationDate}
                 duration={post.duration}
                 image={post.image}
                 content={post.content}
             />
             <SuggestedPost
                 title={randomPost.title}
-                date={randomPost.date}
+                date={randomPost.publicationDate}
                 duration={randomPost.duration}
                 image={randomPost.image}
                 excerpt={randomPost.excerpt}
                 slug={randomPost.slug}
             />
-        </Layout>
+        </Layout >
     )
 };
 
@@ -45,16 +47,19 @@ type Params = {
 export const getStaticProps = async ({ params }: Params) => {
     const post = getPostBySlug(params.slug, [
         'title',
-        'date',
+        'publicationDate',
+        'modificationDate',
         'post',
         'image',
         'slug',
         'content',
+        'excerpt',
     ]);
 
     const randomPost = getRandomPost(params.slug, [
         'title',
-        'date',
+        'publicationDate',
+        'modificationDate',
         'post',
         'image',
         'slug',
