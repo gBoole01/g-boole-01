@@ -13,3 +13,7 @@ yarn-error.log*
 
 # tests
 __tests__/__snapshots__
+
+# seo
+public/robots.txt
+public/sitemap*.xml
