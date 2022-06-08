@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import tw from 'tailwind-styled-components';
-import Head from 'next/head';
 import Layout from '../components/layout';
-import { LEGALS_PROPS, SITENAME } from '../lib/constants';
+import { LEGALS_PROPS } from '../lib/constants';
+import Meta from '../components/meta';
 
 const Section = tw.section`flex flex-col gap-2 mt-6 py-2 relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-r-lg after:right-0 after:left-[-2.25rem] after:top-0 after:bottom-[80%]`
 const PageTitle = tw.h1`text-2xl text-blue-1 font-bold uppercase`
@@ -11,10 +11,10 @@ const ArticleTitle = tw.h2`text-lg text-blue-2 font-bold italic uppercase`
 
 const Legals: NextPage = () => (
     <Layout>
-        <Head>
-            <title>Mentions Légales | {SITENAME}</title>
-        </Head>
-
+        <Meta 
+            title="Mentions Légales"
+            description={`Mentions légales de ${LEGALS_PROPS.siteUrl}`}
+        />
         <Section>
             <PageTitle>Mentions Légales</PageTitle>
             <Subtitle>En vigueur au {new Date().toLocaleDateString('fr')}</Subtitle>

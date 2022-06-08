@@ -1,14 +1,14 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Button from '../components/button';
 import Layout from '../components/layout';
-import { SITENAME } from '../lib/constants';
+import Meta from '../components/meta';
 
 const About: NextPage = () => (
     <Layout>
-      <Head>
-        <title>À Propos | {SITENAME}</title>
-      </Head>
+      <Meta
+        title="À Propos"
+        description="À Propos de gBoole01"
+      />
 
       <section className="flex flex-col mt-6 py-2 relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-r-lg after:right-0 after:left-[-2.25rem] after:top-0 after:bottom-[60%]">
         <h1 className="text-2xl text-blue-1 font-bold uppercase">Qui suis-je ?</h1>

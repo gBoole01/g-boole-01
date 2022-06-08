@@ -1,6 +1,5 @@
-import Head from 'next/head';
 import Layout from '../components/layout';
-import { SITENAME } from '../lib/constants';
+import Meta from '../components/meta';
 import ResumeIntro from '../components/resume-intro';
 import ResumeSkills from '../components/resume-skills';
 import ResumeExperiences from '../components/resume-experiences';
@@ -10,17 +9,18 @@ import ResumeOutro from '../components/resume-outro';
 
 const Resume = () => (
     <Layout>
-      <Head>
-        <title>Curriculum Vitae | {SITENAME}</title>
-      </Head>
+        <Meta
+            title="Curriculum Vitae"
+            description="Le CV de gBoole01"
+        />
 
-      <ResumeIntro/>
-      <ResumeSkills />
-      <ResumeExperiences />
-      <ResumeDiplomas />
-      <ResumeInterests />
-      <ResumeOutro/>
+        <ResumeIntro />
+        <ResumeSkills />
+        <ResumeExperiences />
+        <ResumeDiplomas />
+        <ResumeInterests />
+        <ResumeOutro />
     </Layout>
-  )
+)
 
 export default Resume

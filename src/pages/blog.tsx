@@ -1,9 +1,8 @@
-import Head from 'next/head';
-import Layout from '../components/layout';
-import HeroPost from '../components/hero-post';
-import { getAllPosts } from '../lib/getPosts';
 import PostType from '../types/Post'
-import { SITENAME } from '../lib/constants';
+import { getAllPosts } from '../lib/getPosts';
+import Layout from '../components/layout';
+import Meta from '../components/meta';
+import HeroPost from '../components/hero-post';
 import PostListing from '../components/post-listing';
 
 type Props = {
@@ -18,15 +17,16 @@ const Blog = ({
 
   return (
     <Layout>
-      <Head>
-        <title>Blog | {SITENAME}</title>
-      </Head>
+      <Meta
+        title="Blog"
+        description="Blog de gBoole01"
+      />
 
       <h1 className="text-white">Blog</h1>
       {heroPost && (
         <HeroPost
           title={heroPost.title}
-          date={heroPost.date}
+          date={heroPost.publicationDate}
           duration={heroPost.duration}
           image={heroPost.image}
           excerpt={heroPost.excerpt}
@@ -48,7 +48,8 @@ export default Blog;
 export const getStaticProps = async () => {
   const allPosts = getAllPosts([
     'title',
-    'date',
+    'publicationDate',
+    'modificationDate',
     'slug',
     'duration',
     'image',

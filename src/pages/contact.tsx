@@ -1,8 +1,7 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import { SyntheticEvent, useState } from 'react';
 import Layout from '../components/layout';
-import { SITENAME } from '../lib/constants';
+import Meta from '../components/meta';
 
 const Contact: NextPage = () => {
     const [name, setName] = useState('')
@@ -45,9 +44,10 @@ const Contact: NextPage = () => {
 
     return (
         <Layout>
-            <Head>
-                <title>Contact | {SITENAME}</title>
-            </Head>
+            <Meta
+                title="Contact"
+                description="Entrez en contact avec gBoole01"
+            />
 
             <h1 className="mt-6 mb-4 text-2xl text-blue-1 font-bold uppercase">Contact</h1>
 
