@@ -23,7 +23,7 @@
 }
 
 .markdown blockquote {
-    @apply bg-gray-4 border rounded-md p-4 m-4;
+    @apply bg-gray-4/40 border rounded-md p-4 m-4;
 }
 
 .markdown ul {

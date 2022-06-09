@@ -1,5 +1,9 @@
 import Image from 'next/image';
+import tw from 'tailwind-styled-components';
 import ReadMore from './read-more';
+
+const Title = tw.h2`text-lg text-blue-2 font-bold italic uppercase`
+const Caption = tw.p`text-xs text-gray-3 italic`
 
 type Props = {
     title: string
@@ -19,14 +23,15 @@ const PostThumbnail = ({
     slug,
 }: Props) => (
     <section>
-        <h2 className="text-lg text-blue-2 font-bold italic uppercase">{title}</h2>
-        <p className="text-xs text-gray-3 italic">Le {date} - {duration} min de lecture</p>
+        <Title>{title}</Title>
+        <Caption>Le {date} - {duration} min de lecture</Caption>
         <div className="flex gap-2 items-center">
             <div className="min-w-[90px]">
                 <Image
                     src={`/images/blog/${image}`}
                     width={90}
                     height={90}
+                    alt={`Image of the article: ${title}`}
                 />
             </div>
             <div className="flex flex-col">

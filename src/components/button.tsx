@@ -10,7 +10,7 @@ const Button = ({
     href,
 }: Props) => (
         <Link href={href}>
-            <button className="bg-blue-1 border border-blue-2 text-blue-2 text-xs font-bold rounded-xl py-px px-4">{label}</button>
+            <button className="bg-blue-1 border border-blue-2 text-blue-2 text-xs font-bold rounded-xl w-[100px] py-px px-4">{label}</button>
         </Link>
 )
 

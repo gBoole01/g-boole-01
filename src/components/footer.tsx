@@ -40,8 +40,8 @@ const Footer = () => (
                         <Image
                             priority
                             src="/images/github.png"
-                            height={15}
-                            width={15}
+                            height={20}
+                            width={20}
                             alt="github logo"
                         />        
                     </a>
@@ -55,8 +55,8 @@ const Footer = () => (
                         <Image
                             priority
                             src="/images/stack-overflow.svg"
-                            height={15}
-                            width={15}
+                            height={20}
+                            width={20}
                             alt="stack overflow logo"
                         />
                     </a>
@@ -70,8 +70,8 @@ const Footer = () => (
                         <Image
                             priority
                             src="/images/buy-me-a-coffee.png"
-                            height={15}
-                            width={12}
+                            height={20}
+                            width={13}
                             alt="buy me a coffee logo"
                         />                
                     </a>

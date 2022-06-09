@@ -15,6 +15,7 @@ const ReadMore = ({
                 src="/images/arrow-right.svg"
                 height={20}
                 width={20}
+                alt="arrow right logo"
             />
         </a>
     </Link>

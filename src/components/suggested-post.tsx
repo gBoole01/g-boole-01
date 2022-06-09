@@ -1,4 +1,8 @@
+import tw from 'tailwind-styled-components';
 import PostThumbnail from './post-thumbnail';
+
+const Section = tw.section`my-4 relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-l-lg after:left-[-0.25rem] after:right-[-2.25rem] after:top-0 after:h-[70px]`
+const Title = tw.h2`text-2xl text-blue-1 font-bold uppercase`
 
 type Props = {
     title: string;
@@ -17,8 +21,8 @@ const SuggestedPost = ({
     excerpt,
     slug,
 }: Props) => (
-    <section className="py-4">
-        <h2 className="text-2xl text-blue-1 font-bold uppercase">Cet article pourrait vous plaire</h2>
+    <Section>
+        <Title>Cet article pourrait vous plaire</Title>
         <PostThumbnail
             title={title}
             date={date}
@@ -27,7 +31,7 @@ const SuggestedPost = ({
             excerpt={excerpt}
             slug={slug}
         />
-    </section>
+    </Section>
 )
 
 export default SuggestedPost;

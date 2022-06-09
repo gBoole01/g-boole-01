@@ -1,5 +1,11 @@
 import Image from 'next/image';
+import tw from 'tailwind-styled-components';
 import ReadMore from './read-more';
+
+const Section = tw.section`flex flex-col mt-1 py-2 relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-r-lg after:right-[-0.25rem] after:left-[-2.25rem] after:top-0 after:h-[100px]`
+const Title = tw.h2`text-2xl text-blue-1 font-bold uppercase`
+const Caption = tw.p`text-gray-3 italic`
+const Excerpt = tw.p`pt-3`
 
 type Props = {
     title: string
@@ -18,22 +24,23 @@ const HeroPost = ({
     excerpt,
     slug,
 }: Props) =>  (
-    <section className="flex flex-col py-2 relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-r-lg after:right-0 after:left-[-2.25rem] after:top-0 after:bottom-1/2">
-        <h2 className="text-2xl text-blue-1 font-bold uppercase">{ title }</h2>
-        <p className="text-gray-3 italic">Le { date } - {duration } min de lecture</p>
+    <Section>
+        <Title>{ title }</Title>
+        <Caption className="">Le { date } - {duration } min de lecture</Caption>
         <div className="self-center">
             <Image
                 priority
                 src={`/images/blog/${image}`}
                 width={213}
                 height={120}
+                alt={`Image of the article: ${title}`}
                 />
         </div>
-        <p className="pt-3">{ excerpt }...</p>
+        <Excerpt>{ excerpt }...</Excerpt>
         <div className="self-end">
             <ReadMore slug={slug} />
         </div>
-    </section>
+    </Section>
 )
 
 export default HeroPost
