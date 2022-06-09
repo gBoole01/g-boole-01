@@ -81,7 +81,8 @@ const Meta = ({
                                 "description": "${description || SITE_PROPS.description}",
                                 "author": {
                                     "@type": "Person",
-                                    "name": "${SITE_PROPS.author}"
+                                    "name": "${SITE_PROPS.author}",
+                                    "url": "${SITE_PROPS.url}/"
                                 },
                                 "@type": "BlogPosting",
                                 "url": "${SITE_PROPS.url}/",
@@ -90,7 +91,7 @@ const Meta = ({
                                     "name": "${SITE_PROPS.author}",
                                     "logo": {
                                         "@type": "ImageObject",
-                                        "url": "${SITE_PROPS.url}/images/logo-512.png",
+                                        "url": "${SITE_PROPS.url}/images/logo-512.png"
                                     }
                                 },
                                 "headline": "${title} | ${SITE_PROPS.siteName}",
@@ -99,7 +100,7 @@ const Meta = ({
                                 "dateModified": "${new Date(post.modificationDate).toISOString()}",
                                 "mainEntityOfPage": {
                                     "@type": "WebPage",
-                                    "@id": "${SITE_PROPS.url}${router.asPath}",
+                                    "@id": "${SITE_PROPS.url}${router.asPath}"
                                 },
                                 "@context": "http://schema.org"
                             }`
