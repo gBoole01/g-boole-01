@@ -1,5 +1,10 @@
 import Image from 'next/image';
+import tw from 'tailwind-styled-components';
 import markdownStyles from '../styles/markdown.module.css'
+
+const Article = tw.article`flex flex-col mt-6 py-2 relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-r-lg after:right-[-0.25rem] after:left-[-2.25rem] after:top-0 after:h-[100px]`
+const Title = tw.h1`text-2xl text-blue-1 font-bold uppercase`
+const Caption = tw.p`text-gray-3 italic`
 
 type Props = {
     title: string;
@@ -16,9 +21,9 @@ const PostLayout = ({
     image,
     content,
 }: Props) => (
-    <article className="flex flex-col mt-6 py-2 relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-r-lg after:right-0 after:left-[-2.25rem] after:top-0 after:bottom-1/2">
-        <h1 className="text-2xl text-blue-1 font-bold uppercase">{title}</h1>
-        <p className="text-gray-3 italic">Le { date } - {duration } min de lecture</p>
+    <Article>
+        <Title>{title}</Title>
+        <Caption>Le { date } - {duration } min de lecture</Caption>
         <div className="self-center">
             <Image
                 priority
@@ -31,7 +36,7 @@ const PostLayout = ({
             className={markdownStyles.markdown}
             dangerouslySetInnerHTML={{ __html: content}}
         />
-    </article>
+    </Article>
 )
 
 export default PostLayout;
