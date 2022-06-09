@@ -9,6 +9,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const errors = {
         name: false,
         email: false,
+        emailFormat: false,
         message: false,
     };
     let isValid = true;
@@ -20,6 +21,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     if (email.length <= 0) {
         errors.email = true;
+        isValid = false;
+    }
+
+    if (!email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+        errors.emailFormat = true;
         isValid = false;
     }
 
