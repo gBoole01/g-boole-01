@@ -4,8 +4,8 @@ import Button from '../components/button';
 import Layout from '../components/layout';
 import Meta from '../components/meta';
 
-const Section = tw.section`flex flex-col mt-6 py-2 relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-r-lg after:right-[-0.25rem] after:left-[-2.25rem] after:top-0 after:h-[100px]`
-const PageTitle = tw.h1`text-2xl text-blue-1 font-bold uppercase`
+const Section = tw.section`flex flex-col mt-6 py-2`
+const PageTitle = tw.h1`pb-2 text-2xl text-blue-1 font-bold uppercase relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-r-lg after:right-[-0.25rem] after:left-[-2.25rem] after:top-0 after:bottom-0`
 
 const About: NextPage = () => (
     <Layout>
