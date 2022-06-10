@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import siteLogo from '../../public/images/logo-64.png'
+import contactLogo from '../../public/images/email.png'
 
 const Header = () => {
     const router = useRouter();
@@ -30,9 +32,7 @@ const Header = () => {
                             <a>
                                 <Image
                                     priority
-                                    src="/images/logo-512.png"
-                                    height={64}
-                                    width={64}
+                                    src={siteLogo}
                                     alt="Website Logo"
                                 />
                             </a>
@@ -55,7 +55,7 @@ const Header = () => {
                             <a>
                                 <Image
                                     priority
-                                    src="/images/email.png"
+                                    src={contactLogo}
                                     height={35}
                                     width={35}
                                     alt="gBoole01 Logo"
