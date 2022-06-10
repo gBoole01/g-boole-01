@@ -30,7 +30,8 @@ const PostLayout = ({
                 src={`/images/blog/${image}`}
                 width={213}
                 height={120}
-                />
+                alt={`Image of the article: ${title}`}
+            />
         </div>
         <div 
             className={markdownStyles.markdown}
