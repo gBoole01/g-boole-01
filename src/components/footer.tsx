@@ -1,10 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { SOCIAL_LINKS } from '../lib/constants';
+import githubLogo from '../../public/images/github.png';
+import stackoverflowLogo from '../../public/images/stack-overflow.svg';
+import buymeacoffeeLogo from '../../public/images/buy-me-a-coffee.png';
+import smallSiteLogo from '../../public/favicon-16x16.png';
+
 
 const Footer = () => (
     <footer className="shrink-0">
-        <ul className="bg-gray-4 px-9 pt-2.5 grid grid-cols-3 grid-rows-3 items-center justify-items-center text-center text-xs text-blue-1 underline">
+        <ul className="bg-gray-4/50 px-9 pt-2.5 grid grid-cols-3 grid-rows-3 items-center justify-items-center text-center text-xs text-blue-1 underline">
             <li>
                 <Link href="/">
                     <a>Accueil</a>
@@ -39,7 +44,7 @@ const Footer = () => (
                     >
                         <Image
                             priority
-                            src="/images/github.png"
+                            src={githubLogo}
                             height={20}
                             width={20}
                             alt="github logo"
@@ -54,7 +59,7 @@ const Footer = () => (
                     >
                         <Image
                             priority
-                            src="/images/stack-overflow.svg"
+                            src={stackoverflowLogo}
                             height={20}
                             width={20}
                             alt="stack overflow logo"
@@ -69,7 +74,7 @@ const Footer = () => (
                     >
                         <Image
                             priority
-                            src="/images/buy-me-a-coffee.png"
+                            src={buymeacoffeeLogo}
                             height={20}
                             width={13}
                             alt="buy me a coffee logo"
@@ -82,22 +87,18 @@ const Footer = () => (
                     <a>Mentions Légales</a>
                 </Link>
             </li>
-
         </ul>
+
         <div className="py-2 bg-gray-3 text-white text-[0.60rem] flex gap-1 items-center justify-center">
-            <p>
-                Copyright &copy; { new Date().getFullYear()} gBoole01 
-            </p>
+            <p>Copyright &copy; { new Date().getFullYear()} gBoole01</p>
             <Image
                 priority
-                src="/images/logo-512-small.png"
-                height={15}
-                width={15}
+                src={smallSiteLogo}
+                height={16}
+                width={16}
                 alt="gBoole01 Logo"
             />
-            <p>
-                All Rights Reserved 
-            </p>      
+            <p>All Rights Reserved</p>      
         </div>
     </footer>
 )
