@@ -17,3 +17,6 @@ __tests__/__snapshots__
 # seo
 public/robots.txt
 public/sitemap*.xml
+
+# post template
+_posts/markdown-template.md
