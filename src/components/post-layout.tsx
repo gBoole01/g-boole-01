@@ -23,7 +23,7 @@ const PostLayout = ({
 }: Props) => (
     <Article>
         <Title>{title}</Title>
-        <Caption>Le { date } - {duration } min de lecture</Caption>
+        <Caption>Le { date } - { duration } min de lecture</Caption>
         <div className="self-center">
             <Image
                 priority
