@@ -42,7 +42,7 @@ const Home = ({ allPosts }: Props) => {
 export default Home;
 
 export const getStaticProps = () => {
-    const allPosts = getLatestPosts(3, [
+    const allPosts = getLatestPosts(4, [
         'title',
         'publicationDate',
         'modificationDate',

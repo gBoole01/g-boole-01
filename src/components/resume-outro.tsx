@@ -7,7 +7,7 @@ const ResumeOutro = () => (
     <Section>
         <p>Si vous le souhaitez, vous pouvez téléchargez une copie de mon C.V. au format PDF</p>
         <div className="self-end pr-3">
-            <Button download href="resume.pdf">Télécharger</Button>
+            <Button download href="Curriculum_Vitae_2022_gBoole01.pdf">Télécharger</Button>
         </div>
     </Section>
 )
