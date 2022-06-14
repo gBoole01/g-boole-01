@@ -57,3 +57,7 @@
 .markdown a {
     @apply text-blue-1 visited:text-gray-3 underline;
 }
+
+.markdown code {
+    @apply bg-gray-4/40 border rounded-md px-1 m-1;
+}
