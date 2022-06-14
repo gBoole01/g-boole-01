@@ -1,11 +1,12 @@
 ---
-title: 'Bien gérer sa configuration ?'
-publicationDate: '2022-06-14'
-modificationDate: '2022-06-14'
-duration: '10'
-image: 'bien-gerer-sa-configuration.jpg'
-excerpt: 'No excerpt for the moment !'
+title: "Bien gérer sa configuration ?"
+publicationDate: "2022-06-14"
+modificationDate: "2022-06-14"
+duration: "10"
+image: "bien-gerer-sa-configuration.jpg"
+excerpt: "Comme tout développeur au cours de sa carrière, vous vous êtes sûrement retrouvé à régler pour la dixième fois votre shell, ou encore vos raccourcis d'IDE"
 ---
+
 Comme tout développeur au cours de sa carrière, vous vous êtes sûrement retrouvé à régler pour la dixième fois votre shell, ou encore vos raccourcis d'IDE !
 C'est sans doute à ce moment-là que, dans le respect du principe DRY **(Don't Repeat Yourself)**, vous avez commencé à envisager une solution plus viable et moins chronophage.<br/>
 Et bien, c'est ce que nous allons voir ensemble aujourd'hui. Nous allons voir les différents possibilités qui s'offrent à nous et quelle approche correspond le mieux à vos besoins ! 
@@ -13,18 +14,18 @@ Et bien, c'est ce que nous allons voir ensemble aujourd'hui. Nous allons voir le
 ### Les Dotfiles
 
 Un terme revient souvent lorsqu'on parle de configuration ou de personnalisation, c'est celui de `dotfiles`. **Mais qu'est-ce qu'un dotfile exactement ?** Les dotfiles sont des fichiers et des dossiers des systèmes d'exploitation Unix-like dont le nom commence par un `.`("dot" signifiant "point" en Anglais) qui contrôlent la configuration des applications et des shells du système.<br />
-Ces dossiers sont masqués par défaut dans la plupart des systèmes d'exploitation. Pour afficher les dotfiles présents dans un dossier, exécuter la commande `ls -a <folderName>` dans votre terminal.<br />
-Pour exporter sa configuration, il suffit simplement de copier le contenu de ces fichiers sur sa nouvelle machine.
+Ces dossiers sont masqués par défaut dans la plupart des systèmes d'exploitation. Pour afficher les dotfiles présents dans un dossier, on peut exécuter la commande `ls -a <folderName>` dans son terminal.<br />
+Pour exporter sa configuration, rien de plus simple, il suffit de copier le contenu de ces fichiers d'une machine à l'autre.
 
 ### Comment les sauvegarder ? 
 
 Nous pourrions tout simplement **copier ces fichiers sur notre nouvelle machine**, ce serait déjà un gain de temps en comparaison à notre méthode initiale. Cependant, un incident matériel pourrait causer la perte de nos fichiers. **Les stocker dans un service de Cloud** (OneDrive, Dropbox, etc..) serait une meilleure solution pour parer à cette eventualité, mais un problème subsiste encore...<br/>
-En effet, si l'on modifie des réglages sur une machine et que l'on veut les répercuter sur les autres, il faudra replacer les fichiers en question sur le Cloud puis **les télécharger et les remplacer autant de fois que de machines.**
+En effet, si l'on modifie des réglages sur une machine et que l'on veut les répercuter sur les autres, il faudra replacer les fichiers en question sur le Cloud puis **les télécharger et les remplacer autant de fois que l'on a de machines.**
 
 ### Le dépôt GIT, une solution idéale ?
 
 On retrouve certains articles sur le net qui propose la solution de créer un dépôt GIT à la racine et d'ajouter les fichiers et les dossiers qui ne sont pas des dotfiles dans un fichier `.gitignore` afin de ne pas les versionner.<br/>
-Bien que cette solution soit viable, je ne pense pas qu'elle soit optimale car, bien que les dossiers et fichiers de l'utilisateur ne soient pas versionnés, ils peuvent être affectés par d'autres commandes GIT.<br/>
+Bien que cette solution soit viable, je ne pense pas qu'elle soit optimale car, bien que les dossiers et fichiers de l'utilisateur ne soient pas versionnés, ils peuvent être affectés par d'autres commandes GIT comme `git clean`.<br/>
 Afin d'éviter cela et de garder le dépôt séparé du dossier `$HOME`, nous utiliserons des liens symboliques.<br/>
 Ensemble, nous allons voir comment **mettre en place un dépôt distant pour stocker sa configuration sur GitHub** et comment synchroniser ses dotfiles avec un simple `git pull` !
 
@@ -49,7 +50,7 @@ Ensuite, on initialise le dépôt Git
 git init
 ```
 
-Je vous invite à créer un README où vous pourrez réferencer le contenu du dépôt et d'autres choses qui vous semblent utiles
+Je vous invite à créer un README où vous pourrez réferencer le contenu du dépôt et les commandes permettant de recréer les liens symboliques
 
 ```
 touch README.md
@@ -65,7 +66,7 @@ git push -u origin main
 
 #### Ajouter la configuration du shell (ZSH)
 *Selon le shell utilisé, vous pourrez avoir un fichier avec un nom différent du mien mais le principe reste le même.*<br/>
-Nous allons commencer par mettre en place le fichier contenant la configuration de mon shell **zsh** `.zshrc`. Il se situe à la racine, vous pourrez le voir en effectuant la commande suivante:
+Nous allons commencer par mettre en place le fichier contenant la configuration du shell **zsh** `.zshrc`. Il se situe à la racine, vous pourrez le voir en effectuant la commande suivante:
 
 ```
 ls -a $HOME
@@ -85,7 +86,6 @@ ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 Pour vérifier que tout a fonctionné, on peut effectuer la commande suivante
 
-
 ```
 ls -la $HOME
 ```
@@ -97,11 +97,12 @@ Parmi les fichiers du répertoire racine, vous devriez voir cette ligne apparaî
 lrwxrwxrwx  1 user user     27 13 juin  14:59 .zshrc -> /home/user/.dotfiles/.zshrc
 ```
 
-Le `.zshrc -> /home/user/.dotfiles/.zshrc` nous indique que le lien symbolique de `.zshrc` est correctement en place. Désormais, chaque modification effectuée sur l'un des deux fichiers sera répercuté sur l'autre. Le tout étant versionné dans le dossier `.dotfiles`.<br/>
+Le `.zshrc -> /home/user/.dotfiles/.zshrc` nous indique que le lien symbolique de `.zshrc` est correctement en place.<br/>
 <br/>
+**Désormais, chaque modification effectuée sur l'un des deux fichiers sera répercuté sur l'autre. Le tout étant versionné dans le dossier `.dotfiles`.**
 
 #### Ajouter la configuration de Git
-La configuration Git globale de votre machine se trouve dans le fichier `.gitconfig`, nous allons répeter la même opération que pour `.zshrc`
+La configuration Git globale de votre machine se trouve dans le fichier `.gitconfig`, nous allons donc répeter la même opération.
 ```
 mv $HOME/.gitconfig $HOME/.dotfiles/.gitconfig
 ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
@@ -113,7 +114,6 @@ mkdir $HOME/.dotfiles/VSCode
 ```
 
 *(Remplacez `{YourUsername}` avec le chemin correct de votre machine)*
-
 - `settings.json`
 ```
 mv $HOME/.config/Code/{YourUsername}/settings.json $HOME/.dotfiles/VSCode
@@ -127,17 +127,18 @@ ln -s $HOME/.dotfiles/VSCode/keybindings.json $HOME/.config/Code/{YourUsername}/
 
 ```
 - `snippets`
+
 ```
 mv $HOME/.config/Code/{YourUsername}/snippets $HOME/.dotfiles/VSCode
 ln -s $HOME/.dotfiles/VSCode/snippets $HOME/.config/Code/{YourUsername}/snippets
 
 ```
 
-Il ne vous reste plus qu'à enregistrer vos modifications dans le dépôt `.dotfiles` et effectuer un `git push` pour pouvoir les récupérer ultérieurement.
+Il ne vous reste plus qu'à enregistrer vos modifications dans le dépôt `.dotfiles`, puis effectuer un `git push` pour pouvoir les récupérer ultérieurement.
 
 #### Mise en place d'une nouvelle machine
 
-Bon d'accord, la mise en place a pu sembler fastidieuse mais ne vous inquiètez pas, votre futur Vous est déjà en train de vous remercier pour **ces heures de réglages économisées !**<br/>
+Bon d'accord, la mise en place a été fastidieuse mais ne vous en faites pas, votre futur Vous est déjà en train de vous remercier pour toutes **ces heures de réglages économisées !**<br/>
 <br/>
 Une fois sur votre nouvelle machine, ouvrez votre terminal et clonez votre dépôt distant à la racine
 
@@ -160,10 +161,10 @@ ln -s $HOME/.dotfiles/VSCode/snippets $HOME/.config/Code/{YourUsername}/snippets
 
 #### Synchroniser nos dotfiles
 
-Pour synchroniser la configuration, il suffit d'effectuer un `git push` depuis la branche `main` dans le dossier `.dotfiles`, puis un `git pull` depuis la branche `main` dans le dossier `.dotfiles` sur la seconde machine.<br/>
+Pour synchroniser votre configuration, il suffit d'effectuer un `git push` depuis la branche `main` dans le dossier `.dotfiles` de la première machine, puis un `git pull` depuis la branche `main` dans le dossier `.dotfiles` de la seconde machine.<br/>
 <br/>
 **Et voilà !**<br/>
 <br/>
-*Git est un outil très puissant et il nous permet, entre autres, d'annuler ses modifications, de créer des branches pour effectuer des tests, ou encore de spécifier des configurations selon les systèmes d'exploitation.*<br/>
+*Git est un outil très puissant et il nous permet, entre autres, d'annuler des modifications, de créer des branches pour effectuer des tests, ou encore de spécifier des configurations selon les systèmes d'exploitation.*<br/>
 <br/>
 Dans un prochain article, nous verrons comment mettre en place un script nous permettant de génerer les liens symboliques lors du clonage du dépôt distant, afin d'être toujours plus efficace !
