@@ -8,10 +8,12 @@ type Props = {
 const Layout = ({ 
     children
 }: Props) => (
-        <div className="container min-h-screen flex flex-col mx-auto font-sans text-sm text-gray-1">
-            <Header />
-            <main className="px-9 grow">{children}</main>
-            <Footer />
+        <div className="w-full min-h-screen bg-gradient-to-t from-gray-4/10 via-white to-gray-4/10 font-sans text-sm text-gray-1">
+            <div className="container min-h-screen flex flex-col mx-auto border-x border-gray-4/50">
+                <Header />
+                <main className="px-9 grow">{children}</main>
+                <Footer />
+            </div>
         </div>
     )
 
