@@ -1,7 +1,7 @@
 ---
 title: "Bien gérer sa configuration ?"
 publicationDate: "2022-06-14"
-modificationDate: "2022-06-14"
+modificationDate: "2022-06-15"
 duration: "10"
 image: "bien-gerer-sa-configuration.jpg"
 excerpt: "Comme tout développeur au cours de sa carrière, vous vous êtes sûrement retrouvé à régler pour la dixième fois votre shell, ou encore vos raccourcis d'IDE"
@@ -9,29 +9,37 @@ excerpt: "Comme tout développeur au cours de sa carrière, vous vous êtes sûr
 
 Comme tout développeur au cours de sa carrière, vous vous êtes sûrement retrouvé à régler pour la dixième fois votre shell, ou encore vos raccourcis d'IDE !
 C'est sans doute à ce moment-là que, dans le respect du principe DRY **(Don't Repeat Yourself)**, vous avez commencé à envisager une solution plus viable et moins chronophage.<br/>
+<br/>
 Et bien, c'est ce que nous allons voir ensemble aujourd'hui. Nous allons voir les différents possibilités qui s'offrent à nous et quelle approche correspond le mieux à vos besoins ! 
 
 ### Les Dotfiles
 
 Un terme revient souvent lorsqu'on parle de configuration ou de personnalisation, c'est celui de `dotfiles`. **Mais qu'est-ce qu'un dotfile exactement ?** Les dotfiles sont des fichiers et des dossiers des systèmes d'exploitation Unix-like dont le nom commence par un `.`("dot" signifiant "point" en Anglais) qui contrôlent la configuration des applications et des shells du système.<br />
+<br/>
 Ces dossiers sont masqués par défaut dans la plupart des systèmes d'exploitation. Pour afficher les dotfiles présents dans un dossier, on peut exécuter la commande `ls -a <folderName>` dans son terminal.<br />
+<br/>
 Pour exporter sa configuration, rien de plus simple, il suffit de copier le contenu de ces fichiers d'une machine à l'autre.
 
 ### Comment les sauvegarder ? 
 
 Nous pourrions tout simplement **copier ces fichiers sur notre nouvelle machine**, ce serait déjà un gain de temps en comparaison à notre méthode initiale. Cependant, un incident matériel pourrait causer la perte de nos fichiers. **Les stocker dans un service de Cloud** (OneDrive, Dropbox, etc..) serait une meilleure solution pour parer à cette eventualité, mais un problème subsiste encore...<br/>
+<br/>
 En effet, si l'on modifie des réglages sur une machine et que l'on veut les répercuter sur les autres, il faudra replacer les fichiers en question sur le Cloud puis **les télécharger et les remplacer autant de fois que l'on a de machines.**
 
 ### Le dépôt GIT, une solution idéale ?
 
 On retrouve certains articles sur le net qui propose la solution de créer un dépôt GIT à la racine et d'ajouter les fichiers et les dossiers qui ne sont pas des dotfiles dans un fichier `.gitignore` afin de ne pas les versionner.<br/>
+<br/>
 Bien que cette solution soit viable, je ne pense pas qu'elle soit optimale car, bien que les dossiers et fichiers de l'utilisateur ne soient pas versionnés, ils peuvent être affectés par d'autres commandes GIT comme `git clean`.<br/>
+<br/>
 Afin d'éviter cela et de garder le dépôt séparé du dossier `$HOME`, nous utiliserons des liens symboliques.<br/>
+<br/>
 Ensemble, nous allons voir comment **mettre en place un dépôt distant pour stocker sa configuration sur GitHub** et comment synchroniser ses dotfiles avec un simple `git pull` !
 
 ### Dépôt privé ou dépôt public ?
 
 Lors de la création du dépôt distant, il faudra en déterminer sa visibilité. J'ai choisi de garder ce dépôt privé mais vous pouvez le rendre public si vous le souhaitez, d'ailleurs vous pourrez trouver beaucoup d'exemples en ligne. **Toutefois, faites attention aux fichiers que vous y intègrerez car vos données sensibles seront rendues publiques !**<br/>
+<br/>
 Dans un autre article, je vous apprendrai à sécuriser le contenu des fichiers sensibles afin de partager l'ensemble de vos dotfiles sans crainte.
 
 ### Comment faire ?
@@ -113,7 +121,11 @@ Il existe plusieurs fichiers de configuration pour VS Code, nous allons créer u
 mkdir $HOME/.dotfiles/VSCode
 ```
 
-*(Remplacez `{YourUsername}` avec le chemin correct de votre machine)*
+Les réglages se trouve dans `settings.json`, les raccourcis claviers dans `keybindings.json` et les snippets de code dans un dossier `snippets`. Les chemins complets sont des les exemples suivants :<br/>
+<br/>
+*(Remplacez `{YourUsername}` avec le chemin correct de votre machine)*<br/>
+<br/>
+
 - `settings.json`
 ```
 mv $HOME/.config/Code/{YourUsername}/settings.json $HOME/.dotfiles/VSCode
@@ -134,7 +146,7 @@ ln -s $HOME/.dotfiles/VSCode/snippets $HOME/.config/Code/{YourUsername}/snippets
 
 ```
 
-Il ne vous reste plus qu'à enregistrer vos modifications dans le dépôt `.dotfiles`, puis effectuer un `git push` pour pouvoir les récupérer ultérieurement.
+**Une fois tous ses fichiers mis en place, il ne vous reste plus qu'à enregistrer vos modifications dans le dépôt `.dotfiles`, puis effectuer un `git push` pour pouvoir les récupérer à n'importe quel moment !**
 
 #### Mise en place d'une nouvelle machine
 
@@ -148,7 +160,7 @@ git clone git@github.com:gBoole01/.dotfiles.git
 ```
 
 Ensuite, il faut créer les liens symboliques qui permettront à la configuration d'être correctement chargée.
-Si vous avez suivi le tutoriel jusqu'ici, les commandes sont les suivantes<br/>
+Si vous avez suivi le tutoriel jusqu'ici, les commandes sont les suivantes :<br/>
 <br/>
 *(Remplacez `{YourUsername}` avec le chemin correct de votre machine)*
 ```
@@ -158,6 +170,7 @@ ln -s $HOME/.dotfiles/VSCode/settings.json $HOME/.config/Code/{YourUsername}/set
 ln -s $HOME/.dotfiles/VSCode/keybindings.json $HOME/.config/Code/{YourUsername}/keybindings.json
 ln -s $HOME/.dotfiles/VSCode/snippets $HOME/.config/Code/{YourUsername}/snippets
 ```
+*Dans un premier temps, vous pouvez noter ces commandes dans votre `README.md` pour ne pas les perdre*
 
 #### Synchroniser nos dotfiles
 
