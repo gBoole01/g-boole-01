@@ -115,7 +115,7 @@ La configuration Git globale de votre machine se trouve dans le fichier `.gitcon
 mv $HOME/.gitconfig $HOME/.dotfiles/.gitconfig
 ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
 ```
-##### 3. Ajouter la configuration de Visual Studio Code
+#### Ajouter la configuration de Visual Studio Code
 Il existe plusieurs fichiers de configuration pour VS Code, nous allons créer un dossier pour les rassembler
 ```
 mkdir $HOME/.dotfiles/VSCode
