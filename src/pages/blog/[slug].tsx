@@ -51,11 +51,10 @@ export const getStaticProps = async ({ params }: Params) => {
         'publicationDate',
         'modificationDate',
         'duration',
-        'post',
         'image',
         'slug',
-        'content',
         'excerpt',
+        'content',
     ]);
     const content = await markdownToHTML(post.content || '');
 
@@ -64,7 +63,6 @@ export const getStaticProps = async ({ params }: Params) => {
         'publicationDate',
         'modificationDate',
         'duration',
-        'post',
         'image',
         'slug',
         'excerpt',
