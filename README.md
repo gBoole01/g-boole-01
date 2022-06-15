@@ -6,6 +6,7 @@ It's a Next.js project.
 
 ## Features:
 
+- Deployed by Vercel
 - Powered by Yarn
 - Next.js
 - TypeScript
