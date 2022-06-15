@@ -22,7 +22,7 @@ const Blog = ({
         description="Blog de gBoole01"
       />
 
-      <h1 className="text-white">Blog</h1>
+      <h1 className="invisible">Blog</h1>
       {heroPost && (
         <HeroPost
           title={heroPost.title}

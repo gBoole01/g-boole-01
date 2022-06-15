@@ -19,7 +19,7 @@ const Home = ({ allPosts }: Props) => {
             <Meta
                 title="Accueil"
             />
-            <h1 className="text-white">Accueil</h1>
+            <h1 className="invisible">Accueil</h1>
 
             {heroPost && (
                 <HeroPost

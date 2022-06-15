@@ -8,7 +8,7 @@ const Content = tw.p`ml-3 mt-3 mb-2`
 const Intro = () => (
     <Section>
         <Title>Qui suis-je ?</Title>
-        <Content>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis p</Content>
+        <Content>Je suis un développeur Web Full Stack passioné !<br/>J'écris des articles spécialisés dans les domaines du développement web, de l'expérience Developer (DX), de l'entrepreunariat, et des nouvelles technologies en général</Content>
         <div className="absolute right-3 bottom-[-0.75rem]">
             <Button 
                 label="En savoir plus"
