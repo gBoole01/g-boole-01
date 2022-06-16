@@ -1,5 +1,5 @@
 .markdown {
-    @apply pt-3;
+    @apply pt-3 md:pt-6;
 }
 
 .markdown h2 {
@@ -60,4 +60,8 @@
 
 .markdown code {
     @apply bg-gray-4/40 border rounded-md px-1 m-1;
+}
+
+.markdown p {
+    @apply md:pl-4;
 }
