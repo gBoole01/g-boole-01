@@ -9,6 +9,7 @@ const Header = () => {
     
     return (
         <header className="
+            mb-6
             relative
             after:content-['']
             after:absolute
@@ -30,23 +31,26 @@ const Header = () => {
                     <li className="w-1/5">
                         <Link href="/">
                             <a>
-                                <Image
-                                    priority
-                                    src={siteLogo}
-                                    alt="Website Logo"
-                                />
+                                <div className="w-16 h-16 shadow-md">
+                                    <Image
+                                        src={siteLogo}
+                                        alt="Website Logo"
+                                        width={64}
+                                        height={64}
+                                    />
+                                </div>
                             </a>
                         </Link>
                     </li>
                     <div className="w-3/5 grid grid-cols-2 gap-5">
                         <li className="text-right">
                             <Link href="/blog">
-                                <a className={router.pathname === "/blog" ? "font-bold" : ""}>Blog</a>
+                                <a className={router.pathname === "/blog" ? "font-bold drop-shadow-xl shadow-blue-2" : ""}>Blog</a>
                             </Link>
                         </li>
                         <li>
                             <Link href="/about">
-                                <a className={router.pathname === "/about" ? "font-bold" : ""}>À Propos</a>
+                                <a className={router.pathname === "/about" ? "font-bold drop-shadow-xl shadow-blue-2" : ""}>À Propos</a>
                             </Link>
                         </li>
                     </div>
