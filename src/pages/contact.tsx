@@ -4,8 +4,8 @@ import { SetStateAction, SyntheticEvent, useState } from 'react';
 import Layout from '../components/layout';
 import Meta from '../components/meta';
 
-const Section = tw.section`flex flex-col gap-2 mt-6 pt-2 pb-4`
-const ContactIntro = tw.div`pb-2 relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-r-lg after:right-[-0.25rem] after:left-[-2.25rem] after:top-0 after:bottom-0`
+const Section = tw.section`flex flex-col gap-2 pb-4`
+const ContactIntro = tw.div`pt-2 pb-2 relative after:absolute after:z-[-1] after:content[''] after:shadow-md after:bg-blue-2/20 after:rounded-r-lg after:right-[-0.25rem] after:left-[-2.25rem] after:top-0 after:bottom-0`
 const PageTitle = tw.h1`text-2xl text-blue-1 font-bold uppercase`
 const Form = tw.form`flex flex-col gap-2`
 const Label = tw.label`flex flex-col`
@@ -13,7 +13,7 @@ const LabelRequired = tw.span`text-red font-bold`
 const Input = tw.input`mt-2 p-2 border border-gray-3 rounded-md shadow-sm focus:border-blue-2 focus:ring focus:ring-blue-2 focus:ring-opacity-50`
 const InputError = tw.p`text-red italic`
 const Textarea = tw.textarea`mt-2 p-2 w-full border border-gray-3 rounded-md shadow-sm resize-none focus:border-blue-2 focus:ring focus:ring-blue-2 focus:ring-opacity-50`
-const InputSubmit = tw.input`mt-2 p-2 w-full border-2 border-blue-2 text-white font-bold bg-blue-1 rounded-md shadow-md focus:border-blue-2 focus:ring focus:ring-blue-2 focus:ring-opacity-50`
+const InputSubmit = tw.input`mt-2 p-2 w-full border-2 border-blue-2 text-white font-bold bg-blue-1 rounded-md shadow focus:border-blue-2 focus:ring focus:ring-blue-2 focus:ring-opacity-50`
 const SuccessMessage = tw.div`px-4 py-2 text-blue-1 rounded-md bg-blue-3 border-2`
 const FailureMessage= tw.div`px-4 py-2 text-red rounded-md bg-red/40 border-2`
 const MessageTitle = tw.p`font-bold text-center`

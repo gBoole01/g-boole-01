@@ -1,8 +1,8 @@
 import tw from 'tailwind-styled-components';
 import PostThumbnail from './post-thumbnail';
 
-const Section = tw.section`my-4 relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-l-lg after:left-[-0.25rem] after:right-[-2.25rem] after:top-0 after:h-[50px]`
-const Title = tw.h2`text-2xl mb-4 text-blue-1 font-bold uppercase`
+const Section = tw.section`my-4`
+const Title = tw.h2`text-2xl pb-2 mb-2 text-blue-1 font-bold uppercase relative after:absolute after:z-[-1] after:content[''] after:shadow-md after:bg-blue-2/20 after:rounded-l-lg after:left-[-0.25rem] after:right-[-2.25rem] after:top-0 after:bottom-0`
 
 type Props = {
     title: string;

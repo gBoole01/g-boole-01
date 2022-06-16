@@ -1,7 +1,7 @@
 import tw from 'tailwind-styled-components';
 import Button from './button';
 
-const Section = tw.section`flex flex-col py-2 mt-4 mb-8 relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-l-lg after:left-[-0.25rem] after:right-[-2.25rem] after:top-0 after:bottom-0`
+const Section = tw.section`flex flex-col py-2 mt-4 mb-8 relative after:absolute after:z-[-1] after:content[''] after:shadow-md after:bg-blue-2/20 after:rounded-l-lg after:left-[-0.25rem] after:right-[-2.25rem] after:top-0 after:bottom-0`
 const Title = tw.h2`text-2xl text-blue-1 font-bold uppercase`
 const Content = tw.p`ml-3 mt-3 mb-2`
 

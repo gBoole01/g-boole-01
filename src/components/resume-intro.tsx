@@ -1,7 +1,7 @@
 import tw from 'tailwind-styled-components';
 import Button from './button';
 
-const Section = tw.section`py-2 my-6 relative after:absolute after:z-[-1] after:content[''] after:bg-blue-2/20 after:rounded-r-lg after:right-0 after:left-[-2.25rem] after:top-0 after:bottom-0`
+const Section = tw.section`py-2 mb-6 relative after:absolute after:z-[-1] after:content[''] after:shadow-md after:bg-blue-2/20 after:rounded-r-lg after:right-0 after:left-[-2.25rem] after:top-0 after:bottom-0`
 const PageTitle = tw.h1`text-2xl text-blue-1 font-bold uppercase`
 
 const ResumeIntro = () => (
