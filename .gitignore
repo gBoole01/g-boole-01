@@ -12,7 +12,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # tests
-__tests__/__snapshots__
+coverage
 
 # seo
 public/robots.txt
