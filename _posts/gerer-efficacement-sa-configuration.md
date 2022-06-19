@@ -1,9 +1,9 @@
 ---
-title: "Bien gérer sa configuration ?"
+title: "Gérer efficacement sa configuration"
 publicationDate: "2022-06-14"
-modificationDate: "2022-06-15"
+modificationDate: "2022-06-16"
 duration: "10"
-image: "bien-gerer-sa-configuration.jpg"
+image: "gerer-efficacement-sa-configuration.jpg"
 excerpt: "Comme tout développeur au cours de sa carrière, vous vous êtes sûrement retrouvé à régler pour la dixième fois votre shell, ou encore vos raccourcis d'IDE"
 ---
 
