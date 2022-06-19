@@ -31,14 +31,14 @@
 }
 
 .markdown ul > li {
-    @apply pl-1 relative;
+    @apply pl-2 relative;
 }
 
 .markdown ul > li:before {
     color: rgb(0 114 177);
     content: "-";
     font-weight: bolder;
-    left: -.85rem;
+    left: -.25rem;
     position: absolute;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .markdown ol > li {
-    @apply pl-1;
+    @apply pl-2;
 }
 
 .markdown pre {
@@ -60,6 +60,10 @@
 
 .markdown code {
     @apply bg-gray-4/40 border rounded-md px-1 m-1;
+}
+
+.markdown img {
+    @apply mx-auto w-1/2;
 }
 
 .markdown p {
