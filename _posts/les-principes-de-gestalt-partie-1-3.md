@@ -1,6 +1,6 @@
 ---
 title: "Les principes de gestalt - Partie 1"
-publicationDate: "2022-06-20"
+publicationDate: "2022-06-19"
 modificationDate: "2022-06-20"
 duration: "7"
 image: "gestalt/gestalt.png"
@@ -29,17 +29,17 @@ Les designers ont très vite adopté ces principes afin de concevoir des designs
 ## Les concepts clés derrières les principes de Gestalt
 Les principes de Gestalt s'appuient eux-même sur des concepts éprouvés en psychologie et science de la perception. Voici les principaux :
 #### L'émergence
-**L'ensemble est identifié avant les parties qui le compose**<br/>
+**L'ensemble est identifié avant les parties qui le compose.**<br/>
 Quand un être humain essaie d'identifier un objet, il cherche d'abord à en determiner ses contours. Une fois ces contours identifiés, le cerveau va comparer cette forme avec celle qu'il connaît.<br/>
 Ce n'est qu'une fois que cette forme est reconnue, qu'il poursuit son travail d'identification.
 
 #### La réification
-**Notre esprit remplit les trous**<br/>
+**Notre esprit remplit les trous.**<br/>
 La réification *(du latin 'res, rei' - chose)* est un aspect de la perception dans laquelle un objet peut contenir plus d'informations qu'il n'en a réellement.<br/>
 Lorsque l'on tente de faire correspondre la forme observé à celles stockées dans notre mémoire, il se peut qu'on ne trouve pas de correspondance exact. Par défaut, on choisit la plus forte correspondance et on compense ce qui est manquant par ce qu'on **pense** voir.
 
 #### La multi-stabilité
-**L'esprit cherche à éviter les incertitudes**<br/>
+**L'esprit cherche à éviter les incertitudes.**<br/>
 Lorque la perception est ambigüe, l'esprit a tendance à passer de manière chaotique d'une interpretation à l'autre. Ce phénomène est appelé multi-stabilité.<br/>
 <br/>
 Vous avez probablement déja vu cette image :<br/>
@@ -50,19 +50,23 @@ Ici, vous pouvez observer deux visages blancs et un vase noir à gauche de l'ima
 Cependant, vous ne pouvez pas réellement voir les visages et le vase en même temps. Votre cerveau passe rapidement d'une perception à l'autre. À force d'observer cette image, l'une des deux perceptions deviendra dominante et il sera difficile de voir autre chose que celle-ci.
 
 #### L'invariance
-**L'esprit est doué pour reconnaître les similitudes et les différences**<br/>
+**L'esprit est doué pour reconnaître les similitudes et les différences.**<br/>
 L'invariance est une propriété de la perception selon laquelle des objets simples peuvent être identifiés idépendemment de leur orientation ou de leur échelle.<br/>
 Cela provient du fait, que l'on n'observe jamais les choses depuis la même perspective, notre esprit a dû s'adapter pour les reconnaître en toute situation.
 
 ## Les principes de Gestalt
 Au total, on dénombre 13 principes de Gestalt. Je vous propose de tous les passer en revue.<br/>
-Dans cet article, découvrez:<br/>
 <br/>
+Dans cet article, découvrez :<br/>
+<br/>
+
 - la loi de Prägnanz (aussi appelé loi de la bonne forme ou loi de simplicité)
 - le principe de Clôture<br/>
 <br/>
-Dans la [partie 2](/blog/les-principes-de-gestalt-partie-2-3), vous pourrez découvrir:<br/>
+Dans la partie 2, vous pourrez découvrir :<br/>
+<!-- Dans la [partie 2](/blog/les-principes-de-gestalt-partie-2-3), vous pourrez découvrir :<br/> -->
 <br/>
+
 - Le principe de Symétrie et d'Ordre
 - Le principe de Fond et de Forme
 - Le principe de Connectivité uniforme
@@ -70,13 +74,17 @@ Dans la [partie 2](/blog/les-principes-de-gestalt-partie-2-3), vous pourrez déc
 - Le principe de Continuité
 - Le principe de Proximité<br/>
 <br/>
-Dans la [partie 3](/blog/les-principes-de-gestalt-partie-3-3), vous pourrez découvrir:<br/>
+Dans la partie 3, vous pourrez découvrir :<br/>
+<!-- Dans la [partie 3](/blog/les-principes-de-gestalt-partie-3-3), vous pourrez découvrir :<br/> -->
 <br/>
+
 - Le principe de Parallèlisme
 - Le principe de Similitude
 - Le principe de Destin Commun
 - Le principe de Familiarité
-- Le principe dew Points focaux
+- Le principe des Points focaux
+<br/>
+<br/>
 
 ## La loi de Prägnanz
 La loi de Präganz *(ou loi de la bonne forme, ou encore loi de la simplicité)* est le principe le plus fondamental de Gestalt. Elle établit que **l'esprit préfére les choses simples, claires et ordonnées**.<br/>
