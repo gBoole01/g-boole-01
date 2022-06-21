@@ -63,8 +63,7 @@ Dans cet article, découvrez :<br/>
 - la loi de Prägnanz (aussi appelé loi de la bonne forme ou loi de simplicité)
 - le principe de Clôture<br/>
 <br/>
-Dans la partie 2, vous pourrez découvrir :<br/>
-<!-- Dans la [partie 2](/blog/les-principes-de-gestalt-partie-2-3), vous pourrez découvrir :<br/> -->
+Dans la [partie 2](/blog/les-principes-de-gestalt-partie-2-3), vous pourrez découvrir :<br/>
 <br/>
 
 - Le principe de Symétrie et d'Ordre
@@ -107,5 +106,4 @@ Dans la partie droite, c'est encore plus flagrant, il ne s'agit que de plusieurs
 <br/>
 La difficulté lorsque l'on applique le principe de clôture est de doser correctement ce que l'on souhaite montrer et ce que l'on souhaite masquer. **Trop peu d'informations et l'esprit ne parviendra pas à reformer l'ensemble. Et, au contraire, trop d'informations et l'esprit n'aura pas besoin de reformer ce qui est évident.**
 <br/><br/>
-**Revenez vite pour découvrir la suite de cet article !**
-<!-- **Continuez à apprendre les principes de Gestalt dans la [partie 2](/blog/les-principes-de-gestalt-partie-2-3) de cet article !** -->
+**Continuez à apprendre les principes de Gestalt dans la [partie 2](/blog/les-principes-de-gestalt-partie-2-3) de cet article !**
