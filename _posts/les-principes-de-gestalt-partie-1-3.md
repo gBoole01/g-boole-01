@@ -1,7 +1,7 @@
 ---
-title: "Les principes de gestalt - Partie 1"
+title: "Les principes de Gestalt - Partie 1"
 publicationDate: "2022-06-19"
-modificationDate: "2022-06-20"
+modificationDate: "2022-06-21"
 duration: "7"
 image: "gestalt/gestalt.png"
 excerpt: "Lorsqu'il s'agit d'organiser de l'information dans un espace visuel défini, comme une page web, des outils longuement éprouvés sont à notre disposition ! Aujourd'hui, je vais vous parler des principes de Gestalt"
@@ -73,13 +73,12 @@ Dans la [partie 2](/blog/les-principes-de-gestalt-partie-2-3), vous pourrez déc
 - Le principe de Continuité
 - Le principe de Proximité<br/>
 <br/>
-Dans la partie 3, vous pourrez découvrir :<br/>
-<!-- Dans la [partie 3](/blog/les-principes-de-gestalt-partie-3-3), vous pourrez découvrir :<br/> -->
+Dans la [partie 3](/blog/les-principes-de-gestalt-partie-3-3), vous pourrez découvrir :<br/>
 <br/>
 
-- Le principe de Parallèlisme
 - Le principe de Similitude
 - Le principe de Destin Commun
+- Le principe de Parallèlisme
 - Le principe de Familiarité
 - Le principe des Points focaux
 <br/>
