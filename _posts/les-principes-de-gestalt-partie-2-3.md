@@ -9,7 +9,8 @@ excerpt: "Poursuivons ensemble la découverte des principes de Gestalt, ces règ
 
 **Ceci est la suite de la [partie 1](/blog/les-principes-de-gestalt-partie-1-3), je vous invite à la consulter avant de lire cet article.**<br/>
 <br/>
-*Poursuivons ensemble la découverte des principes de Gestalt, ces règles fondamentales d'organisation de l'information dans l'espace. Ne concevez plus vos maquettes au hasard et dirigez l'attention de vos spectacteurs en maîtrisant ces principes élémentaires !*
+*Poursuivons ensemble la découverte des principes de Gestalt, ces règles fondamentales d'organisation de l'information dans l'espace. Ne concevez plus vos maquettes a**Revenez vite pour découvrir la suite de cet article !**
+u hasard et dirigez l'attention de vos spectacteurs en maîtrisant ces principes élémentaires !*
 
 ## Le principe de Symétrie et d'Ordre
 La symétrie est un aspect très puissant de la perception. En effet, **l'esprit humain cherche naturellement la symétrie en toute chose car cela lui procure des sentiments de solidité, de stabilité et d'ordre.**<br/>
@@ -93,4 +94,5 @@ Sur cet image, on identifie nettement deux groupes d'élements.<br/>
 Le principe de Proximité et le principe des Zones communes sont similaires exceptés qu'ici, on ne va pas "enfermer" les éléments mais les éloigner.
 
 <br/><br/>
-**Continuez à apprendre les principes de Gestalt dans la [partie 3](/blog/les-principes-de-gestalt-partie-3-3) de cet article !**
+**Revenez vite pour découvrir la suite de cet article !**
+<!-- **Continuez à apprendre les principes de Gestalt dans la [partie 3](/blog/les-principes-de-gestalt-partie-3-3) de cet article !** -->
