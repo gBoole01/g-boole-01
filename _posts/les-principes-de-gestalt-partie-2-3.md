@@ -1,6 +1,6 @@
 ---
 title: "Les principes de Gestalt - Partie 2"
-publicationDate: "2022-06-21"
+publicationDate: "2022-06-20"
 modificationDate: "2022-06-21"
 duration: "7"
 image: "gestalt/gestalt.png"
