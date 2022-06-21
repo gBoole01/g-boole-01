@@ -5,6 +5,7 @@ import githubLogo from '../../public/images/github.png';
 import stackoverflowLogo from '../../public/images/stack-overflow.svg';
 import buymeacoffeeLogo from '../../public/images/buy-me-a-coffee.png';
 import smallSiteLogo from '../../public/favicon-16x16.png';
+import PWAScript from './PWA-script';
 
 
 const Footer = () => (
@@ -100,6 +101,8 @@ const Footer = () => (
             />
             <p>All Rights Reserved</p>      
         </div>
+
+        <PWAScript />
     </footer>
 )
 
