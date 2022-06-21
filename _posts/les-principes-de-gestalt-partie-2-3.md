@@ -1,7 +1,7 @@
 ---
-title: "Les principes de gestalt - Partie 2"
+title: "Les principes de Gestalt - Partie 2"
 publicationDate: "2022-06-21"
-modificationDate: "2022-06-20"
+modificationDate: "2022-06-21"
 duration: "7"
 image: "gestalt/gestalt.png"
 excerpt: "Poursuivons ensemble la découverte des principes de Gestalt, ces règles fondamentales d'organisation de l'information dans l'espace. Ne concevez plus vos maquettes au hasard et dirigez l'attention de vos spectacteurs en maîtrisant ces principes élémentaires !"
@@ -94,5 +94,4 @@ Sur cet image, on identifie nettement deux groupes d'élements.<br/>
 Le principe de Proximité et le principe des Zones communes sont similaires exceptés qu'ici, on ne va pas "enfermer" les éléments mais les éloigner.
 
 <br/><br/>
-**Revenez vite pour découvrir la suite de cet article !**
-<!-- **Continuez à apprendre les principes de Gestalt dans la [partie 3](/blog/les-principes-de-gestalt-partie-3-3) de cet article !** -->
+**Continuez à apprendre les principes de Gestalt dans la [partie 3](/blog/les-principes-de-gestalt-partie-3-3) de cet article !**
