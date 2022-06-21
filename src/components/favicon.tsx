@@ -17,6 +17,8 @@ const Favicon = () => (
         <link key="manifest" rel="manifest" href="/manifest.json"/>
         <meta key="mstilecolor" name="msapplication-TileColor" content="#ffffff"/>
         <meta key="mstileimage" name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
+        <meta key="msapplicationconfig" name='msapplication-config' content='/browserconfig.xml' />
+        <meta key="msapplicationtaphighlight" name='msapplication-tap-highlight' content='no' />
         <meta key="themecolor" name="theme-color" content="#ffffff"/>  
     </>
 )

@@ -25,6 +25,13 @@ const Meta = ({
     return (
         <Head>
             <Favicon />
+            <meta name="application-name" content={SITE_PROPS.siteName} key="application_name" />
+            <meta name="apple-mobile-web-app-capable" content="yes" key="apple_mobile_web_app_capable" />
+            <meta name="apple-mobile-web-app-status-bar-style" content="default" key="apple_mobile_web_app_status_bar_style" />
+            <meta name="apple-mobile-web-app-title" content={SITE_PROPS.siteName} key="apple_mobile_web_app_title" />
+            <meta name="format-detection" content="telephone=no" key="format_detection" />
+            <meta name="mobile-web-app-capable" content="yes" key="mobile_web_app_capable" />
+
             <meta charSet="UTF-8" key="charset" />
             <meta name="viewport" content="width=device-width,initial-scale=1" key="viewport" />
             {canonical && (
@@ -50,6 +57,23 @@ const Meta = ({
                 key="og:description"
             />
             <meta name="author" content={SITE_PROPS.author} key="author" />
+
+            {!post && (
+                <>
+                    <meta 
+                        property="og:image"
+                        content={`${SITE_PROPS.url}/images/logo-512.png`}
+                        key="og:image"
+                        />
+                    <meta 
+                        name="twitter:card"
+                        content="summary_large_image"
+                        key="twitter:card"
+                    />
+                </>
+
+
+            )}
 
             {post && (
                 <>
