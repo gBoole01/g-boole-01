@@ -6,7 +6,6 @@ import stackoverflowLogo from '../../public/images/stack-overflow.svg';
 import buymeacoffeeLogo from '../../public/images/buy-me-a-coffee.png';
 import smallSiteLogo from '../../public/favicon-16x16.png';
 
-
 const Footer = () => (
     <footer className="shrink-0 shadow-md">
         <ul className="bg-gray-4/50 px-9 pt-2.5 grid grid-cols-3 grid-rows-3 items-center justify-items-center text-center text-xs text-blue-1 underline">
