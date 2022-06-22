@@ -18,5 +18,9 @@ coverage
 public/robots.txt
 public/sitemap*.xml
 
+# pwa
+public/sw.js
+public/workbox-*.js
+
 # post template
 _posts/markdown-template.md
