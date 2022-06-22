@@ -14,12 +14,13 @@ const Favicon = () => (
         <link key="icon32" rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
         <link key="icon96" rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"/>
         <link key="icon16" rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+        <link rel='mask-icon' href='/maskable_icon.png' color='#FFFFFF' />
         <link key="manifest" rel="manifest" href="/manifest.json"/>
-        <meta key="mstilecolor" name="msapplication-TileColor" content="#ffffff"/>
+        <meta key="themecolor" name="theme-color" content="#FFFFFF"/>  
+        <meta key="mstilecolor" name="msapplication-TileColor" content="#FFFFFF"/>
         <meta key="mstileimage" name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
         <meta key="msapplicationconfig" name='msapplication-config' content='/browserconfig.xml' />
         <meta key="msapplicationtaphighlight" name='msapplication-tap-highlight' content='no' />
-        <meta key="themecolor" name="theme-color" content="#ffffff"/>  
     </>
 )
 
