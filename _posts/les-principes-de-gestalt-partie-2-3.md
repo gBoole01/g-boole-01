@@ -9,8 +9,7 @@ excerpt: "Poursuivons ensemble la découverte des principes de Gestalt, ces règ
 
 **Ceci est la suite de la [partie 1](/blog/les-principes-de-gestalt-partie-1-3), je vous invite à la consulter avant de lire cet article.**<br/>
 <br/>
-*Poursuivons ensemble la découverte des principes de Gestalt, ces règles fondamentales d'organisation de l'information dans l'espace. Ne concevez plus vos maquettes a**Revenez vite pour découvrir la suite de cet article !**
-u hasard et dirigez l'attention de vos spectacteurs en maîtrisant ces principes élémentaires !*
+*Poursuivons ensemble la découverte des principes de Gestalt, ces règles fondamentales d'organisation de l'information dans l'espace. Ne concevez plus vos maquettes au hasard et dirigez l'attention de vos spectacteurs en maîtrisant ces principes élémentaires !*
 
 ## Le principe de Symétrie et d'Ordre
 La symétrie est un aspect très puissant de la perception. En effet, **l'esprit humain cherche naturellement la symétrie en toute chose car cela lui procure des sentiments de solidité, de stabilité et d'ordre.**<br/>
@@ -30,7 +29,7 @@ Lorsque l'on découvre une composition, on ne voit qu'une accumulation d'éléme
 Le principe de Fond et de Forme (ou Fond/Forme) décrit **la relation entre les éléments qui composent le fond et ceux qui composent la forme**. On parle aussi d'éléments **négatifs** et **positifs**.<br/>
 L'esprit doit séparer ces éléments afin de comprendre ce qui est observé.<br/>
 <br/>
-La relation Forme/Fond peut-être stable ou instable. Cela dépends de la difficulté à séparer les éléments négatifs et positifs.<br/>
+La relation Forme/Fond peut-être stable ou instable. Cela dépend de la difficulté à séparer les éléments négatifs et positifs.<br/>
 <br/>
 
 ![Figure Ground](/images/blog/gestalt/figure-ground.png)
@@ -58,7 +57,7 @@ Dans notre exemple, en l'absence de lignes, votre perception aurait associé les
 
 ## Les principe des Zones communes
 Le principe des Zones communes établit que **des élements sont perçus comme membre d'un groupe si ils sont situés dans la même zone fermée**<br/>
-Une zone fermée peut-être représenté par un tracé entourant les éléments, ou encore un fond commun.
+Une zone fermée peut être représentée par un tracé entourant les éléments, ou encore un fond commun.
 <br/>
 
 ![Common Regions](/images/blog/gestalt/common-regions.png)
@@ -74,8 +73,8 @@ Que voyez-vous sur cette image ?<br/>
 <br/>
 
 Vous serez d'accord pour dire qu'il y a vingt-huit cercles, et pourtant, votre esprit perçoit deux éléments distincts.<br/>
-Soit vous voyez deux lignes courbe, une bleue et une noire, soit vous voyez une ligne droite horizontale et une autre ligne courbe qui la traverse en son centre.<br/>
-Mais quelle que soit votre perception, la première ligne ne s'est pas arrêté lorsqu'elle a rencontré la seconde, elle a continué au-delà de celle-ci.<br/>
+Soit vous voyez deux lignes courbes, une bleue et une noire, soit vous voyez une ligne droite horizontale et une autre ligne courbe qui la traverse en son centre.<br/>
+Mais quelle que soit votre perception, la première ligne ne s'est pas arrêtée lorsqu'elle a rencontré la seconde, elle s'est poursuivie au-delà de celle-ci.<br/>
 <br/>
 C'est le principe de Clôture, déja vu dans la [première partie](/blog/les-principes-de-gestalt-partie-1-3), qui vous a fait percevoir les cercles comme les pointillés d'une ligne.<br/>
 Et, si vous avez vu deux lignes, bleue et noire, c'est le principe de Similarité, que nous aborderons dans la [troisième partie](/blog/les-principes-de-gestalt-partie-3-3) de cet article, qui a influé sur votre perception.<br/>

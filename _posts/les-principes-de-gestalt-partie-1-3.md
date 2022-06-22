@@ -30,13 +30,13 @@ Les designers ont très vite adopté ces principes afin de concevoir des designs
 Les principes de Gestalt s'appuient eux-même sur des concepts éprouvés en psychologie et science de la perception. Voici les principaux :
 #### L'émergence
 **L'ensemble est identifié avant les parties qui le compose.**<br/>
-Quand un être humain essaie d'identifier un objet, il cherche d'abord à en determiner ses contours. Une fois ces contours identifiés, le cerveau va comparer cette forme avec celle qu'il connaît.<br/>
-Ce n'est qu'une fois que cette forme est reconnue, qu'il poursuit son travail d'identification.
+Quand un être humain essaie d'identifier un objet, il cherche d'abord à en determiner ses contours. Une fois ces contours identifiés, le cerveau va comparer cette forme avec celles qu'il connaît déjà.<br/>
+Le travail d'identification ne peut continuer tant que cette forme n'est pas reconnue.
 
 #### La réification
 **Notre esprit remplit les trous.**<br/>
 La réification *(du latin 'res, rei' - chose)* est un aspect de la perception dans laquelle un objet peut contenir plus d'informations qu'il n'en a réellement.<br/>
-Lorsque l'on tente de faire correspondre la forme observé à celles stockées dans notre mémoire, il se peut qu'on ne trouve pas de correspondance exact. Par défaut, on choisit la plus forte correspondance et on compense ce qui est manquant par ce qu'on **pense** voir.
+Lorsque l'on tente de faire correspondre la forme observée à celles stockées dans notre mémoire, il se peut qu'on ne trouve pas de correspondance exact. Par défaut, on choisit la plus forte correspondance et on compense ce qui est manquant par ce qu'on **pense** voir.
 
 #### La multi-stabilité
 **L'esprit cherche à éviter les incertitudes.**<br/>

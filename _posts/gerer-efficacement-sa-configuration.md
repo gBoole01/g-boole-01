@@ -107,7 +107,7 @@ lrwxrwxrwx  1 user user     27 13 juin  14:59 .zshrc -> /home/user/.dotfiles/.zs
 
 Le `.zshrc -> /home/user/.dotfiles/.zshrc` nous indique que le lien symbolique de `.zshrc` est correctement en place.<br/>
 <br/>
-**Désormais, chaque modification effectuée sur l'un des deux fichiers sera répercuté sur l'autre. Le tout étant versionné dans le dossier `.dotfiles`.**
+**Désormais, chaque modification effectuée sur l'un des deux fichiers sera répercutée sur l'autre. Le tout étant versionné dans le dossier `.dotfiles`.**
 
 #### Ajouter la configuration de Git
 La configuration Git globale de votre machine se trouve dans le fichier `.gitconfig`, nous allons donc répeter la même opération.
