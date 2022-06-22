@@ -26,7 +26,7 @@ const PostThumbnail = ({
         <Title>{title}</Title>
         <Caption>Le {date} - {duration} min de lecture</Caption>
         <div className="flex gap-2">
-            <div className="max-h-[90px] sm:max-h-full min-w-[90px] w-1/3 shadow-md">
+            <div className="max-h-[90px] sm:max-h-full min-w-[90px] max-w-[220px] w-1/3 shadow-md">
                 <Image
                     src={`/images/blog/${image}`}
                     width={90}
