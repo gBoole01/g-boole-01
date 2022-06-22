@@ -8,10 +8,10 @@ type Props = {
 const Layout = ({ 
     children
 }: Props) => (
-        <div className="w-full min-h-screen bg-gradient-to-t from-gray-4/10 via-white to-gray-4/10 font-sans text-sm text-gray-1">
-            <div className="container min-h-screen flex flex-col mx-auto border-x border-gray-4/50">
+        <div className="w-full min-h-screen bg-gray-4/40 font-sans text-sm text-gray-1">
+            <div className="container min-h-screen xl:max-w-screen-xl flex flex-col mx-auto shadow-2xl border-x border-gray-4/50 bg-gradient-to-t from-gray-5 via-white to-gray-5">
                 <Header />
-                <main className="px-9 grow">{children}</main>
+                <main className="z-10 px-9 grow">{children}</main>
                 <Footer />
             </div>
         </div>
