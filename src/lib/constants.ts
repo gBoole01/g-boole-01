@@ -2,7 +2,7 @@ export const SITE_PROPS = {
     siteName: 'gBoole01 💻',
     title: 'gBoole01 💻',
     description: 'Site Web de gBoole01',
-    url: 'https://g-boole-01.vercel.app',
+    url: 'https://g-boole-01.com',
     locale: 'fr',
     author: 'gBoole01',
 };
