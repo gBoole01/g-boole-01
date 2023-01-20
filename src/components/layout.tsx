@@ -2,11 +2,12 @@ import { useTheme as useNextTheme } from 'next-themes'
 import { Switch, useTheme } from '@nextui-org/react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react'
+import { RiMailSendLine } from 'react-icons/ri'
 import siteLogo from '../../public/images/logo-64.png'
 import smallSiteLogo from '../../public/favicon-16x16.png'
-import contactLogo from '../../public/images/email.png'
 import { SOCIAL_LINKS } from '../lib/constants'
-import LegalsModal from './legals'
+import LegalsModal from './legals-modal'
 
 type Props = {
   children?: React.ReactNode
@@ -21,17 +22,16 @@ const Header = () => {
       <nav>
         <ul>
           <Link href="/">
-            <Image src={siteLogo} alt="Website Logo" width={64} height={64} />
+            <a>
+              <Image src={siteLogo} alt="Website Logo" width={64} height={64} />
+            </a>
           </Link>
           <Link href="/blog">Blog</Link>
           <Link href="/about">À Propos</Link>
           <Link href="/contact">
-            <Image
-              src={contactLogo}
-              height={35}
-              width={35}
-              alt="gBoole01 Logo"
-            />
+            <a>
+              <RiMailSendLine />
+            </a>
           </Link>
         </ul>
       </nav>
@@ -46,7 +46,11 @@ const Header = () => {
   )
 }
 
-const Footer = () => (
+type FooterProps = {
+  legalsModalHandler: () => void
+}
+
+const Footer = ({ legalsModalHandler }: FooterProps) => (
   <footer>
     <ul>
       <Link href="/">Accueil</Link>
@@ -63,7 +67,7 @@ const Footer = () => (
       <a href={SOCIAL_LINKS.buymeacoffee} target="_blank">
         BuyMeACoffee
       </a>
-      <Link href="#">Mentions Légales</Link>
+      <p onClick={legalsModalHandler}> Mentions Légales</p>
     </ul>
 
     <div>
@@ -80,13 +84,24 @@ const Footer = () => (
   </footer>
 )
 
-const Layout = ({ children }: Props) => (
-  <div>
-    <Header />
-    <main>{children}</main>
-    <Footer />
-    <LegalsModal />
-  </div>
-)
+const Layout = ({ children }: Props) => {
+  const [legalsModalVisible, setLegalsModalVisible] = useState(false)
+  const legalsModalHandler = () => setLegalsModalVisible(true)
+  const legalsModalCloseHandler = () => {
+    setLegalsModalVisible(false)
+  }
+
+  return (
+    <div>
+      <Header />
+      <main>{children}</main>
+      <Footer legalsModalHandler={legalsModalHandler} />
+      <LegalsModal
+        visible={legalsModalVisible}
+        closeHandler={legalsModalCloseHandler}
+      />
+    </div>
+  )
+}
 
 export default Layout
