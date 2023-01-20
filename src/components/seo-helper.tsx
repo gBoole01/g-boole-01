@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import NextHead from 'next/head'
 import { SITE_PROPS } from '../lib/constants'
 
 type SeoHelperProps = {
@@ -16,7 +17,7 @@ const SeoHelper = ({ title, description, canonical, post }: SeoHelperProps) => {
   const router = useRouter()
 
   return (
-    <>
+    <NextHead>
       {canonical && <link rel="canonical" href={canonical} key="canonical" />}
       <title>{`${title} | ${SITE_PROPS.siteName}`}</title>
       <meta
@@ -109,7 +110,7 @@ const SeoHelper = ({ title, description, canonical, post }: SeoHelperProps) => {
           />
         </>
       )}
-    </>
+    </NextHead>
   )
 }
 

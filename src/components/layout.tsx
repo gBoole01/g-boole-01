@@ -1,26 +1,42 @@
 import { useTheme as useNextTheme } from 'next-themes'
-import { Switch, useTheme } from '@nextui-org/react'
+import { Button, Row, useTheme } from '@nextui-org/react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import { RiMailSendLine } from 'react-icons/ri'
+import { RiMailSendLine, RiMoonFill, RiSunFill } from 'react-icons/ri'
 import siteLogo from '../../public/images/logo-64.png'
 import smallSiteLogo from '../../public/favicon-16x16.png'
 import { SOCIAL_LINKS } from '../lib/constants'
 import LegalsModal from './legals-modal'
+import ContactModal from './contact-modal'
 
-type Props = {
-  children?: React.ReactNode
+type HeaderProps = {
+  contactModalHandler: () => void
 }
 
-const Header = () => {
+const ThemeSwitcher = () => {
   const { setTheme } = useNextTheme()
   const { isDark, type } = useTheme()
 
+  const handleClick = () => {
+    if (type === 'light') setTheme('dark')
+    else if (type === 'dark') setTheme('light')
+  }
+
   return (
-    <header>
-      <nav>
-        <ul>
+    <>
+      <Button size="sm" onPress={handleClick}>
+        {isDark ? <RiMoonFill /> : <RiSunFill />}
+      </Button>
+    </>
+  )
+}
+
+const Header = ({ contactModalHandler }: HeaderProps) => (
+  <header>
+    <nav>
+      <ul>
+        <Row justify="space-evenly" align="center" css={{ gap: '$6' }}>
           <Link href="/">
             <a>
               <Image src={siteLogo} alt="Website Logo" width={64} height={64} />
@@ -28,34 +44,27 @@ const Header = () => {
           </Link>
           <Link href="/blog">Blog</Link>
           <Link href="/about">À Propos</Link>
-          <Link href="/contact">
-            <a>
-              <RiMailSendLine />
-            </a>
-          </Link>
-        </ul>
-      </nav>
-      <div>
-        <Switch
-          checked={isDark}
-          onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
-        />
-        {type}
-      </div>
-    </header>
-  )
-}
+          <a onClick={contactModalHandler}>
+            <RiMailSendLine />
+          </a>
+          <ThemeSwitcher />
+        </Row>
+      </ul>
+    </nav>
+  </header>
+)
 
 type FooterProps = {
+  contactModalHandler: () => void
   legalsModalHandler: () => void
 }
 
-const Footer = ({ legalsModalHandler }: FooterProps) => (
+const Footer = ({ contactModalHandler, legalsModalHandler }: FooterProps) => (
   <footer>
     <ul>
       <Link href="/">Accueil</Link>
       <Link href="/blog">Blog</Link>
-      <Link href="/contact">Contact</Link>
+      <a onClick={contactModalHandler}>Contact</a>
       <Link href="/about">À Propos</Link>
       <Link href="/resume">Curriculum Vitae</Link>
       <a href={SOCIAL_LINKS.github} target="_blank">
@@ -67,10 +76,10 @@ const Footer = ({ legalsModalHandler }: FooterProps) => (
       <a href={SOCIAL_LINKS.buymeacoffee} target="_blank">
         BuyMeACoffee
       </a>
-      <p onClick={legalsModalHandler}> Mentions Légales</p>
+      <a onClick={legalsModalHandler}> Mentions Légales</a>
     </ul>
 
-    <div>
+    <Row justify="center" align="center" css={{ gap: '$6' }}>
       <p>Copyright &copy; {new Date().getFullYear()} gBoole01</p>
       <Image
         priority
@@ -80,25 +89,42 @@ const Footer = ({ legalsModalHandler }: FooterProps) => (
         alt="gBoole01 Logo"
       />
       <p>All Rights Reserved</p>
-    </div>
+    </Row>
   </footer>
 )
 
-const Layout = ({ children }: Props) => {
+type LayoutProps = {
+  children?: React.ReactNode
+}
+
+const Layout = ({ children }: LayoutProps) => {
   const [legalsModalVisible, setLegalsModalVisible] = useState(false)
   const legalsModalHandler = () => setLegalsModalVisible(true)
   const legalsModalCloseHandler = () => {
     setLegalsModalVisible(false)
   }
 
+  const [contactModalVisible, setContactModalVisible] = useState(false)
+  const contactModalHandler = () => setContactModalVisible(true)
+  const contactModalCloseHandler = () => {
+    setContactModalVisible(false)
+  }
+
   return (
     <div>
-      <Header />
+      <Header contactModalHandler={contactModalHandler} />
       <main>{children}</main>
-      <Footer legalsModalHandler={legalsModalHandler} />
+      <Footer
+        legalsModalHandler={legalsModalHandler}
+        contactModalHandler={contactModalHandler}
+      />
       <LegalsModal
         visible={legalsModalVisible}
         closeHandler={legalsModalCloseHandler}
+      />
+      <ContactModal
+        visible={contactModalVisible}
+        closeHandler={contactModalCloseHandler}
       />
     </div>
   )

@@ -1,9 +1,9 @@
 import PostType from '../types/Post'
 import { getAllPosts } from '../lib/getPosts'
 import Layout from '../components/layout'
-import Meta from '../components/head'
 import HeroPost from '../components/hero-post'
 import PostListing from '../components/post-listing'
+import SeoHelper from '../components/seo-helper'
 
 type Props = {
   allPosts: PostType[]
@@ -15,7 +15,7 @@ const Blog = ({ allPosts }: Props) => {
 
   return (
     <Layout>
-      <Meta title="Blog" description="Blog de gBoole01" />
+      <SeoHelper title="Blog" description="Blog de gBoole01" />
 
       <h1 className="hidden">Blog</h1>
       {heroPost && (
