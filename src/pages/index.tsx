@@ -1,4 +1,3 @@
-import { Button } from '@nextui-org/react'
 import SeoHelper from '../components/seo-helper'
 
 export default function Home() {
@@ -6,7 +5,6 @@ export default function Home() {
     <>
       <SeoHelper title="Home" description="Homepage of my Portfolio" />
       <h1>gBoole01 Portfolio</h1>
-      <Button>Click me!</Button>
     </>
   )
 }
