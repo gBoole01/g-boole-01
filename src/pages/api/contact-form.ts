@@ -43,8 +43,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     from: process.env.FROM_ADDRESS || '',
     to: process.env.TO_ADDRESS,
     subject: `Demande de contact depuis ${SITE_PROPS.siteName}`,
-    text: `${name} <${email}> has sent you a message => ${message}`,
-    html: `<div>${name} <${email}> has sent you a message =></div><div>${message}</div>`,
+    text: `${name} (${email}) has sent you a message => ${message}`,
+    html: `<div>${name} (${email}) has sent you a message =></div><div>${message}</div>`,
   })
 
   if (!response) {
