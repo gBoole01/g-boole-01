@@ -42,12 +42,15 @@ const Header = ({ contactModalHandler }: HeaderProps) => (
               <Image src={siteLogo} alt="Website Logo" width={64} height={64} />
             </a>
           </Link>
-          <Link href="/blog">Blog</Link>
           <Link href="/about">À Propos</Link>
-          <a onClick={contactModalHandler}>
-            <RiMailSendLine />
-          </a>
-          <ThemeSwitcher />
+          <Link href="/blog">Blog</Link>
+          <Link href="/resume">C.V.</Link>
+          <Button.Group size="xl">
+            <Button onPress={contactModalHandler}>
+              <RiMailSendLine />
+            </Button>
+            <ThemeSwitcher />
+          </Button.Group>
         </Row>
       </ul>
     </nav>
@@ -66,7 +69,7 @@ const Footer = ({ contactModalHandler, legalsModalHandler }: FooterProps) => (
       <Link href="/blog">Blog</Link>
       <a onClick={contactModalHandler}>Contact</a>
       <Link href="/about">À Propos</Link>
-      <Link href="/resume">Curriculum Vitae</Link>
+      <Link href="/resume">C.V.</Link>
       <a href={SOCIAL_LINKS.github} target="_blank">
         Github
       </a>
@@ -76,7 +79,7 @@ const Footer = ({ contactModalHandler, legalsModalHandler }: FooterProps) => (
       <a href={SOCIAL_LINKS.buymeacoffee} target="_blank">
         BuyMeACoffee
       </a>
-      <a onClick={legalsModalHandler}> Mentions Légales</a>
+      <a onClick={legalsModalHandler}>Mentions Légales</a>
     </ul>
 
     <Row justify="center" align="center" css={{ gap: '$6' }}>
@@ -88,7 +91,7 @@ const Footer = ({ contactModalHandler, legalsModalHandler }: FooterProps) => (
         width={16}
         alt="gBoole01 Logo"
       />
-      <p>All Rights Reserved</p>
+      <p>Tous droits réservés</p>
     </Row>
   </footer>
 )
@@ -111,7 +114,7 @@ const Layout = ({ children }: LayoutProps) => {
   }
 
   return (
-    <div>
+    <div id="root">
       <Header contactModalHandler={contactModalHandler} />
       <main>{children}</main>
       <Footer
