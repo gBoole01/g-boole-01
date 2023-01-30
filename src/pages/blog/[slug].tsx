@@ -1,10 +1,9 @@
 import PostLayout from '../../components/post-layout'
-import Layout from '../../components/layout'
 import SuggestedPost from '../../components/suggested-post'
 import { getAllPosts, getPostBySlug, getRandomPost } from '../../lib/getPosts'
 import PostType from '../../types/Post'
-import Meta from '../../components/head'
 import markdownToHTML from '../../lib/markdownToHTML'
+import SeoHelper from '../../components/seo-helper'
 
 type Props = {
   post: PostType
@@ -13,8 +12,8 @@ type Props = {
 
 export default function Post({ post, randomPost }: Props) {
   return (
-    <Layout>
-      <Meta title={post.title} description={post.excerpt} post={post} />
+    <>
+      <SeoHelper title={post.title} description={post.excerpt} post={post} />
 
       <PostLayout
         title={post.title}
@@ -31,7 +30,7 @@ export default function Post({ post, randomPost }: Props) {
         excerpt={randomPost.excerpt}
         slug={randomPost.slug}
       />
-    </Layout>
+    </>
   )
 }
 
