@@ -1,20 +1,258 @@
-import Header from './header';
-import Footer from './footer';
+import { useTheme as useNextTheme } from 'next-themes'
+import {
+  Button,
+  Col,
+  Container,
+  Grid,
+  Navbar,
+  Row,
+  useTheme,
+  Link as NextUILink,
+} from '@nextui-org/react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+import {
+  RiCupFill,
+  RiGithubFill,
+  RiMailSendLine,
+  RiMoonFill,
+  RiStackOverflowFill,
+  RiSunFill,
+} from 'react-icons/ri'
+import siteLogo from '../../public/images/logo-64.png'
+import smallSiteLogo from '../../public/favicon-16x16.png'
+import { SOCIAL_LINKS } from '../lib/constants'
+import LegalsModal from './legals-modal'
+import ContactModal from './contact-modal'
 
-type Props = {
-    children? : React.ReactNode;
+const ThemeSwitcher = () => {
+  const { setTheme } = useNextTheme()
+  const { isDark, type } = useTheme()
+
+  const handleClick = () => {
+    if (type === 'light') setTheme('dark')
+    else if (type === 'dark') setTheme('light')
+  }
+
+  return (
+    <Button onPress={handleClick} bordered>
+      {isDark ? <RiMoonFill /> : <RiSunFill />}
+    </Button>
+  )
 }
 
-const Layout = ({ 
-    children
-}: Props) => (
-        <div className="w-full min-h-screen bg-gray-4/40 font-sans text-sm text-gray-1">
-            <div className="container min-h-screen xl:max-w-screen-xl flex flex-col mx-auto shadow-2xl border-x border-gray-4/50 bg-gradient-to-t from-gray-5 via-white to-gray-5">
-                <Header />
-                <main className="z-10 px-9 grow">{children}</main>
-                <Footer />
-            </div>
-        </div>
-    )
+type HeaderProps = {
+  contactModalHandler: () => void
+}
 
-export default Layout;
+const Header = ({ contactModalHandler }: HeaderProps) => {
+  const router = useRouter()
+  return (
+    <header>
+      <Navbar variant="sticky" css={{ padding: '$4' }}>
+        <Navbar.Brand>
+          <Link href="/">
+            <a>
+              <Image src={siteLogo} alt="Website Logo" width={64} height={64} />
+            </a>
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Content
+          enableCursorHighlight
+          activeColor="primary"
+          variant="highlight"
+          hideIn="xs"
+        >
+          <Link href="/about">
+            <Navbar.Link isActive={router.pathname === '/about'}>
+              À Propos
+            </Navbar.Link>
+          </Link>
+          <Link href="/blog">
+            <Navbar.Link isActive={router.pathname === '/blog'}>
+              Articles
+            </Navbar.Link>
+          </Link>
+        </Navbar.Content>
+        <Navbar.Content>
+          <Button.Group size="md">
+            <ThemeSwitcher />
+            <Button onPress={contactModalHandler}>
+              <RiMailSendLine />
+            </Button>
+          </Button.Group>
+        </Navbar.Content>
+        <Navbar.Toggle showIn="xs" />
+        <Navbar.Collapse disableAnimation>
+          <Navbar.CollapseItem isActive={router.pathname === '/about'}>
+            <Link href="/about">À Propos</Link>
+          </Navbar.CollapseItem>
+          <Navbar.CollapseItem isActive={router.pathname === '/blog'}>
+            <Link href="/blog">Articles</Link>
+          </Navbar.CollapseItem>
+        </Navbar.Collapse>
+      </Navbar>
+    </header>
+  )
+}
+
+const AbsoluteFooter = () => (
+  <Row justify="center" align="center" css={{ gap: '$6' }}>
+    <p>Copyright &copy; {new Date().getFullYear()} gBoole01</p>
+    <Image
+      priority
+      src={smallSiteLogo}
+      height={16}
+      width={16}
+      alt="gBoole01 Logo"
+    />
+    <p>Tous droits réservés</p>
+  </Row>
+)
+
+type FooterProps = {
+  contactModalHandler: () => void
+  legalsModalHandler: () => void
+}
+
+const Footer = ({ contactModalHandler, legalsModalHandler }: FooterProps) => (
+  <footer>
+    <Grid.Container justify="center" gap={1}>
+      <Grid xs={6} justify="space-around">
+        <Link href="/">
+          <NextUILink block>Accueil</NextUILink>
+        </Link>
+      </Grid>
+      <Grid xs={6} justify="space-around">
+        <NextUILink block onClick={contactModalHandler}>
+          <RiMailSendLine />
+          &nbsp;Contact
+        </NextUILink>
+      </Grid>
+      <Grid xs={6} justify="space-around">
+        <Link href="/blog">
+          <NextUILink block>Articles</NextUILink>
+        </Link>
+      </Grid>
+      <Grid xs={6} justify="space-around">
+        <NextUILink
+          block
+          href={SOCIAL_LINKS.stackoverflow}
+          target="_blank"
+          isExternal
+        >
+          <RiStackOverflowFill />
+          &nbsp;Stack Overflow
+        </NextUILink>
+      </Grid>
+      <Grid xs={6} justify="space-around">
+        <Link href="/about">
+          <NextUILink block>À Propos</NextUILink>
+        </Link>
+      </Grid>
+      <Grid xs={6} justify="space-around">
+        <NextUILink
+          block
+          href={SOCIAL_LINKS.buymeacoffee}
+          target="_blank"
+          isExternal
+        >
+          <RiCupFill />
+          &nbsp;Buy Me A Coffee
+        </NextUILink>
+      </Grid>
+      <Grid xs={6} justify="space-around">
+        <Link href="/resume">
+          <NextUILink block>C.V .</NextUILink>
+        </Link>
+      </Grid>
+      <Grid xs={6} justify="space-around">
+        <NextUILink block href={SOCIAL_LINKS.github} target="_blank" isExternal>
+          <RiGithubFill />
+          &nbsp;Github
+        </NextUILink>
+      </Grid>
+      <Grid xs={6} justify="space-around">
+        <NextUILink block onClick={legalsModalHandler}>
+          Mentions Légales
+        </NextUILink>
+      </Grid>
+    </Grid.Container>
+    <AbsoluteFooter />
+  </footer>
+)
+
+type LayoutProps = {
+  children?: React.ReactNode
+}
+
+const Layout = ({ children }: LayoutProps) => {
+  const { isDark } = useTheme()
+  const backgroundColor = isDark ? 'black' : 'lightgray'
+
+  const [legalsModalVisible, setLegalsModalVisible] = useState(false)
+  const legalsModalHandler = () => setLegalsModalVisible(true)
+  const legalsModalCloseHandler = () => {
+    setLegalsModalVisible(false)
+  }
+
+  const [contactModalVisible, setContactModalVisible] = useState(false)
+  const contactModalHandler = () => setContactModalVisible(true)
+  const contactModalCloseHandler = () => {
+    setContactModalVisible(false)
+  }
+
+  return (
+    <Container
+      fluid
+      css={{
+        display: 'flex',
+        flexDirection: 'column',
+        padding: 0,
+        minHeight: '100vh',
+      }}
+    >
+      <Row>
+        <Col span={12}>
+          <Header contactModalHandler={contactModalHandler} />
+        </Col>
+      </Row>
+      <Row style={{ flexGrow: 1 }}>
+        <Col span={12}>
+          <Container>
+            <main>{children}</main>
+          </Container>
+        </Col>
+      </Row>
+      <Row
+        style={{
+          flexShrink: 0,
+          backgroundColor,
+          borderTop: '1px solid lightgray',
+          padding: '1rem 0',
+        }}
+      >
+        <Col span={12}>
+          <Container>
+            <Footer
+              legalsModalHandler={legalsModalHandler}
+              contactModalHandler={contactModalHandler}
+            />
+          </Container>
+        </Col>
+      </Row>
+      <LegalsModal
+        visible={legalsModalVisible}
+        closeHandler={legalsModalCloseHandler}
+      />
+      <ContactModal
+        visible={contactModalVisible}
+        closeHandler={contactModalCloseHandler}
+      />
+    </Container>
+  )
+}
+
+export default Layout
