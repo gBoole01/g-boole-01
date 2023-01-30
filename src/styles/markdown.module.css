@@ -1,71 +1,92 @@
 .markdown {
-    @apply pt-3 md:pt-6;
+  padding-top: 3rem;
+}
+
+.markdown h2,
+.markdown h3 {
+  font-weight: bold;
+  color: rgb(0 114 177);
+  font-size: 3rem;
+  margin: 0 2rem;
+  text-decoration: underline;
+  text-underline-offset: 2rem;
 }
 
 .markdown h2 {
-    @apply font-bold text-blue-1 text-xl my-2 underline-offset-2 underline;
+  font-size: 3rem;
 }
 
 .markdown h3 {
-    @apply font-bold text-blue-1 text-lg my-2 underline-offset-2 underline;
+  font-size: 2rem;
 }
 
 .markdown h4 {
-    @apply font-bold text-blue-2 text-base my-2 underline-offset-2 underline;
+  font-size: 1.75rem;
 }
 
 .markdown h5 {
-    @apply font-bold text-blue-2 text-sm my-2 underline-offset-2 underline;
+  font-size: 1.5rem;
 }
 
 .markdown h6 {
-    @apply font-bold text-blue-2 text-xs my-2 underline-offset-2 underline;
+  font-size: 1.25rem;
 }
 
 .markdown blockquote {
-    @apply bg-gray-4/40 border rounded-md p-4 m-4;
+  padding: 2rem;
+  margin: 2rem;
 }
 
 .markdown ul {
-    @apply pl-2 list-none;
+  padding-left: 2rem;
+  list-style-type: none;
 }
 
 .markdown ul > li {
-    @apply pl-2 relative;
+  position: relative;
+  padding-left: 2rem;
 }
 
 .markdown ul > li:before {
-    color: rgb(0 114 177);
-    content: "-";
-    font-weight: bolder;
-    left: -.25rem;
-    position: absolute;
+  color: rgb(0 114 177);
+  content: '-';
+  font-weight: bolder;
+  left: -0.25rem;
+  position: absolute;
 }
 
 .markdown ol {
-    @apply pl-2 list-decimal marker:font-bold marker:text-blue-1;
+  padding-left: 2rem;
+  list-style-type: decimal;
 }
 
 .markdown ol > li {
-    @apply pl-2;
+  padding-left: 2rem;
 }
 
 .markdown pre {
-    @apply mr-4;
+  margin-right: 4rem;
 }
 
 .markdown a {
-    @apply text-blue-1 visited:text-gray-3 underline;
+  color: rgb(0 114 177);
+  text-decoration: underline;
+}
+
+.markdown a:visited {
+  color: gray;
 }
 
 .markdown code {
-    @apply bg-gray-4/40 border rounded-md px-1 m-1;
+  background-color: lightgray;
+  border: 1px solid gray;
+  border-radius: 20%;
+  padding: 1rem 0;
+  margin: 1rem 0;
 }
 
 .markdown img {
-    @apply mx-auto w-1/2 py-2;
-}
-
-.markdown p {
-    @apply md:pl-4;
+  margin: auto 0;
+  width: 50%;
+  padding: 0 2rem;
 }
