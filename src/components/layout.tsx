@@ -206,12 +206,12 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <Container
-      fluid
       css={{
         display: 'flex',
         flexDirection: 'column',
         padding: 0,
         minHeight: '100vh',
+        maxWidth: '100%',
       }}
     >
       <Row>
