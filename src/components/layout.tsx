@@ -44,12 +44,10 @@ const ThemeSwitcher = () => {
   )
 }
 
-type HeaderProps = {
-  contactModalHandler: () => void
-}
-
-const Header = ({ contactModalHandler }: HeaderProps) => {
+const Header = () => {
   const router = useRouter()
+  const { contactModalShowHandler } = useContactModal()
+
   return (
     <header>
       <Navbar variant="sticky" css={{ padding: '$4' }}>
@@ -80,7 +78,7 @@ const Header = ({ contactModalHandler }: HeaderProps) => {
         <Navbar.Content>
           <Button.Group size="md">
             <ThemeSwitcher />
-            <Button onPress={contactModalHandler}>
+            <Button onPress={contactModalShowHandler}>
               <RiMailSendLine />
             </Button>
           </Button.Group>
@@ -114,76 +112,84 @@ const AbsoluteFooter = () => (
 )
 
 type FooterProps = {
-  contactModalHandler: () => void
   legalsModalHandler: () => void
 }
 
-const Footer = ({ contactModalHandler, legalsModalHandler }: FooterProps) => (
-  <footer>
-    <Grid.Container justify="center" gap={1}>
-      <Grid xs={6} justify="space-around">
-        <Link href="/">
-          <NextUILink block>Accueil</NextUILink>
-        </Link>
-      </Grid>
-      <Grid xs={6} justify="space-around">
-        <NextUILink block onClick={contactModalHandler}>
-          <RiMailSendLine />
-          &nbsp;Contact
-        </NextUILink>
-      </Grid>
-      <Grid xs={6} justify="space-around">
-        <Link href="/blog">
-          <NextUILink block>Articles</NextUILink>
-        </Link>
-      </Grid>
-      <Grid xs={6} justify="space-around">
-        <NextUILink
-          block
-          href={SOCIAL_LINKS.stackoverflow}
-          target="_blank"
-          isExternal
-        >
-          <RiStackOverflowFill />
-          &nbsp;Stack Overflow
-        </NextUILink>
-      </Grid>
-      <Grid xs={6} justify="space-around">
-        <Link href="/about">
-          <NextUILink block>À Propos</NextUILink>
-        </Link>
-      </Grid>
-      <Grid xs={6} justify="space-around">
-        <NextUILink
-          block
-          href={SOCIAL_LINKS.buymeacoffee}
-          target="_blank"
-          isExternal
-        >
-          <RiCupFill />
-          &nbsp;Buy Me A Coffee
-        </NextUILink>
-      </Grid>
-      <Grid xs={6} justify="space-around">
-        <Link href="/resume">
-          <NextUILink block>C.V .</NextUILink>
-        </Link>
-      </Grid>
-      <Grid xs={6} justify="space-around">
-        <NextUILink block href={SOCIAL_LINKS.github} target="_blank" isExternal>
-          <RiGithubFill />
-          &nbsp;Github
-        </NextUILink>
-      </Grid>
-      <Grid xs={6} justify="space-around">
-        <NextUILink block onClick={legalsModalHandler}>
-          Mentions Légales
-        </NextUILink>
-      </Grid>
-    </Grid.Container>
-    <AbsoluteFooter />
-  </footer>
-)
+const Footer = ({ legalsModalHandler }: FooterProps) => {
+  const { contactModalShowHandler } = useContactModal()
+
+  return (
+    <footer>
+      <Grid.Container justify="center" gap={1}>
+        <Grid xs={6} justify="space-around">
+          <Link href="/">
+            <NextUILink block>Accueil</NextUILink>
+          </Link>
+        </Grid>
+        <Grid xs={6} justify="space-around">
+          <NextUILink block onClick={contactModalShowHandler}>
+            <RiMailSendLine />
+            &nbsp;Contact
+          </NextUILink>
+        </Grid>
+        <Grid xs={6} justify="space-around">
+          <Link href="/blog">
+            <NextUILink block>Articles</NextUILink>
+          </Link>
+        </Grid>
+        <Grid xs={6} justify="space-around">
+          <NextUILink
+            block
+            href={SOCIAL_LINKS.stackoverflow}
+            target="_blank"
+            isExternal
+          >
+            <RiStackOverflowFill />
+            &nbsp;Stack Overflow
+          </NextUILink>
+        </Grid>
+        <Grid xs={6} justify="space-around">
+          <Link href="/about">
+            <NextUILink block>À Propos</NextUILink>
+          </Link>
+        </Grid>
+        <Grid xs={6} justify="space-around">
+          <NextUILink
+            block
+            href={SOCIAL_LINKS.buymeacoffee}
+            target="_blank"
+            isExternal
+          >
+            <RiCupFill />
+            &nbsp;Buy Me A Coffee
+          </NextUILink>
+        </Grid>
+        <Grid xs={6} justify="space-around">
+          <Link href="/resume">
+            <NextUILink block>C.V .</NextUILink>
+          </Link>
+        </Grid>
+        <Grid xs={6} justify="space-around">
+          <NextUILink
+            block
+            href={SOCIAL_LINKS.github}
+            target="_blank"
+            isExternal
+          >
+            <RiGithubFill />
+            &nbsp;Github
+          </NextUILink>
+        </Grid>
+        <Grid xs={6} justify="space-around">
+          <NextUILink block onClick={legalsModalHandler}>
+            Mentions Légales
+          </NextUILink>
+        </Grid>
+      </Grid.Container>
+      <AbsoluteFooter />
+    </footer>
+  )
+}
 
 type LayoutProps = {
   children?: React.ReactNode
@@ -199,12 +205,6 @@ const Layout = ({ children }: LayoutProps) => {
     setLegalsModalVisible(false)
   }
 
-  const {
-    contactModalVisible,
-    contactModalShowHandler,
-    contactModalCloseHandler,
-  } = useContactModal()
-
   return (
     <Container
       css={{
@@ -217,7 +217,7 @@ const Layout = ({ children }: LayoutProps) => {
     >
       <Row>
         <Col span={12}>
-          <Header contactModalHandler={contactModalShowHandler} />
+          <Header />
         </Col>
       </Row>
       <Row style={{ flexGrow: 1 }}>
@@ -237,10 +237,7 @@ const Layout = ({ children }: LayoutProps) => {
       >
         <Col span={12}>
           <Container md>
-            <Footer
-              legalsModalHandler={legalsModalHandler}
-              contactModalHandler={contactModalShowHandler}
-            />
+            <Footer legalsModalHandler={legalsModalHandler} />
           </Container>
         </Col>
       </Row>
@@ -248,10 +245,7 @@ const Layout = ({ children }: LayoutProps) => {
         visible={legalsModalVisible}
         closeHandler={legalsModalCloseHandler}
       />
-      <ContactModal
-        visible={contactModalVisible}
-        closeHandler={contactModalCloseHandler}
-      />
+      <ContactModal />
     </Container>
   )
 }

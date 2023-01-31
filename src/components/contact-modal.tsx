@@ -1,6 +1,7 @@
 import { Button, Grid, Input, Modal, Text, Textarea } from '@nextui-org/react'
 import { SetStateAction, SyntheticEvent, useState } from 'react'
 import { RiMailFill, RiUserFill } from 'react-icons/ri'
+import { useContactModal } from '../contexts/ContactModalProvider'
 
 const ContactForm = () => {
   const [name, setName] = useState('')
@@ -112,6 +113,7 @@ const ContactForm = () => {
         </Grid>
         <Grid xs={6}>
           <Input
+            fullWidth
             underlined
             color="primary"
             labelPlaceholder="Votre Nom"
@@ -127,6 +129,7 @@ const ContactForm = () => {
         </Grid>
         <Grid xs={6}>
           <Input
+            fullWidth
             underlined
             color="primary"
             labelPlaceholder="Votre E-mail"
@@ -173,30 +176,29 @@ const ContactForm = () => {
   )
 }
 
-type ContactModalProps = {
-  visible: boolean
-  closeHandler: () => void
-}
+const ContactModal = () => {
+  const { contactModalVisible, contactModalCloseHandler } = useContactModal()
 
-const ContactModal = ({ visible, closeHandler }: ContactModalProps) => (
-  <Modal
-    width="75%"
-    closeButton
-    scroll
-    blur
-    aria-labelledby="contact-modal-title"
-    open={visible}
-    onClose={closeHandler}
-  >
-    <Modal.Header>
-      <Text b size="$3xl" id="contact-modal-title">
-        Contact
-      </Text>
-    </Modal.Header>
-    <Modal.Body>
-      <ContactForm />
-    </Modal.Body>
-  </Modal>
-)
+  return (
+    <Modal
+      width="75%"
+      closeButton
+      scroll
+      blur
+      aria-labelledby="contact-modal-title"
+      open={contactModalVisible}
+      onClose={contactModalCloseHandler}
+    >
+      <Modal.Header>
+        <Text b size="$3xl" id="contact-modal-title" color="primary">
+          Contact
+        </Text>
+      </Modal.Header>
+      <Modal.Body>
+        <ContactForm />
+      </Modal.Body>
+    </Modal>
+  )
+}
 
 export default ContactModal
