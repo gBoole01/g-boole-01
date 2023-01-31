@@ -30,12 +30,17 @@ const Intro = () => (
     </Row>
     <Row css={{ margin: '$md 0' }}>
       <Text>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aliquid
-        facilis praesentium, facere culpa doloremque sunt, odit nostrum
-        recusandae eius ea architecto provident sit natus iure incidunt illo
-        inventore in? Debitis accusantium quos nisi autem amet, aperiam animi
-        odit minus perspiciatis, sequi quo magnam possimus magni eum nesciunt
-        repellendus laborum!
+        Je suis un <Text b>développeur Full Stack</Text>, passionné par la
+        conception et la mise en œuvre de sites web et d'applications. Grâce à
+        mes connaissances en <Text b>Javascript</Text>,{' '}
+        <Text b>Typescript</Text> et en <Text b>PHP</Text>, je suis en train de
+        développer mes compétences dans les dernières technologies du marché,
+        comme <Text b>Next</Text>, <Text b>React</Text> et{' '}
+        <Text b>Symfony</Text>. Je suis enthousiaste à l'idée de continuer à
+        apprendre et de développer mes compétences pour offrir des solutions de
+        qualité supérieure. Si vous êtes intéressé par mon parcours et mes
+        projets en cours, je vous invite à consulter mon portfolio et à me
+        contacter pour en discuter.
       </Text>
     </Row>
     <Row justify="flex-end">
@@ -64,10 +69,11 @@ const FeaturedPosts = ({ featuredPosts }: FeaturedPostsProps) => {
             &nbsp;Articles
           </Text>
         </Text>
-        <Text>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ipsam
-          voluptatibus id facilis, sit nisi ratione magni eos itaque ipsa eius
-          autem veniam eaque quis sed, odio eligendi, tempora facere.
+        <Text css={{ paddingRight: '$sm' }}>
+          Je publie des articles sur le développement web, le clean code et
+          l'expérience développeur. Lorsqu'un sujet m'intéresse, je tente d'en
+          rédiger un article. N'hésitez pas à me contacter afin d'améliorer leur
+          qualité !
         </Text>
       </Col>
       {featuredPosts.map(({ title, slug, excerpt, duration, image }) => (
@@ -112,25 +118,30 @@ const Contact = () => {
   const { contactModalShowHandler } = useContactModal()
 
   return (
-    <Container>
+    <Card variant="bordered" css={{ padding: '$sm' }}>
       <Row justify="center">
         <Text h2 size={40} color="primary">
           Contactez-moi
         </Text>
       </Row>
-      <Row css={{ margin: '$sm auto' }}>
-        <Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-          nesciunt accusamus quod neque nobis, autem distinctio, possimus et
-          dicta sint aliquid! Beatae repellendus, magni in fuga placeat eius qui
-          distinctio quaerat quibusdam magnam commodi repellat ipsam! Nesciunt
-          rerum libero earum!
+      <Row css={{ marginTop: '$sm' }}>
+        <Text css={{ textAlign: 'center' }}>
+          En quête de défis et d'opportunités pour grandir professionnellement,
+          je suis actuellement à la recherche d'un contrat en alternance à
+          Bordeaux <Text i>(ou en télétravail)</Text>.
+        </Text>
+      </Row>
+      <Row css={{ marginBottom: '$sm' }}>
+        <Text css={{ textAlign: 'center' }}>
+          Si vous souhaitez discuter de mes aspirations et de mes compétences ou
+          de n'importe quel sujet,
+          <Text b>&nbsp;n'hésitez pas à me contacter !</Text>
         </Text>
       </Row>
       <Row justify="center">
         <Button onPress={contactModalShowHandler}>Contact</Button>
       </Row>
-    </Container>
+    </Card>
   )
 }
 
@@ -140,7 +151,7 @@ type HomeProps = {
 
 export default function Home({ featuredPosts }: HomeProps) {
   return (
-    <Container gap={1} css={{ margin: '$xl 0' }}>
+    <Container gap={1} css={{ margin: '$xl auto' }}>
       <SeoHelper title="Accueil" description="Homepage of my Portfolio" />
       <Intro />
       <FeaturedPosts featuredPosts={featuredPosts} />
