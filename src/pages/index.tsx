@@ -4,21 +4,25 @@ import {
   Card,
   Col,
   Container,
+  Grid,
   Row,
   Text,
 } from '@nextui-org/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { RiTimeFill } from 'react-icons/ri'
 
 import SeoHelper from '../components/seo-helper'
 import { useContactModal } from '../contexts/ContactModalProvider'
+import { getPostBySlug } from '../lib/getPosts'
+import PostType from '../types/Post'
 
 const Intro = () => (
   <>
     <Row justify="space-between">
       <Text h1 size={30}>
         Bonjour ! Je m'appelle
-        <Text b size="3xl" color="primary">
+        <Text b color="primary">
           &nbsp;gBoole01
         </Text>
       </Text>
@@ -44,36 +48,62 @@ const Intro = () => (
   </>
 )
 
-const FeaturedPosts = () => {
+type FeaturedPostsProps = {
+  featuredPosts: PostType[]
+}
+
+const FeaturedPosts = ({ featuredPosts }: FeaturedPostsProps) => {
   const router = useRouter()
 
   return (
-    <Row gap={2} css={{ margin: '$xl 0' }}>
+    <Row gap={1} css={{ margin: '$3xl 0' }}>
       <Col css={{ padding: '0' }}>
-        <Text h2 size={30}>
-          Articles
+        <Text h2 size={40}>
+          Mes
+          <Text b color="primary">
+            &nbsp;Articles
+          </Text>
+        </Text>
+        <Text>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ipsam
+          voluptatibus id facilis, sit nisi ratione magni eos itaque ipsa eius
+          autem veniam eaque quis sed, odio eligendi, tempora facere.
         </Text>
       </Col>
-      <Col>
-        <Card isPressable isHoverable onPress={() => router.push('/blog')}>
-          <Card.Header>
-            <Text h3>Article 1</Text>
-          </Card.Header>
-          <Card.Body>
-            <Text>Article excerpt</Text>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col>
-        <Card isPressable isHoverable onPress={() => router.push('/blog')}>
-          <Card.Header>
-            <Text h3>Article 2</Text>
-          </Card.Header>
-          <Card.Body>
-            <Text>Article excerpt</Text>
-          </Card.Body>
-        </Card>
-      </Col>
+      {featuredPosts.map(({ title, slug, excerpt, duration, image }) => (
+        <Col>
+          <Card
+            isPressable
+            isHoverable
+            onPress={() => router.push(`/blog/${slug}`)}
+          >
+            <Card.Header>
+              <Grid.Container>
+                <Grid xs={12}>
+                  <Text h3 size={25}>
+                    {title}
+                  </Text>
+                </Grid>
+                <Grid xs={12} alignItems="center">
+                  <RiTimeFill />
+                  <Text>&nbsp;{duration} min</Text>
+                </Grid>
+                <Grid xs={12}>
+                  <Card.Image
+                    src={`/images/blog/${image}`}
+                    alt={title}
+                    width="90%"
+                    height="170px"
+                  ></Card.Image>
+                </Grid>
+              </Grid.Container>
+            </Card.Header>
+            <Card.Body>
+              <Text>{excerpt}</Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
     </Row>
   )
 }
@@ -84,11 +114,11 @@ const Contact = () => {
   return (
     <Container>
       <Row justify="center">
-        <Text h2 size={30}>
+        <Text h2 size={40} color="primary">
           Contactez-moi
         </Text>
       </Row>
-      <Row css={{ margin: '$sm $xl' }}>
+      <Row css={{ margin: '$sm auto' }}>
         <Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
           nesciunt accusamus quod neque nobis, autem distinctio, possimus et
@@ -103,13 +133,33 @@ const Contact = () => {
     </Container>
   )
 }
-export default function Home() {
+
+type HomeProps = {
+  featuredPosts: PostType[]
+}
+
+export default function Home({ featuredPosts }: HomeProps) {
   return (
-    <Container css={{ margin: '$xl 0' }}>
+    <Container gap={1} css={{ margin: '$xl 0' }}>
       <SeoHelper title="Accueil" description="Homepage of my Portfolio" />
       <Intro />
-      <FeaturedPosts />
+      <FeaturedPosts featuredPosts={featuredPosts} />
       <Contact />
     </Container>
   )
+}
+
+export const getStaticProps = () => {
+  const featuredPostsSlug = [
+    'gerer-efficacement-sa-configuration',
+    'les-principes-de-gestalt-partie-1-3',
+  ]
+
+  const featuredPosts = featuredPostsSlug.map((slug) =>
+    getPostBySlug(slug, ['title', 'excerpt', 'slug', 'duration', 'image']),
+  )
+
+  return {
+    props: { featuredPosts },
+  }
 }
