@@ -97,6 +97,9 @@ const Header = () => {
           <Navbar.CollapseItem isActive={router.pathname === '/blog'}>
             <Link href="/blog">Articles</Link>
           </Navbar.CollapseItem>
+          <Navbar.CollapseItem isActive={router.pathname === '/resume'}>
+            <Link href="/resume">C.V.</Link>
+          </Navbar.CollapseItem>
         </Navbar.Collapse>
       </Navbar>
     </header>
