@@ -8,6 +8,7 @@ import {
   Row,
   useTheme,
   Link as NextUILink,
+  Text,
 } from '@nextui-org/react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -74,6 +75,11 @@ const Header = () => {
               Articles
             </Navbar.Link>
           </Link>
+          <Link href="/resume">
+            <Navbar.Link isActive={router.pathname === '/resume'}>
+              C.V.
+            </Navbar.Link>
+          </Link>
         </Navbar.Content>
         <Navbar.Content>
           <Button.Group size="md">
@@ -98,8 +104,10 @@ const Header = () => {
 }
 
 const AbsoluteFooter = () => (
-  <Row justify="center" align="center" css={{ gap: '$6' }}>
-    <p>Copyright &copy; {new Date().getFullYear()} gBoole01</p>
+  <Row justify="center" align="center" css={{ gap: '$10' }}>
+    <Text small b>
+      Copyright &copy; {new Date().getFullYear()} gBoole01
+    </Text>
     <Image
       priority
       src={smallSiteLogo}
@@ -107,7 +115,9 @@ const AbsoluteFooter = () => (
       width={16}
       alt="gBoole01 Logo"
     />
-    <p>Tous droits réservés</p>
+    <Text small b>
+      Tous droits réservés
+    </Text>
   </Row>
 )
 
