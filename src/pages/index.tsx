@@ -8,7 +8,6 @@ import {
   Row,
   Text,
 } from '@nextui-org/react'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { RiTimeFill } from 'react-icons/ri'
 
@@ -17,42 +16,43 @@ import { useContactModal } from '../contexts/ContactModalProvider'
 import { getPostBySlug } from '../lib/getPosts'
 import PostType from '../types/Post'
 
-const Intro = () => (
-  <>
-    <Row justify="space-between">
-      <Text h1 size={30}>
-        Bonjour ! Je m'appelle
-        <Text b color="primary">
-          &nbsp;gBoole01
-        </Text>
-      </Text>
-      <Avatar src="/images/g-boole-01-avatar.png" size="xl" />
-    </Row>
-    <Row css={{ margin: '$md 0' }}>
-      <Text>
-        Je suis un <Text b>développeur Full Stack</Text>, passionné par la
-        conception et la mise en œuvre de sites web et d'applications. Grâce à
-        mes connaissances en <Text b>Javascript</Text>,{' '}
-        <Text b>Typescript</Text> et en <Text b>PHP</Text>, je suis en train de
-        développer mes compétences dans les dernières technologies du marché,
-        comme <Text b>Next</Text>, <Text b>React</Text> et{' '}
-        <Text b>Symfony</Text>. Je suis enthousiaste à l'idée de continuer à
-        apprendre et de développer mes compétences pour offrir des solutions de
-        qualité supérieure. Si vous êtes intéressé par mon parcours et mes
-        projets en cours, je vous invite à consulter mon portfolio et à me
-        contacter pour en discuter.
-      </Text>
-    </Row>
-    <Row justify="flex-end">
-      <Link href="/about">
-        <a>
-          <Button>En savoir plus</Button>
-        </a>
-      </Link>
-    </Row>
-  </>
-)
+const Intro = () => {
+  const router = useRouter()
 
+  return (
+    <>
+      <Row justify="space-between">
+        <Text h1 size={30}>
+          Bonjour ! Je m'appelle
+          <Text b color="primary">
+            &nbsp;gBoole01
+          </Text>
+        </Text>
+        <Avatar src="/images/g-boole-01-avatar.png" size="xl" />
+      </Row>
+      <Row css={{ margin: '$md 0' }}>
+        <Text>
+          Je suis un <Text b>développeur Full Stack</Text>, passionné par la
+          conception et la mise en œuvre de sites web et d'applications. Grâce à
+          mes connaissances en <Text b>Javascript</Text>,{' '}
+          <Text b>Typescript</Text> et en <Text b>PHP</Text>, je suis en train
+          de développer mes compétences dans les dernières technologies du
+          marché, comme <Text b>Next</Text>, <Text b>React</Text> et{' '}
+          <Text b>Symfony</Text>. Je suis enthousiaste à l'idée de continuer à
+          apprendre et de développer mes compétences pour offrir des solutions
+          de qualité supérieure. Si vous êtes intéressé par mon parcours et mes
+          projets en cours, je vous invite à consulter mon portfolio et à me
+          contacter pour en discuter.
+        </Text>
+      </Row>
+      <Row justify="flex-end">
+        <Button shadow onPress={() => router.push('/about')}>
+          En savoir plus
+        </Button>
+      </Row>
+    </>
+  )
+}
 type FeaturedPostsProps = {
   featuredPosts: PostType[]
 }
@@ -76,12 +76,13 @@ const FeaturedPosts = ({ featuredPosts }: FeaturedPostsProps) => {
           qualité !
         </Text>
       </Col>
-      {featuredPosts.map(({ title, slug, excerpt, duration, image }) => (
+      {featuredPosts.map(({ title, slug, excerpt, duration, image }, index) => (
         <Col>
           <Card
             isPressable
             isHoverable
             onPress={() => router.push(`/blog/${slug}`)}
+            key={index}
           >
             <Card.Header>
               <Grid.Container>
