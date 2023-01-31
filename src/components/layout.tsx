@@ -26,6 +26,7 @@ import smallSiteLogo from '../../public/favicon-16x16.png'
 import { SOCIAL_LINKS } from '../lib/constants'
 import LegalsModal from './legals-modal'
 import ContactModal from './contact-modal'
+import { useContactModal } from '../contexts/ContactModalProvider'
 
 const ThemeSwitcher = () => {
   const { setTheme } = useNextTheme()
@@ -198,11 +199,11 @@ const Layout = ({ children }: LayoutProps) => {
     setLegalsModalVisible(false)
   }
 
-  const [contactModalVisible, setContactModalVisible] = useState(false)
-  const contactModalHandler = () => setContactModalVisible(true)
-  const contactModalCloseHandler = () => {
-    setContactModalVisible(false)
-  }
+  const {
+    contactModalVisible,
+    contactModalShowHandler,
+    contactModalCloseHandler,
+  } = useContactModal()
 
   return (
     <Container
@@ -216,7 +217,7 @@ const Layout = ({ children }: LayoutProps) => {
     >
       <Row>
         <Col span={12}>
-          <Header contactModalHandler={contactModalHandler} />
+          <Header contactModalHandler={contactModalShowHandler} />
         </Col>
       </Row>
       <Row style={{ flexGrow: 1 }}>
@@ -238,7 +239,7 @@ const Layout = ({ children }: LayoutProps) => {
           <Container md>
             <Footer
               legalsModalHandler={legalsModalHandler}
-              contactModalHandler={contactModalHandler}
+              contactModalHandler={contactModalShowHandler}
             />
           </Container>
         </Col>

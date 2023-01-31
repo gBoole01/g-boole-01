@@ -11,6 +11,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import SeoHelper from '../components/seo-helper'
+import { useContactModal } from '../contexts/ContactModalProvider'
 
 const Intro = () => (
   <>
@@ -45,6 +46,7 @@ const Intro = () => (
 
 const FeaturedPosts = () => {
   const router = useRouter()
+
   return (
     <Row gap={2} css={{ margin: '$xl 0' }}>
       <Col css={{ padding: '0' }}>
@@ -76,28 +78,31 @@ const FeaturedPosts = () => {
   )
 }
 
-const Contact = () => (
-  <Container>
-    <Row justify="center">
-      <Text h2 size={30}>
-        Contactez-moi
-      </Text>
-    </Row>
-    <Row css={{ margin: '$sm $xl' }}>
-      <Text>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-        nesciunt accusamus quod neque nobis, autem distinctio, possimus et dicta
-        sint aliquid! Beatae repellendus, magni in fuga placeat eius qui
-        distinctio quaerat quibusdam magnam commodi repellat ipsam! Nesciunt
-        rerum libero earum!
-      </Text>
-    </Row>
-    <Row justify="center">
-      <Button>Contact</Button>
-    </Row>
-  </Container>
-)
+const Contact = () => {
+  const { contactModalShowHandler } = useContactModal()
 
+  return (
+    <Container>
+      <Row justify="center">
+        <Text h2 size={30}>
+          Contactez-moi
+        </Text>
+      </Row>
+      <Row css={{ margin: '$sm $xl' }}>
+        <Text>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+          nesciunt accusamus quod neque nobis, autem distinctio, possimus et
+          dicta sint aliquid! Beatae repellendus, magni in fuga placeat eius qui
+          distinctio quaerat quibusdam magnam commodi repellat ipsam! Nesciunt
+          rerum libero earum!
+        </Text>
+      </Row>
+      <Row justify="center">
+        <Button onPress={contactModalShowHandler}>Contact</Button>
+      </Row>
+    </Container>
+  )
+}
 export default function Home() {
   return (
     <Container css={{ margin: '$xl 0' }}>

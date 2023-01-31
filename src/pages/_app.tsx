@@ -5,6 +5,7 @@ import '../styles/prism.css'
 import { lightTheme, darkTheme } from '../styles/theme'
 import Head from '../components/head'
 import Layout from '../components/layout'
+import { ContactModalProvider } from '../contexts/ContactModalProvider'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,10 +18,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       }}
     >
       <NextUIProvider>
-        <Head />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <ContactModalProvider>
+          <Head />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ContactModalProvider>
       </NextUIProvider>
     </NextThemesProvider>
   )
