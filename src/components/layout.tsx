@@ -221,7 +221,7 @@ const Layout = ({ children }: LayoutProps) => {
       </Row>
       <Row style={{ flexGrow: 1 }}>
         <Col span={12}>
-          <Container>
+          <Container sm>
             <main>{children}</main>
           </Container>
         </Col>
@@ -235,7 +235,7 @@ const Layout = ({ children }: LayoutProps) => {
         }}
       >
         <Col span={12}>
-          <Container>
+          <Container md>
             <Footer
               legalsModalHandler={legalsModalHandler}
               contactModalHandler={contactModalHandler}
