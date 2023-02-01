@@ -1,12 +1,18 @@
-import { Card, Container, Text } from '@nextui-org/react'
+import { Card, Container, Link, Text, useTheme } from '@nextui-org/react'
 import Image from 'next/image'
 import { RiTimeFill } from 'react-icons/ri'
 import { useRouter } from 'next/router'
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import {
+  oneDark,
+  oneLight,
+} from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import remarkGfm from 'remark-gfm'
+import NextLink from 'next/link'
 import { getAllPosts, getPostBySlug, getRandomPost } from '../../lib/getPosts'
 import PostType from '../../types/Post'
-import markdownToHTML from '../../lib/markdownToHTML'
 import SeoHelper from '../../components/seo-helper'
-import markdownStyles from '../../styles/markdown.module.css'
 
 const FORMAT_DATE = (date: string) =>
   new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium' }).format(
@@ -27,33 +33,62 @@ const PostLayout = ({
   duration,
   image,
   content,
-}: PostLayoutProps) => (
-  <article>
-    <Container>
-      <Text h1>{title}</Text>
-      <Text css={{ display: 'flex', alignItems: 'center' }}>
-        Le {FORMAT_DATE(date)} -&nbsp;
-        <RiTimeFill />
-        &nbsp;
-        {duration} min de lecture
-      </Text>
-      <Card css={{ margin: '$sm 0' }}>
-        <Image
-          priority
-          src={`/images/blog/${image}`}
-          width={213}
-          height={120}
-          layout="responsive"
-          alt={`Image of the article: ${title}`}
+}: PostLayoutProps) => {
+  const { isDark } = useTheme()
+  return (
+    <article>
+      <Container>
+        <Text h1 color="primary">
+          {title}
+        </Text>
+        <Text css={{ display: 'flex', alignItems: 'center' }}>
+          Le {FORMAT_DATE(date)} -&nbsp;
+          <RiTimeFill />
+          &nbsp;
+          {duration} min de lecture
+        </Text>
+        <Card css={{ margin: '$sm 0' }}>
+          <Image
+            priority
+            src={`/images/blog/${image}`}
+            width={213}
+            height={120}
+            layout="responsive"
+            alt={`Image of the article: ${title}`}
+          />
+        </Card>
+
+        <ReactMarkdown
+          children={content}
+          remarkPlugins={[remarkGfm]}
+          components={{
+            code({ inline, className, children, ...props }) {
+              const match = /language-(\w+)/.exec(className || '')
+              return !inline && match ? (
+                <SyntaxHighlighter
+                  children={String(children).replace(/\n$/, '')}
+                  language={match[1]}
+                  style={isDark ? oneDark : oneLight}
+                />
+              ) : (
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              )
+            },
+            a({ href, children }) {
+              return (
+                <NextLink href={href || ''}>
+                  <Link>{children}</Link>
+                </NextLink>
+              )
+            },
+          }}
         />
-      </Card>
-      <div
-        className={markdownStyles.markdown}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-    </Container>
-  </article>
-)
+      </Container>
+    </article>
+  )
+}
 
 type SuggestedPostProps = {
   title: string
@@ -156,7 +191,6 @@ export const getStaticProps = async ({ params }: Params) => {
     'excerpt',
     'content',
   ])
-  const content = await markdownToHTML(post.content || '')
 
   const randomPost = getRandomPost(params.slug, [
     'title',
@@ -170,10 +204,7 @@ export const getStaticProps = async ({ params }: Params) => {
 
   return {
     props: {
-      post: {
-        ...post,
-        content,
-      },
+      post,
       randomPost,
     },
   }
