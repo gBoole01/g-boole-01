@@ -30,10 +30,6 @@ const Blog = ({ allPosts }: Props) => {
                       {title}
                     </Text>
                   </Grid>
-                  <Grid xs={12} alignItems="center">
-                    <RiTimeFill />
-                    <Text>&nbsp;{duration} min</Text>
-                  </Grid>
                   <Grid xs={12}>
                     <Card.Image
                       src={`/images/blog/${image}`}
@@ -41,6 +37,15 @@ const Blog = ({ allPosts }: Props) => {
                       width="90%"
                       height="170px"
                     ></Card.Image>
+                  </Grid>
+                  <Grid
+                    xs={12}
+                    alignItems="center"
+                    justify="flex-end"
+                    css={{ marginRight: '5%' }}
+                  >
+                    <RiTimeFill />
+                    <Text>&nbsp;{duration} min</Text>
                   </Grid>
                 </Grid.Container>
               </Card.Header>
