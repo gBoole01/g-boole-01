@@ -2,7 +2,6 @@ import {
   Avatar,
   Button,
   Card,
-  Col,
   Container,
   Grid,
   Row,
@@ -30,19 +29,27 @@ const Intro = () => {
         </Text>
         <Avatar src="/images/g-boole-01-avatar.png" size="xl" />
       </Row>
-      <Row css={{ margin: '$md 0' }}>
+      <Row css={{ margin: '$md 0', flexDirection: 'column' }}>
         <Text>
           Je suis un <Text b>développeur Full Stack</Text>, passionné par la
-          conception et la mise en œuvre de sites web et d'applications. Grâce à
-          mes connaissances en <Text b>Javascript</Text>,{' '}
+          conception et la mise en œuvre de sites web et d'applications.
+        </Text>
+        <Text>
+          Grâce à mes connaissances en <Text b>Javascript</Text>,
           <Text b>Typescript</Text> et en <Text b>PHP</Text>, je suis en train
           de développer mes compétences dans les dernières technologies du
           marché, comme <Text b>Next</Text>, <Text b>React</Text> et{' '}
-          <Text b>Symfony</Text>. Je suis enthousiaste à l'idée de continuer à
-          apprendre et de développer mes compétences pour offrir des solutions
-          de qualité supérieure. Si vous êtes intéressé par mon parcours et mes
-          projets en cours, je vous invite à consulter mon portfolio et à me
-          contacter pour en discuter.
+          <Text b>Symfony</Text>.
+        </Text>
+        <Text>
+          Je suis enthousiaste à l'idée de continuer à apprendre et de
+          développer mes compétences pour offrir des solutions de qualité
+          supérieure.
+        </Text>
+        <Text>
+          Si vous êtes intéressé par mon parcours et mes projets en cours, je
+          vous invite à consulter mon portfolio et à me contacter pour en
+          discuter.
         </Text>
       </Row>
       <Row justify="flex-end">
@@ -61,23 +68,27 @@ const FeaturedPosts = ({ featuredPosts }: FeaturedPostsProps) => {
   const router = useRouter()
 
   return (
-    <Row gap={1} css={{ margin: '$3xl 0' }}>
-      <Col css={{ padding: '0' }}>
+    <Grid.Container gap={1} css={{ margin: '$3xl 0' }}>
+      <Grid
+        sm={4}
+        xs={12}
+        css={{ padding: '0', display: 'flex', flexDirection: 'column' }}
+      >
         <Text h2 size={40}>
           Mes
           <Text b color="primary">
             &nbsp;Articles
           </Text>
         </Text>
-        <Text css={{ paddingRight: '$sm' }}>
+        <Text css={{ paddingRight: '$sm', marginBottom: '$sm' }}>
           Je publie des articles sur le développement web, le clean code et
           l'expérience développeur. Lorsqu'un sujet m'intéresse, je tente d'en
           rédiger un article. N'hésitez pas à me contacter afin d'améliorer leur
           qualité !
         </Text>
-      </Col>
+      </Grid>
       {featuredPosts.map(({ title, slug, excerpt, duration, image }, index) => (
-        <Col>
+        <Grid sm={4} xs={12}>
           <Card
             isPressable
             isHoverable
@@ -109,9 +120,9 @@ const FeaturedPosts = ({ featuredPosts }: FeaturedPostsProps) => {
               <Text>{excerpt}</Text>
             </Card.Body>
           </Card>
-        </Col>
+        </Grid>
       ))}
-    </Row>
+    </Grid.Container>
   )
 }
 
