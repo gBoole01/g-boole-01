@@ -1,7 +1,8 @@
+import { Card, Container, Grid, Text } from '@nextui-org/react'
+import { RiTimeFill } from 'react-icons/ri'
+import { useRouter } from 'next/router'
 import PostType from '../types/Post'
 import { getAllPosts } from '../lib/getPosts'
-import HeroPost from '../components/hero-post'
-import PostListing from '../components/post-listing'
 import SeoHelper from '../components/seo-helper'
 
 type Props = {
@@ -9,31 +10,48 @@ type Props = {
 }
 
 const Blog = ({ allPosts }: Props) => {
-  const heroPost = allPosts[0]
-  const otherPosts = allPosts.slice(1)
-
+  const router = useRouter()
   return (
-    <>
+    <Container gap={1} css={{ margin: '$xl auto' }}>
       <SeoHelper title="Blog" description="Blog de gBoole01" />
-
-      <h1 className="hidden">Blog</h1>
-      {heroPost && (
-        <HeroPost
-          title={heroPost.title}
-          date={heroPost.publicationDate}
-          duration={heroPost.duration}
-          image={heroPost.image}
-          excerpt={heroPost.excerpt}
-          slug={heroPost.slug}
-        />
-      )}
-
-      {otherPosts.length > 0 && (
-        <div className="pb-4">
-          <PostListing posts={otherPosts} />
-        </div>
-      )}
-    </>
+      <Grid.Container gap={3}>
+        {allPosts.map(({ title, slug, excerpt, duration, image }, index) => (
+          <Grid sm={4} xs={12}>
+            <Card
+              isPressable
+              isHoverable
+              onPress={() => router.push(`/blog/${slug}`)}
+              key={index}
+            >
+              <Card.Header>
+                <Grid.Container>
+                  <Grid xs={12}>
+                    <Text h3 size={25} css={{ minHeight: '70px' }}>
+                      {title}
+                    </Text>
+                  </Grid>
+                  <Grid xs={12} alignItems="center">
+                    <RiTimeFill />
+                    <Text>&nbsp;{duration} min</Text>
+                  </Grid>
+                  <Grid xs={12}>
+                    <Card.Image
+                      src={`/images/blog/${image}`}
+                      alt={title}
+                      width="90%"
+                      height="170px"
+                    ></Card.Image>
+                  </Grid>
+                </Grid.Container>
+              </Card.Header>
+              <Card.Body>
+                <Text>{excerpt}</Text>
+              </Card.Body>
+            </Card>
+          </Grid>
+        ))}
+      </Grid.Container>
+    </Container>
   )
 }
 
@@ -42,8 +60,6 @@ export default Blog
 export const getStaticProps = async () => {
   const allPosts = getAllPosts([
     'title',
-    'publicationDate',
-    'modificationDate',
     'slug',
     'duration',
     'image',
