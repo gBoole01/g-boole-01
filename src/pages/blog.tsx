@@ -5,15 +5,16 @@ import PostType from '../types/Post'
 import { getAllPosts } from '../lib/getPosts'
 import SeoHelper from '../components/seo-helper'
 
-type Props = {
+type BlogProps = {
   allPosts: PostType[]
 }
 
-const Blog = ({ allPosts }: Props) => {
+const Blog = ({ allPosts }: BlogProps) => {
   const router = useRouter()
   return (
     <Container gap={1} css={{ margin: '$xl auto' }}>
       <SeoHelper title="Blog" description="Blog de gBoole01" />
+      <Text h1>Blog</Text>
       <Grid.Container gap={3}>
         {allPosts.map(({ title, slug, excerpt, duration, image }, index) => (
           <Grid sm={4} xs={12}>
@@ -26,7 +27,7 @@ const Blog = ({ allPosts }: Props) => {
               <Card.Header>
                 <Grid.Container>
                   <Grid xs={12}>
-                    <Text h3 size={25} css={{ minHeight: '70px' }}>
+                    <Text h2 size={25} css={{ minHeight: '70px' }}>
                       {title}
                     </Text>
                   </Grid>

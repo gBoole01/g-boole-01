@@ -1,18 +1,123 @@
-import PostLayout from '../../components/post-layout'
-import SuggestedPost from '../../components/suggested-post'
+import { Card, Container, Text } from '@nextui-org/react'
+import Image from 'next/image'
+import { RiTimeFill } from 'react-icons/ri'
+import { useRouter } from 'next/router'
 import { getAllPosts, getPostBySlug, getRandomPost } from '../../lib/getPosts'
 import PostType from '../../types/Post'
 import markdownToHTML from '../../lib/markdownToHTML'
 import SeoHelper from '../../components/seo-helper'
+import markdownStyles from '../../styles/markdown.module.css'
 
-type Props = {
+const FORMAT_DATE = (date: string) =>
+  new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium' }).format(
+    new Date(date),
+  )
+
+type PostLayoutProps = {
+  title: string
+  date: string
+  duration: string
+  image: string
+  content: string
+}
+
+const PostLayout = ({
+  title,
+  date,
+  duration,
+  image,
+  content,
+}: PostLayoutProps) => (
+  <article>
+    <Container>
+      <Text h1>{title}</Text>
+      <Text css={{ display: 'flex', alignItems: 'center' }}>
+        Le {FORMAT_DATE(date)} -&nbsp;
+        <RiTimeFill />
+        &nbsp;
+        {duration} min de lecture
+      </Text>
+      <Card css={{ margin: '$sm 0' }}>
+        <Image
+          priority
+          src={`/images/blog/${image}`}
+          width={213}
+          height={120}
+          layout="responsive"
+          alt={`Image of the article: ${title}`}
+        />
+      </Card>
+      <div
+        className={markdownStyles.markdown}
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
+    </Container>
+  </article>
+)
+
+type SuggestedPostProps = {
+  title: string
+  date: string
+  duration: string
+  image: string
+  excerpt: string
+  slug: string
+}
+
+const SuggestedPost = ({
+  title,
+  date,
+  duration,
+  image,
+  excerpt,
+  slug,
+}: SuggestedPostProps) => {
+  const router = useRouter()
+  return (
+    <section>
+      <Text h2 size={50} color="primary" css={{ marginTop: '$xl' }}>
+        Cet article pourrait également vous plaire
+      </Text>
+      <Card
+        variant="bordered"
+        css={{ padding: '$xl' }}
+        isPressable
+        isHoverable
+        onPress={() => router.push(`/blog/${slug}`)}
+      >
+        <Text h3 size={40}>
+          {title}
+        </Text>
+        <Text css={{ display: 'flex', alignItems: 'center' }}>
+          Le {FORMAT_DATE(date)} -&nbsp;
+          <RiTimeFill />
+          &nbsp;
+          {duration} min de lecture
+        </Text>
+        <Card css={{ margin: '$sm auto', width: '60%' }}>
+          <Image
+            priority
+            src={`/images/blog/${image}`}
+            width="100%"
+            height="62.5%"
+            layout="responsive"
+            alt={`Image of the article: ${title}`}
+          />
+        </Card>
+        <Text>{excerpt}...</Text>
+      </Card>
+    </section>
+  )
+}
+
+type PostProps = {
   post: PostType
   randomPost: PostType
 }
 
-export default function Post({ post, randomPost }: Props) {
+export default function Post({ post, randomPost }: PostProps) {
   return (
-    <>
+    <Container gap={1} css={{ margin: '$xl auto' }}>
       <SeoHelper title={post.title} description={post.excerpt} post={post} />
 
       <PostLayout
@@ -30,7 +135,7 @@ export default function Post({ post, randomPost }: Props) {
         excerpt={randomPost.excerpt}
         slug={randomPost.slug}
       />
-    </>
+    </Container>
   )
 }
 
