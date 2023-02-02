@@ -55,7 +55,13 @@ const ResumeSkills = () => (
       <Collapse title="Front-End">
         <Grid.Container>
           {RESUME.skills.frontEnd.map((skill, index) => (
-            <Grid xs={6} sm={4} key={index} justify="center">
+            <Grid
+              xs={12}
+              sm={4}
+              key={index}
+              justify="center"
+              css={{ textAlign: 'center' }}
+            >
               {skill}
             </Grid>
           ))}
@@ -64,7 +70,13 @@ const ResumeSkills = () => (
       <Collapse title="Back-End">
         <Grid.Container>
           {RESUME.skills.backEnd.map((skill, index) => (
-            <Grid xs={6} sm={4} key={index} justify="center">
+            <Grid
+              xs={12}
+              sm={4}
+              key={index}
+              justify="center"
+              css={{ textAlign: 'center' }}
+            >
               {skill}
             </Grid>
           ))}
@@ -73,7 +85,13 @@ const ResumeSkills = () => (
       <Collapse title="CMS">
         <Grid.Container>
           {RESUME.skills.CMS.map((skill, index) => (
-            <Grid xs={6} sm={4} key={index} justify="center">
+            <Grid
+              xs={12}
+              sm={4}
+              key={index}
+              justify="center"
+              css={{ textAlign: 'center' }}
+            >
               {skill}
             </Grid>
           ))}
@@ -82,7 +100,7 @@ const ResumeSkills = () => (
       <Collapse title="Outils de Développement">
         <Grid.Container>
           {RESUME.skills.devTools.map((skill, index) => (
-            <Grid xs={6} sm={4} key={index} justify="center">
+            <Grid xs={12} sm={4} key={index} justify="center">
               {skill}
             </Grid>
           ))}
