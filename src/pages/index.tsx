@@ -8,7 +8,7 @@ import {
   Text,
 } from '@nextui-org/react'
 import { useRouter } from 'next/router'
-import { RiTimeFill } from 'react-icons/ri'
+import { RiMailSendLine, RiTimeFill } from 'react-icons/ri'
 
 import SeoHelper from '../components/seo-helper'
 import { useContactModal } from '../contexts/ContactModalProvider'
@@ -156,7 +156,10 @@ const Contact = () => {
         </Text>
       </Row>
       <Row justify="center">
-        <Button onPress={contactModalShowHandler}>Contact</Button>
+        <Button onPress={contactModalShowHandler}>
+          <RiMailSendLine />
+          &nbsp;Contact
+        </Button>
       </Row>
     </Card>
   )
