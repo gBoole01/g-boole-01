@@ -134,7 +134,7 @@ const ResumeSection = () => {
 }
 
 const BioSection = () => (
-  <Container css={{ margin: '$xl 0' }}>
+  <Container css={{ margin: '$xl 0', padding: '0' }}>
     <Text h2>Pourquoi devenir Développeur ?</Text>
     <Text size={18} css={{ marginTop: '$md' }}>
       Le métier de dévelopeur s'est imposé comme un choix naturel pour moi en
@@ -177,7 +177,7 @@ const BioSection = () => (
 )
 
 const SetupSection = () => (
-  <Container>
+  <Container css={{ padding: 0 }}>
     <Text h2>Comment j'exerce mon métier ?</Text>
     <Collapse.Group splitted accordion={false} css={{ padding: '0' }}>
       <Collapse
@@ -185,27 +185,27 @@ const SetupSection = () => (
         subtitle="L'ensemble des outils utilisés pour développer"
       >
         <Grid.Container>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Système d'exploitation :&nbsp;</Text>
             <Text>Linux - Debian 11</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Environnement de bureau :&nbsp;</Text>
             <Text>Gnome</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Shell :&nbsp;</Text>
             <Text>Bash / Zsh</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Éditeur de code :&nbsp;</Text>
             <Text>Visual Studio Code</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Navigateurs Internet :&nbsp;</Text>
             <Text>Firefox / Chromium</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Outil de Design :&nbsp;</Text>
             <Text>Figma / Photoshop / GIMP</Text>
           </Grid>
@@ -216,19 +216,19 @@ const SetupSection = () => (
         subtitle="Les équipements à ma disposition pour développer"
       >
         <Grid.Container>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Ordinateur Portable :&nbsp;</Text>
             <Text>Dell - Inspiron G5</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Souris :&nbsp;</Text>
             <Text>Advance Vertical+</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Écouteurs :&nbsp;</Text>
             <Text>Sennheiser CX 300 S</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Smartphone :&nbsp;</Text>
             <Text>iPhone</Text>
           </Grid>
@@ -239,35 +239,35 @@ const SetupSection = () => (
         subtitle="Ce dont j'aurai besoin pour m'équiper de manière optimale !"
       >
         <Grid.Container>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Ordinateur Portable :&nbsp;</Text>
             <Text>MacBook Pro 14"</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>(Choix 2) :&nbsp;</Text>
             <Text>Dell - Latitude 5420</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Souris :&nbsp;</Text>
             <Text>Logithech MX Vertical</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Clavier :&nbsp;</Text>
             <Text>Das Keyboard 6 Professional</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Écrans :&nbsp;</Text>
             <Text>Double écrans avec Bras ajustables</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Casque :&nbsp;</Text>
             <Text>Sennheiser Momentum 4 Wireless</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Bureau :&nbsp;</Text>
             <Text>Standing Desk motorisé</Text>
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} css={{ flexWrap: 'wrap' }}>
             <Text b>Smartphone :&nbsp;</Text>
             <Text>iPhone 14</Text>
           </Grid>
