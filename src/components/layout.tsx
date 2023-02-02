@@ -65,14 +65,14 @@ const Header = () => {
           variant="highlight"
           hideIn="xs"
         >
-          <Link href="/about">
-            <Navbar.Link isActive={router.pathname === '/about'}>
-              À Propos
-            </Navbar.Link>
-          </Link>
           <Link href="/blog">
             <Navbar.Link isActive={router.pathname === '/blog'}>
               Articles
+            </Navbar.Link>
+          </Link>
+          <Link href="/about">
+            <Navbar.Link isActive={router.pathname === '/about'}>
+              À Propos
             </Navbar.Link>
           </Link>
           <Link href="/resume">
