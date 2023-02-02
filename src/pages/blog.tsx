@@ -12,9 +12,11 @@ type BlogProps = {
 const Blog = ({ allPosts }: BlogProps) => {
   const router = useRouter()
   return (
-    <Container gap={1} css={{ margin: '$xl auto' }}>
+    <Container css={{ margin: '$xl auto' }}>
       <SeoHelper title="Blog" description="Blog de gBoole01" />
-      <Text h1>Blog</Text>
+      <Text h1 color="primary">
+        Blog
+      </Text>
       <Grid.Container gap={3}>
         {allPosts.map(({ title, slug, excerpt, duration, image }, index) => (
           <Grid sm={4} xs={12}>
