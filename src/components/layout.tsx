@@ -156,6 +156,7 @@ const Footer = ({ legalsModalHandler }: FooterProps) => {
             href={SOCIAL_LINKS.stackoverflow}
             target="_blank"
             isExternal
+            css={{ textAlign: 'center' }}
           >
             <RiStackOverflowFill />
             &nbsp;Stack Overflow
@@ -172,6 +173,7 @@ const Footer = ({ legalsModalHandler }: FooterProps) => {
             href={SOCIAL_LINKS.buymeacoffee}
             target="_blank"
             isExternal
+            css={{ textAlign: 'center' }}
           >
             <RiCupFill />
             &nbsp;Buy Me A Coffee
@@ -194,7 +196,11 @@ const Footer = ({ legalsModalHandler }: FooterProps) => {
           </NextUILink>
         </Grid>
         <Grid xs={6} justify="space-around">
-          <NextUILink block onClick={legalsModalHandler}>
+          <NextUILink
+            block
+            onClick={legalsModalHandler}
+            css={{ textAlign: 'center' }}
+          >
             Mentions Légales
           </NextUILink>
         </Grid>

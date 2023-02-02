@@ -182,6 +182,7 @@ const ContactModal = () => {
   return (
     <Modal
       width="75%"
+      fullScreen
       closeButton
       scroll
       blur

@@ -92,12 +92,11 @@ const FeaturedPosts = ({ featuredPosts }: FeaturedPostsProps) => {
         </Text>
       </Grid>
       {featuredPosts.map(({ title, slug, excerpt, duration, image }, index) => (
-        <Grid sm={4} xs={12}>
+        <Grid sm={4} xs={12} key={index}>
           <Card
             isPressable
             isHoverable
             onPress={() => router.push(`/blog/${slug}`)}
-            key={index}
           >
             <Card.Header>
               <Grid.Container>
