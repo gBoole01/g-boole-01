@@ -111,7 +111,7 @@ const ContactForm = () => {
             </div>
           )}
         </Grid>
-        <Grid xs={6}>
+        <Grid xs={12} sm={6} css={{ margin: '$sm 0' }}>
           <Input
             fullWidth
             underlined
@@ -127,7 +127,7 @@ const ContactForm = () => {
             status={errors.name ? 'error' : undefined}
           />
         </Grid>
-        <Grid xs={6}>
+        <Grid xs={12} sm={6} css={{ margin: '$sm 0' }}>
           <Input
             fullWidth
             underlined
