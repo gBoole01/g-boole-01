@@ -54,7 +54,7 @@ const skills: Skills = {
     'Système de Cache',
     'Websockets',
   ],
-  CMS: ['WordPress, PrestaShop'],
+  CMS: ['WordPress', 'PrestaShop'],
   devTools: [
     'Linux - Debian',
     'CLI - Bash, Zsh',
@@ -111,7 +111,7 @@ const experiences: Experience[] = [
   {
     startDate: '2016',
     endDate: '2018',
-    company: 'Etablissement de restauration rapide',
+    company: 'Établissement de restauration rapide',
     title: 'Manager',
     duration: '2 ans',
     type: 'CDI',
