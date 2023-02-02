@@ -246,10 +246,10 @@ const Resume = () => (
     <ResumeSkills />
     <ResumeExperiences />
     <Grid.Container>
-      <Grid xs={12} sm={6}>
+      <Grid xs={12} sm={6} css={{ margin: '$xs 0' }}>
         <ResumeDiplomas />
       </Grid>
-      <Grid xs={12} sm={6}>
+      <Grid xs={12} sm={6} css={{ margin: '$xs 0' }}>
         <ResumeInterests />
       </Grid>
     </Grid.Container>
