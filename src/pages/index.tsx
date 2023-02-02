@@ -20,15 +20,19 @@ const Intro = () => {
 
   return (
     <>
-      <Row justify="space-between" align="center">
-        <Text h1 size={30}>
-          Bonjour ! Je m'appelle
-          <Text b color="primary">
-            &nbsp;gBoole01
+      <Grid.Container alignItems="center">
+        <Grid xs={12} sm={8}>
+          <Text h1 size={30}>
+            Bonjour ! Je m'appelle
+            <Text b color="primary">
+              &nbsp;gBoole01
+            </Text>
           </Text>
-        </Text>
-        <Avatar src="/images/g-boole-01-avatar.png" css={{ size: '150px' }} />
-      </Row>
+        </Grid>
+        <Grid xs={12} sm={4} justify="center">
+          <Avatar src="/images/g-boole-01-avatar.png" css={{ size: '150px' }} />
+        </Grid>
+      </Grid.Container>
       <Row css={{ margin: '$md 0', flexDirection: 'column' }}>
         <Text>
           Je suis un <Text b>développeur Full Stack</Text>, passionné par la
