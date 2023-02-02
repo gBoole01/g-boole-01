@@ -206,7 +206,7 @@ const ResumeOutro = () => (
       <Grid xs={12} sm={4} justify="center">
         <Button
           onPress={() => {
-            window.open('Curriculum_Vitae_2022_gBoole01.pdf')
+            window.open('CV2023_gBoole01.pdf')
           }}
         >
           <RiDownload2Fill />

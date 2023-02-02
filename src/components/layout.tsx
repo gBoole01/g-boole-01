@@ -22,7 +22,7 @@ import {
   RiStackOverflowFill,
   RiSunFill,
 } from 'react-icons/ri'
-import siteLogo from '../../public/images/logo-64.png'
+import siteLogo from '../../public/images/logo-gBoole01.png'
 import smallSiteLogo from '../../public/favicon-16x16.png'
 import { SOCIAL_LINKS } from '../lib/constants'
 import LegalsModal from './legals-modal'
