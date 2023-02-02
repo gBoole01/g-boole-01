@@ -14,9 +14,9 @@ Et bien, c'est ce que nous allons voir ensemble aujourd'hui. Nous allons voir le
 
 ### Les Dotfiles
 
-Un terme revient souvent lorsqu'on parle de configuration ou de personnalisation, c'est celui de `dotfiles`. **Mais qu'est-ce qu'un dotfile exactement ?** Les dotfiles sont des fichiers et des dossiers des systèmes d'exploitation Unix-like dont le nom commence par un `.`("dot" signifiant "point" en Anglais) qui contrôlent la configuration des applications et des shells du système.<br />
+Un terme revient souvent lorsqu'on parle de configuration ou de personnalisation, c'est celui de `dotfiles`. **Mais qu'est-ce qu'un dotfile exactement ?** Les dotfiles sont des fichiers et des dossiers des systèmes d'exploitation Unix-like dont le nom commence par un `.`("dot" signifiant "point" en Anglais) qui contrôlent la configuration des applications et des shells du système.
 
-Ces dossiers sont masqués par défaut dans la plupart des systèmes d'exploitation. Pour afficher les dotfiles présents dans un dossier, on peut exécuter la commande `ls -a <folderName>` dans son terminal.<br />
+Ces dossiers sont masqués par défaut dans la plupart des systèmes d'exploitation. Pour afficher les dotfiles présents dans un dossier, on peut exécuter la commande `ls -a <folderName>` dans son terminal.
 
 Pour exporter sa configuration, rien de plus simple, il suffit de copier le contenu de ces fichiers d'une machine à l'autre.
 
