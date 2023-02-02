@@ -181,7 +181,7 @@ const Footer = ({ legalsModalHandler }: FooterProps) => {
         </Grid>
         <Grid xs={6} justify="space-around">
           <Link href="/resume">
-            <NextUILink block>C.V .</NextUILink>
+            <NextUILink block>C.V.</NextUILink>
           </Link>
         </Grid>
         <Grid xs={6} justify="space-around">

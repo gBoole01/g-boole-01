@@ -10,6 +10,7 @@ const LegalsModal = ({ visible, closeHandler }: LegalsModalProps) => (
   <Modal
     width="75%"
     closeButton
+    fullScreen
     scroll
     blur
     aria-labelledby="legals-modal-title"
