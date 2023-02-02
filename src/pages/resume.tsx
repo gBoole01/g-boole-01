@@ -158,7 +158,7 @@ const ResumeExperiences = () => (
 )
 
 const ResumeDiplomas = () => (
-  <Container>
+  <Container css={{ padding: '0' }}>
     <Text h2 css={{ textAlign: 'center' }}>
       Diplômes
     </Text>
@@ -187,7 +187,7 @@ const ResumeDiplomas = () => (
 )
 
 const ResumeInterests = () => (
-  <Container>
+  <Container css={{ padding: '0' }}>
     <Text h2 css={{ textAlign: 'center' }}>
       Interêts
     </Text>
