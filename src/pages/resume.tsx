@@ -33,8 +33,8 @@ const ResumeIntro = () => {
             et entreprises ne sont pas disponibles.
           </Text>
           <Text>
-            Si vous souhaitez en apprendre plus sur moi, n'hésitez pas à me
-            contacter !
+            Si vous souhaitez en apprendre plus sur moi,{' '}
+            <Text b>n'hésitez pas à me contacter !</Text>
           </Text>
         </Grid>
         <Grid xs={12} sm={4} justify="center">
