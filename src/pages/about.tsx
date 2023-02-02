@@ -40,18 +40,24 @@ const IntroSection = () => (
                 <dt>
                   <Text b>Naissance :</Text>
                 </dt>
+              </Row>
+              <Row justify="flex-end">
                 <dd>2 Novembre 1815</dd>
               </Row>
               <Row justify="space-between">
                 <dt>
                   <Text b>Décès :</Text>
                 </dt>
-                <dd>8 Décembre 1864 (49 ans)</dd>
+              </Row>
+              <Row justify="flex-end">
+                <dd style={{ textAlign: 'end' }}>8 Décembre 1864 (49 ans)</dd>
               </Row>
               <Row justify="space-between">
                 <dt>
                   <Text b>Nationalité :</Text>
                 </dt>
+              </Row>
+              <Row justify="flex-end">
                 <dd>🇬🇧 Britannique</dd>
               </Row>
               <Row>
@@ -59,7 +65,7 @@ const IntroSection = () => (
                   <Text b>Activités :</Text>
                 </dt>
               </Row>
-              <Row>
+              <Row justify="flex-end">
                 <dd style={{ textAlign: 'end' }}>
                   Mathématicien, logicien, philosophe, informaticien
                 </dd>
@@ -133,23 +139,34 @@ const BioSection = () => (
     <Text size={18} css={{ marginTop: '$md' }}>
       Le métier de dévelopeur s'est imposé comme un choix naturel pour moi en
       raison de plusieurs facteurs personnels. Tout d'abord, j'ai toujours été{' '}
-      <Text b>passionné par la technologie</Text> et la façon dont elle peut
-      être utilisée pour <Text b>résoudre des problèmes complexes</Text>. La
-      programmation informatique me permet de concrétiser cette passion en me
-      donnant les moyens de créer des solutions logicielles innovantes.
+      <Text b color="primary">
+        passionné par la technologie
+      </Text>{' '}
+      et la façon dont elle peut être utilisée pour{' '}
+      <Text b color="primary">
+        résoudre des problèmes complexes
+      </Text>
+      . La programmation informatique me permet de concrétiser cette passion en
+      me donnant les moyens de créer des solutions logicielles innovantes.
     </Text>
     <Text size={18} css={{ marginTop: '$md' }}>
-      De plus, j'apprécie énormément le <Text b>défi intellectuel</Text> que
-      représente la programmation. J'aime résoudre des problèmes logiques et
+      De plus, j'apprécie énormément le{' '}
+      <Text b color="primary">
+        défi intellectuel
+      </Text>{' '}
+      que représente la programmation. J'aime résoudre des problèmes logiques et
       trouver des moyens de rendre les processus plus efficaces. Cette activité
       me donne l'occasion de continuer à développer mon esprit critique et de
       tester mes capacités de résolution de problèmes.
     </Text>
     <Text size={18} css={{ marginTop: '$md' }}>
-      Enfin, j'ai également été attiré par <Text b>la diversité</Text> des
-      opportunités offertes par la programmation informatique. Aujourd'hui, le
-      numérique et l'informatique sont au coeur de presque tous les secteurs, et
-      je sais que ces compétences permettent d'explorer de nombreux métiers.
+      Enfin, j'ai également été attiré par{' '}
+      <Text b color="primary">
+        la diversité
+      </Text>{' '}
+      des opportunités offertes par la programmation informatique. Aujourd'hui,
+      le numérique et l'informatique sont au coeur de presque tous les secteurs,
+      et je sais que ces compétences permettent d'explorer de nombreux métiers.
     </Text>
     <Text size={18} css={{ marginTop: '$md' }}>
       En résumé, mes passions, mon goût pour les défis intellectuels et ma quête
