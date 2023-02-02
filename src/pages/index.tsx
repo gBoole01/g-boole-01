@@ -20,14 +20,14 @@ const Intro = () => {
 
   return (
     <>
-      <Row justify="space-between">
+      <Row justify="space-between" align="center">
         <Text h1 size={30}>
           Bonjour ! Je m'appelle
           <Text b color="primary">
             &nbsp;gBoole01
           </Text>
         </Text>
-        <Avatar src="/images/g-boole-01-avatar.png" size="xl" />
+        <Avatar src="/images/g-boole-01-avatar.png" css={{ size: '150px' }} />
       </Row>
       <Row css={{ margin: '$md 0', flexDirection: 'column' }}>
         <Text>
@@ -35,7 +35,7 @@ const Intro = () => {
           conception et la mise en œuvre de sites web et d'applications.
         </Text>
         <Text>
-          Grâce à mes connaissances en <Text b>Javascript</Text>,
+          Grâce à mes connaissances en <Text b>Javascript</Text>,{' '}
           <Text b>Typescript</Text> et en <Text b>PHP</Text>, je suis en train
           de développer mes compétences dans les dernières technologies du
           marché, comme <Text b>Next</Text>, <Text b>React</Text> et{' '}
