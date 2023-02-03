@@ -12,7 +12,7 @@ type BlogProps = {
 const Blog = ({ allPosts }: BlogProps) => {
   const router = useRouter()
   return (
-    <Container css={{ margin: '$xl auto' }}>
+    <Container css={{ margin: '$xl auto', padding: '0' }}>
       <SeoHelper title="Blog" description="Blog de gBoole01" />
       <Text h1 color="primary">
         Blog
