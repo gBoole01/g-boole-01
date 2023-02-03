@@ -41,7 +41,7 @@ const PostLayout = ({
         <Text h1 color="primary">
           {title}
         </Text>
-        <Text css={{ display: 'flex', alignItems: 'center' }}>
+        <Text css={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
           Le {FORMAT_DATE(date)} -&nbsp;
           <RiTimeFill />
           &nbsp;
@@ -123,7 +123,7 @@ const SuggestedPost = ({
         <Text h3 size={40}>
           {title}
         </Text>
-        <Text css={{ display: 'flex', alignItems: 'center' }}>
+        <Text css={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
           Le {FORMAT_DATE(date)} -&nbsp;
           <RiTimeFill />
           &nbsp;
