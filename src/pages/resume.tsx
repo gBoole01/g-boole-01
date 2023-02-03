@@ -100,7 +100,13 @@ const ResumeSkills = () => (
       <Collapse title="Outils de Développement">
         <Grid.Container>
           {RESUME.skills.devTools.map((skill, index) => (
-            <Grid xs={12} sm={4} key={index} justify="center">
+            <Grid
+              xs={12}
+              sm={4}
+              key={index}
+              justify="center"
+              css={{ textAlign: 'center' }}
+            >
               {skill}
             </Grid>
           ))}
