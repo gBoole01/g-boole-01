@@ -1,6 +1,6 @@
 import { Card, Container, Link, Text, useTheme } from '@nextui-org/react'
 import Image from 'next/image'
-import { RiTimeFill } from 'react-icons/ri'
+import { RiCalendar2Fill, RiTimeFill } from 'react-icons/ri'
 import { useRouter } from 'next/router'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -42,7 +42,8 @@ const PostLayout = ({
           {title}
         </Text>
         <Text css={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-          Le {FORMAT_DATE(date)} -&nbsp;
+          <RiCalendar2Fill />
+          &nbsp;Le {FORMAT_DATE(date)} -&nbsp;
           <RiTimeFill />
           &nbsp;
           {duration} min de lecture
@@ -124,7 +125,8 @@ const SuggestedPost = ({
           {title}
         </Text>
         <Text css={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-          Le {FORMAT_DATE(date)} -&nbsp;
+          <RiCalendar2Fill />
+          &nbsp;Le {FORMAT_DATE(date)} -&nbsp;
           <RiTimeFill />
           &nbsp;
           {duration} min de lecture
