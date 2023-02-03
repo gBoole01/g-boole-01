@@ -137,7 +137,7 @@ const BioSection = () => (
   <Container css={{ margin: '$xl 0', padding: '0' }}>
     <Text h2>Pourquoi devenir Développeur ?</Text>
     <Text size={18} css={{ marginTop: '$md' }}>
-      Le métier de dévelopeur s'est imposé comme un choix naturel pour moi en
+      Le métier de développeur s'est imposé comme un choix naturel pour moi en
       raison de plusieurs facteurs personnels. Tout d'abord, j'ai toujours été{' '}
       <Text b color="primary">
         passionné par la technologie
