@@ -48,7 +48,7 @@ const LegalsModal = ({ visible, closeHandler }: LegalsModalProps) => (
       <Text>
         L'édition et la direction de la publication du Site est assurée par{' '}
         {LEGALS_PROPS.editorName}, dont l'adresse e-mail est{' '}
-        {LEGALS_PROPS.editorMail}.
+        <Text small>{LEGALS_PROPS.editorMail}.</Text>
       </Text>
       <Text>
         ci-après l'<b>«Editeur»</b>.
