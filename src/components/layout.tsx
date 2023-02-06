@@ -71,7 +71,7 @@ const Header = () => {
             </Navbar.Link>
           </Link>
           <Link href="/kata">
-            <Navbar.Link isActive={router.pathname === '/blog'}>
+            <Navbar.Link isActive={router.pathname === '/kata'}>
               Katas
             </Navbar.Link>
           </Link>
