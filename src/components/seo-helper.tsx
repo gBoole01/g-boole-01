@@ -11,9 +11,19 @@ type SeoHelperProps = {
     publicationDate: string
     modificationDate: string
   }
+  kata?: {
+    publicationDate: string
+    modificationDate: string
+  }
 }
 
-const SeoHelper = ({ title, description, canonical, post }: SeoHelperProps) => {
+const SeoHelper = ({
+  title,
+  description,
+  canonical,
+  post,
+  kata,
+}: SeoHelperProps) => {
   const router = useRouter()
 
   return (
@@ -105,6 +115,57 @@ const SeoHelper = ({ title, description, canonical, post }: SeoHelperProps) => {
                                     },
                                     "@context": "http://schema.org"
                                 }`,
+            }}
+            key="ldjson"
+          />
+        </>
+      )}
+      {kata && (
+        <>
+          <meta property="og:type" content="article" key="og:type" />
+          <meta
+            property="article:published_time"
+            content={new Date(kata.publicationDate).toISOString()}
+            key="article:published_time"
+          />
+          <meta
+            property="article:modified_time"
+            content={new Date(kata.modificationDate).toISOString()}
+            key="article:modified_time"
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `{
+                  "description": "${description || SITE_PROPS.description}",
+                    "author": {
+                        "@type": "Person",
+                        "name": "${SITE_PROPS.author}",
+                        "url": "${SITE_PROPS.url}/"
+                    },
+                    "@type": "BlogPosting",
+                    "url": "${SITE_PROPS.url}/",
+                    "publisher": {
+                        "@type": "Person",
+                        "name": "${SITE_PROPS.author}",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "${SITE_PROPS.url}/images/logo-512.png"
+                        }
+                    },
+                    "headline": "${title} | ${SITE_PROPS.siteName}",
+                    "datePublished": "${new Date(
+                      kata.publicationDate,
+                    ).toISOString()}",
+                    "dateModified": "${new Date(
+                      kata.modificationDate,
+                    ).toISOString()}",
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": "${SITE_PROPS.url}${router.asPath}"
+                    },
+                    "@context": "http://schema.org"
+                }`,
             }}
             key="ldjson"
           />
