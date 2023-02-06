@@ -11,13 +11,9 @@ import {
 import remarkGfm from 'remark-gfm'
 import NextLink from 'next/link'
 import { getAllPosts, getPostBySlug, getRandomPost } from '../../lib/getPosts'
-import PostType from '../../types/Post'
+import Post from '../../types/Post'
 import SeoHelper from '../../components/seo-helper'
-
-const FORMAT_DATE = (date: string) =>
-  new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium' }).format(
-    new Date(date),
-  )
+import FORMAT_DATE from '../../lib/formatDate'
 
 type PostLayoutProps = {
   title: string
@@ -147,12 +143,12 @@ const SuggestedPost = ({
   )
 }
 
-type PostProps = {
-  post: PostType
-  randomPost: PostType
+type PostPageProps = {
+  post: Post
+  randomPost: Post
 }
 
-export default function Post({ post, randomPost }: PostProps) {
+export default function PostPage({ post, randomPost }: PostPageProps) {
   return (
     <Container gap={1} css={{ margin: '$xl auto' }}>
       <SeoHelper title={post.title} description={post.excerpt} post={post} />
