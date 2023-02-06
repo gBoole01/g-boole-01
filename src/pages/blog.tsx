@@ -1,12 +1,12 @@
 import { Card, Container, Grid, Text } from '@nextui-org/react'
 import { RiTimeFill } from 'react-icons/ri'
 import { useRouter } from 'next/router'
-import PostType from '../types/Post'
+import Post from '../types/Post'
 import { getAllPosts } from '../lib/getPosts'
 import SeoHelper from '../components/seo-helper'
 
 type BlogProps = {
-  allPosts: PostType[]
+  allPosts: Post[]
 }
 
 const Blog = ({ allPosts }: BlogProps) => {

@@ -22,6 +22,11 @@ export const SOCIAL_LINKS = {
   buymeacoffee: 'https://www.buymeacoffee.com/gBoole01',
 }
 
+export const BADGES_URL = {
+  typescript:
+    'https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white',
+}
+
 type Skills = {
   frontEnd: string[]
   backEnd: string[]

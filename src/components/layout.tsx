@@ -70,6 +70,11 @@ const Header = () => {
               Articles
             </Navbar.Link>
           </Link>
+          <Link href="/kata">
+            <Navbar.Link isActive={router.pathname === '/kata'}>
+              Katas
+            </Navbar.Link>
+          </Link>
           <Link href="/about">
             <Navbar.Link isActive={router.pathname === '/about'}>
               À Propos
@@ -91,11 +96,14 @@ const Header = () => {
         </Navbar.Content>
         <Navbar.Toggle showIn="xs" />
         <Navbar.Collapse disableAnimation>
-          <Navbar.CollapseItem isActive={router.pathname === '/about'}>
-            <Link href="/about">À Propos</Link>
-          </Navbar.CollapseItem>
           <Navbar.CollapseItem isActive={router.pathname === '/blog'}>
             <Link href="/blog">Articles</Link>
+          </Navbar.CollapseItem>
+          <Navbar.CollapseItem isActive={router.pathname === '/kata'}>
+            <Link href="/kata">Katas</Link>
+          </Navbar.CollapseItem>
+          <Navbar.CollapseItem isActive={router.pathname === '/about'}>
+            <Link href="/about">À Propos</Link>
           </Navbar.CollapseItem>
           <Navbar.CollapseItem isActive={router.pathname === '/resume'}>
             <Link href="/resume">C.V.</Link>
@@ -163,10 +171,11 @@ const Footer = ({ legalsModalHandler }: FooterProps) => {
           </NextUILink>
         </Grid>
         <Grid xs={6} justify="space-around">
-          <Link href="/about">
-            <NextUILink block>À Propos</NextUILink>
+          <Link href="/kata">
+            <NextUILink block>Katas</NextUILink>
           </Link>
         </Grid>
+
         <Grid xs={6} justify="space-around">
           <NextUILink
             block
@@ -180,10 +189,11 @@ const Footer = ({ legalsModalHandler }: FooterProps) => {
           </NextUILink>
         </Grid>
         <Grid xs={6} justify="space-around">
-          <Link href="/resume">
-            <NextUILink block>C.V.</NextUILink>
+          <Link href="/about">
+            <NextUILink block>À Propos</NextUILink>
           </Link>
         </Grid>
+
         <Grid xs={6} justify="space-around">
           <NextUILink
             block
@@ -195,6 +205,12 @@ const Footer = ({ legalsModalHandler }: FooterProps) => {
             &nbsp;Github
           </NextUILink>
         </Grid>
+        <Grid xs={6} justify="space-around">
+          <Link href="/resume">
+            <NextUILink block>C.V.</NextUILink>
+          </Link>
+        </Grid>
+
         <Grid xs={6} justify="space-around">
           <NextUILink
             block

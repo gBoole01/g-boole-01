@@ -44,17 +44,6 @@ export function getAllPosts(fields: string[] = []) {
   return posts
 }
 
-export function getLatestPosts(n: number, fields: string[] = []) {
-  const slugs = getPostSlugs()
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    .sort((post1, post2) =>
-      post1.publicationDate > post2.publicationDate ? -1 : 1,
-    )
-    .slice(0, n)
-  return posts
-}
-
 export function getRandomPost(excludedSlug?: string, fields: string[] = []) {
   let slugs = getPostSlugs()
   if (excludedSlug) {

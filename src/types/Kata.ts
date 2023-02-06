@@ -1,12 +1,10 @@
-type Post = {
+type Kata = {
   content: string
   publicationDate: string
   modificationDate: string
-  duration: string
-  image: string
   slug: string
   title: string
-  excerpt: string
+  language: 'typescript'
 }
 
-export default Post
+export default Kata
