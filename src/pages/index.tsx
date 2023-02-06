@@ -14,6 +14,7 @@ import SeoHelper from '../components/seo-helper'
 import { useContactModal } from '../contexts/ContactModalProvider'
 import { BADGES_URL } from '../lib/constants'
 import FORMAT_DATE from '../lib/formatDate'
+import { getLatestKatas } from '../lib/getKatas'
 import { getPostBySlug } from '../lib/getPosts'
 import Kata from '../types/Kata'
 import Post from '../types/Post'
@@ -146,7 +147,16 @@ const LatestKatas = ({ latestKatas }: LatestKatasProps) => {
   const router = useRouter()
 
   return (
-    <Container css={{ padding: '0', margin: '$3xl 0' }}>
+    <Container
+      css={{
+        padding: '0',
+        margin: '$3xl 0',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        textAlign: 'center',
+      }}
+    >
       <Text h2 size={40}>
         Mes Derniers
         <Text b color="primary">
@@ -154,11 +164,9 @@ const LatestKatas = ({ latestKatas }: LatestKatasProps) => {
         </Text>
       </Text>
       <Text css={{ paddingRight: '$sm' }}>
-        Je pratique quotidiennement des Katas de code.
-      </Text>
-      <Text css={{ paddingRight: '$sm' }}>
-        Ce sont des exercices de programmation visant à améliorer les
-        compétences en développement en travaillant sur des problèmes précis.
+        Je pratique quotidiennement des Katas de code. Ce sont des exercices de
+        programmation visant à améliorer les compétences en développement en
+        travaillant sur des problèmes précis.
       </Text>
       <Grid.Container gap={1} alignItems="flex-start">
         {latestKatas.map(
@@ -263,33 +271,12 @@ export const getStaticProps = () => {
     getPostBySlug(slug, ['title', 'excerpt', 'slug', 'duration', 'image']),
   )
 
-  //   const latestKatas = getLatestKatas()
-  const latestKatas: Kata[] = [
-    {
-      slug: 'test',
-      title: 'Produit de Nombres consécutifs de Fibonacci',
-      publicationDate: '2022-04-12',
-      modificationDate: '2022-04-12',
-      content: 'test',
-      language: 'typescript',
-    },
-    {
-      slug: 'test3',
-      title: 'test2',
-      publicationDate: '2022-04-13',
-      modificationDate: '2022-04-13',
-      content: 'test 2',
-      language: 'typescript',
-    },
-    {
-      slug: 'test3',
-      title: 'test3',
-      publicationDate: '2022-04-13',
-      modificationDate: '2022-04-13',
-      content: 'test 3',
-      language: 'typescript',
-    },
-  ]
+  const latestKatas = getLatestKatas(3, [
+    'title',
+    'slug',
+    'publicationDate',
+    'language',
+  ])
 
   return {
     props: { featuredPosts, latestKatas },

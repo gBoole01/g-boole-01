@@ -5,6 +5,7 @@ import SeoHelper from '../components/seo-helper'
 import Kata from '../types/Kata'
 import { BADGES_URL } from '../lib/constants'
 import FORMAT_DATE from '../lib/formatDate'
+import { getAllKatas } from '../lib/getKatas'
 
 type KataPageProps = {
   allKatas: Kata[]
@@ -61,40 +62,14 @@ const KataPage = ({ allKatas }: KataPageProps) => {
 export default KataPage
 
 export const getStaticProps = async () => {
-  // const allKatas = getAllKatas([
-  //     'title',
-  //     'slug',
-  //     'publicationDate',
-  //     'modificationDate',
-  //     'content',
-  //     'language',
-  //   ])
-  const allKatas: Kata[] = [
-    {
-      slug: 'test',
-      title: 'Produit de Nombres consécutifs de Fibonacci',
-      publicationDate: '2022-04-12',
-      modificationDate: '2022-04-12',
-      content: 'test',
-      language: 'typescript',
-    },
-    {
-      slug: 'test3',
-      title: 'test2',
-      publicationDate: '2022-04-13',
-      modificationDate: '2022-04-13',
-      content: 'test 2',
-      language: 'typescript',
-    },
-    {
-      slug: 'test3',
-      title: 'test3',
-      publicationDate: '2022-04-13',
-      modificationDate: '2022-04-13',
-      content: 'test 3',
-      language: 'typescript',
-    },
-  ]
+  const allKatas = getAllKatas([
+    'title',
+    'slug',
+    'publicationDate',
+    'modificationDate',
+    'content',
+    'language',
+  ])
 
   return {
     props: {
