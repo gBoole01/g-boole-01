@@ -8,12 +8,15 @@ import {
   Text,
 } from '@nextui-org/react'
 import { useRouter } from 'next/router'
-import { RiMailSendLine, RiTimeFill } from 'react-icons/ri'
+import { RiCalendar2Fill, RiMailSendLine, RiTimeFill } from 'react-icons/ri'
 
 import SeoHelper from '../components/seo-helper'
 import { useContactModal } from '../contexts/ContactModalProvider'
+import { BADGES_URL } from '../lib/constants'
+import FORMAT_DATE from '../lib/formatDate'
 import { getPostBySlug } from '../lib/getPosts'
-import PostType from '../types/Post'
+import Kata from '../types/Kata'
+import Post from '../types/Post'
 
 const Intro = () => {
   const router = useRouter()
@@ -64,8 +67,9 @@ const Intro = () => {
     </>
   )
 }
+
 type FeaturedPostsProps = {
-  featuredPosts: PostType[]
+  featuredPosts: Post[]
 }
 
 const FeaturedPosts = ({ featuredPosts }: FeaturedPostsProps) => {
@@ -134,6 +138,70 @@ const FeaturedPosts = ({ featuredPosts }: FeaturedPostsProps) => {
   )
 }
 
+type LatestKatasProps = {
+  latestKatas: Kata[]
+}
+
+const LatestKatas = ({ latestKatas }: LatestKatasProps) => {
+  const router = useRouter()
+
+  return (
+    <Container css={{ padding: '0', margin: '$3xl 0' }}>
+      <Text h2 size={40}>
+        Mes Derniers
+        <Text b color="primary">
+          &nbsp;Katas
+        </Text>
+      </Text>
+      <Text css={{ paddingRight: '$sm' }}>
+        Je pratique quotidiennement des Katas de code.
+      </Text>
+      <Text css={{ paddingRight: '$sm' }}>
+        Ce sont des exercices de programmation visant à améliorer les
+        compétences en développement en travaillant sur des problèmes précis.
+      </Text>
+      <Grid.Container gap={1} alignItems="flex-start">
+        {latestKatas.map(
+          ({ title, slug, publicationDate, language }, index) => (
+            <Grid sm={4} xs={12} key={index}>
+              <Card
+                isPressable
+                isHoverable
+                onPress={() => router.push(`/kata/${slug}`)}
+              >
+                <Card.Body>
+                  <Card.Image
+                    src={BADGES_URL[language]}
+                    alt={`Language of Kata "${title}"`}
+                  />
+                </Card.Body>
+                <Card.Footer>
+                  <Grid.Container>
+                    <Grid xs={12}>
+                      <Text h3 size={25}>
+                        {title}
+                      </Text>
+                    </Grid>
+                    <Grid
+                      xs={12}
+                      alignItems="center"
+                      justify="flex-end"
+                      css={{ marginRight: '5%' }}
+                    >
+                      <RiCalendar2Fill />
+                      <Text> &nbsp;Le {FORMAT_DATE(publicationDate)}</Text>
+                    </Grid>
+                  </Grid.Container>
+                </Card.Footer>
+              </Card>
+            </Grid>
+          ),
+        )}
+      </Grid.Container>
+    </Container>
+  )
+}
+
 const Contact = () => {
   const { contactModalShowHandler } = useContactModal()
 
@@ -169,15 +237,17 @@ const Contact = () => {
 }
 
 type HomeProps = {
-  featuredPosts: PostType[]
+  featuredPosts: Post[]
+  latestKatas: Kata[]
 }
 
-export default function Home({ featuredPosts }: HomeProps) {
+export default function Home({ featuredPosts, latestKatas }: HomeProps) {
   return (
     <Container gap={1} css={{ margin: '$xl auto' }}>
       <SeoHelper title="Accueil" description="Homepage of my Portfolio" />
       <Intro />
       <FeaturedPosts featuredPosts={featuredPosts} />
+      <LatestKatas latestKatas={latestKatas} />
       <Contact />
     </Container>
   )
@@ -193,7 +263,35 @@ export const getStaticProps = () => {
     getPostBySlug(slug, ['title', 'excerpt', 'slug', 'duration', 'image']),
   )
 
+  //   const latestKatas = getLatestKatas()
+  const latestKatas: Kata[] = [
+    {
+      slug: 'test',
+      title: 'Produit de Nombres consécutifs de Fibonacci',
+      publicationDate: '2022-04-12',
+      modificationDate: '2022-04-12',
+      content: 'test',
+      language: 'typescript',
+    },
+    {
+      slug: 'test3',
+      title: 'test2',
+      publicationDate: '2022-04-13',
+      modificationDate: '2022-04-13',
+      content: 'test 2',
+      language: 'typescript',
+    },
+    {
+      slug: 'test3',
+      title: 'test3',
+      publicationDate: '2022-04-13',
+      modificationDate: '2022-04-13',
+      content: 'test 3',
+      language: 'typescript',
+    },
+  ]
+
   return {
-    props: { featuredPosts },
+    props: { featuredPosts, latestKatas },
   }
 }
