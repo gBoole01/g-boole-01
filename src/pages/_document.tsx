@@ -47,7 +47,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {process.env.NODE_ENV !== 'production' && <GTagScript />}
+          {process.env.NODE_ENV === 'production' && <GTagScript />}
         </body>
       </Html>
     )
