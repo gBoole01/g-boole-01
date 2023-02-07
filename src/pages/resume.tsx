@@ -20,6 +20,7 @@ import {
 import SeoHelper from '../components/seo-helper'
 import opquastLogo from '../../public/images/opquast-expert-badge.png'
 import { RESUME } from '../lib/constants'
+import * as gtag from '../lib/gtag'
 import { useContactModal } from '../contexts/ContactModalProvider'
 
 const ResumeIntro = () => {
@@ -219,27 +220,35 @@ const ResumeInterests = () => (
   </Container>
 )
 
-const ResumeOutro = () => (
-  <Card variant="flat">
-    <Grid.Container gap={1} alignItems="center" css={{ padding: '$md' }}>
-      <Grid xs={12} sm={8}>
-        <Text b size={20}>
-          Mon C.V. vous a interessé ?
-        </Text>
-      </Grid>
-      <Grid xs={12} sm={4} justify="center">
-        <Button
-          onPress={() => {
-            window.open('CV2023_gBoole01.pdf')
-          }}
-        >
-          <RiDownload2Fill />
-          &nbsp;Télécharger
-        </Button>
-      </Grid>
-    </Grid.Container>
-  </Card>
-)
+const ResumeOutro = () => {
+  const download = () => {
+    window.open('CV2023_gBoole01.pdf')
+    gtag.event({
+      action: 'download',
+      category: 'file_download',
+      label: 'download',
+      value: 1,
+    })
+  }
+
+  return (
+    <Card variant="flat">
+      <Grid.Container gap={1} alignItems="center" css={{ padding: '$md' }}>
+        <Grid xs={12} sm={8}>
+          <Text b size={20}>
+            Mon C.V. vous a interessé ?
+          </Text>
+        </Grid>
+        <Grid xs={12} sm={4} justify="center">
+          <Button onPress={download}>
+            <RiDownload2Fill />
+            &nbsp;Télécharger
+          </Button>
+        </Grid>
+      </Grid.Container>
+    </Card>
+  )
+}
 
 const Resume = () => (
   <Container css={{ margin: '$xl auto', display: 'flex', gap: '$md' }}>
