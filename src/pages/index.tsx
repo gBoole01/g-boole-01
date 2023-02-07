@@ -168,7 +168,7 @@ const LatestKatas = ({ latestKatas }: LatestKatasProps) => {
         programmation visant à améliorer les compétences en développement en
         travaillant sur des problèmes précis.
       </Text>
-      <Grid.Container gap={1} alignItems="flex-start">
+      <Grid.Container gap={1} alignItems="stretch">
         {latestKatas.map(
           ({ title, slug, publicationDate, language }, index) => (
             <Grid sm={4} xs={12} key={index}>
@@ -185,7 +185,7 @@ const LatestKatas = ({ latestKatas }: LatestKatasProps) => {
                 </Card.Body>
                 <Card.Footer>
                   <Grid.Container>
-                    <Grid xs={12}>
+                    <Grid xs={12} justify="center">
                       <Text h3 size={25}>
                         {title}
                       </Text>
