@@ -39,7 +39,7 @@ export function getAllKatas(fields: string[] = []) {
   const katas = slugs
     .map((slug) => getKataBySlug(slug, fields))
     .sort((kata1, kata2) =>
-      kata1.publicationDate > kata2.publicationDate ? 1 : -1,
+      kata1.publicationDate > kata2.publicationDate ? -1 : 1,
     )
   return katas
 }
@@ -49,7 +49,7 @@ export function getLatestKatas(n: number, fields: string[] = []) {
   const katas = slugs
     .map((slug) => getKataBySlug(slug, fields))
     .sort((kata1, kata2) =>
-      kata1.publicationDate > kata2.publicationDate ? 1 : -1,
+      kata1.publicationDate > kata2.publicationDate ? -1 : 1,
     )
     .slice(0, n)
   return katas

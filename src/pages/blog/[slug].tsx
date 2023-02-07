@@ -1,6 +1,6 @@
 import { Card, Container, Link, Text, useTheme } from '@nextui-org/react'
 import Image from 'next/image'
-import { RiCalendar2Fill, RiTimeFill } from 'react-icons/ri'
+import { RiArrowLeftFill, RiCalendar2Fill, RiTimeFill } from 'react-icons/ri'
 import { useRouter } from 'next/router'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -106,7 +106,7 @@ const SuggestedPost = ({
 }: SuggestedPostProps) => {
   const router = useRouter()
   return (
-    <section>
+    <Container css={{ padding: '0', marginBottom: '$sm' }}>
       <Text h2 size={50} color="primary" css={{ marginTop: '$xl' }}>
         Cet article pourrait également vous plaire
       </Text>
@@ -139,9 +139,20 @@ const SuggestedPost = ({
         </Card>
         <Text>{excerpt}...</Text>
       </Card>
-    </section>
+    </Container>
   )
 }
+
+const BackLink = () => (
+  <Container>
+    <NextLink href="/blog">
+      <Link>
+        <RiArrowLeftFill />
+        Retour à la liste des Articles
+      </Link>
+    </NextLink>
+  </Container>
+)
 
 type PostPageProps = {
   post: Post
@@ -153,6 +164,7 @@ export default function PostPage({ post, randomPost }: PostPageProps) {
     <Container gap={1} css={{ margin: '$xl auto' }}>
       <SeoHelper title={post.title} description={post.excerpt} post={post} />
 
+      <BackLink />
       <PostLayout
         title={post.title}
         date={post.publicationDate}
@@ -168,6 +180,7 @@ export default function PostPage({ post, randomPost }: PostPageProps) {
         excerpt={randomPost.excerpt}
         slug={randomPost.slug}
       />
+      <BackLink />
     </Container>
   )
 }
