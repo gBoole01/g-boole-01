@@ -23,7 +23,7 @@ const KataLayout = ({ title, date, content }: KataLayoutProps) => {
   const { isDark } = useTheme()
   return (
     <article>
-      <Container>
+      <Container css={{ padding: '0' }}>
         <Text h1 color="primary">
           {title}
         </Text>
@@ -32,7 +32,14 @@ const KataLayout = ({ title, date, content }: KataLayoutProps) => {
           &nbsp;Le {FORMAT_DATE(date)}
         </Text>
 
-        <Card css={{ padding: '$xs $xl', margin: '$sm auto' }} variant="flat">
+        <Card
+          css={{
+            padding: '0 $sm',
+            margin: '$sm auto',
+            '@sm': { padding: '$xs $xl' },
+          }}
+          variant="flat"
+        >
           <ReactMarkdown
             children={content}
             remarkPlugins={[remarkGfm]}
