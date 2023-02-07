@@ -226,7 +226,7 @@ const ResumeOutro = () => {
     gtag.event({
       action: 'download',
       category: 'file_download',
-      label: 'download',
+      label: 'Resume downloaded',
       value: 1,
     })
   }
