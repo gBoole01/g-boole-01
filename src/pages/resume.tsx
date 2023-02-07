@@ -223,12 +223,14 @@ const ResumeInterests = () => (
 const ResumeOutro = () => {
   const download = () => {
     window.open('CV2023_gBoole01.pdf')
-    gtag.event({
-      action: 'download',
-      category: 'file_download',
-      label: 'Resume downloaded',
-      value: 1,
-    })
+    if (process.env.NODE_ENV === 'production') {
+      gtag.event({
+        action: 'download',
+        category: 'file_download',
+        label: 'Resume downloaded',
+        value: 1,
+      })
+    }
   }
 
   return (
