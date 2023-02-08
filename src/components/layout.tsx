@@ -70,6 +70,11 @@ const Header = () => {
               Articles
             </Navbar.Link>
           </Link>
+          <Link href="/project">
+            <Navbar.Link isActive={router.pathname === '/project'}>
+              Projets
+            </Navbar.Link>
+          </Link>
           <Link href="/kata">
             <Navbar.Link isActive={router.pathname === '/kata'}>
               Katas
@@ -98,6 +103,9 @@ const Header = () => {
         <Navbar.Collapse disableAnimation>
           <Navbar.CollapseItem isActive={router.pathname === '/blog'}>
             <Link href="/blog">Articles</Link>
+          </Navbar.CollapseItem>
+          <Navbar.CollapseItem isActive={router.pathname === '/project'}>
+            <Link href="/project">Projets</Link>
           </Navbar.CollapseItem>
           <Navbar.CollapseItem isActive={router.pathname === '/kata'}>
             <Link href="/kata">Katas</Link>
@@ -148,14 +156,41 @@ const Footer = ({ legalsModalHandler }: FooterProps) => {
           </Link>
         </Grid>
         <Grid xs={6} justify="space-around">
+          <Link href="/resume">
+            <NextUILink block>C.V.</NextUILink>
+          </Link>
+        </Grid>
+        <Grid xs={6} justify="space-around">
+          <Link href="/blog">
+            <NextUILink block>Articles</NextUILink>
+          </Link>
+        </Grid>
+        <Grid xs={6} justify="space-around">
           <NextUILink block onClick={contactModalShowHandler}>
             <RiMailSendLine />
             &nbsp;Contact
           </NextUILink>
         </Grid>
         <Grid xs={6} justify="space-around">
-          <Link href="/blog">
-            <NextUILink block>Articles</NextUILink>
+          <Link href="/project">
+            <NextUILink block>Projets</NextUILink>
+          </Link>
+        </Grid>
+        <Grid xs={6} justify="space-around">
+          <NextUILink
+            block
+            href={SOCIAL_LINKS.buymeacoffee}
+            target="_blank"
+            isExternal
+            css={{ textAlign: 'center' }}
+          >
+            <RiCupFill />
+            &nbsp;Buy Me A Coffee
+          </NextUILink>
+        </Grid>
+        <Grid xs={6} justify="space-around">
+          <Link href="/kata">
+            <NextUILink block>Katas</NextUILink>
           </Link>
         </Grid>
         <Grid xs={6} justify="space-around">
@@ -171,29 +206,10 @@ const Footer = ({ legalsModalHandler }: FooterProps) => {
           </NextUILink>
         </Grid>
         <Grid xs={6} justify="space-around">
-          <Link href="/kata">
-            <NextUILink block>Katas</NextUILink>
-          </Link>
-        </Grid>
-
-        <Grid xs={6} justify="space-around">
-          <NextUILink
-            block
-            href={SOCIAL_LINKS.buymeacoffee}
-            target="_blank"
-            isExternal
-            css={{ textAlign: 'center' }}
-          >
-            <RiCupFill />
-            &nbsp;Buy Me A Coffee
-          </NextUILink>
-        </Grid>
-        <Grid xs={6} justify="space-around">
           <Link href="/about">
             <NextUILink block>À Propos</NextUILink>
           </Link>
         </Grid>
-
         <Grid xs={6} justify="space-around">
           <NextUILink
             block
@@ -205,12 +221,6 @@ const Footer = ({ legalsModalHandler }: FooterProps) => {
             &nbsp;Github
           </NextUILink>
         </Grid>
-        <Grid xs={6} justify="space-around">
-          <Link href="/resume">
-            <NextUILink block>C.V.</NextUILink>
-          </Link>
-        </Grid>
-
         <Grid xs={6} justify="space-around">
           <NextUILink
             block
