@@ -10,7 +10,7 @@ repositoryUrl: 'https://github.com/gBoole01/symfony-countries-rest-api'
 
 ## Langages utilisés
 
-J'utilise PHP.
+J'utilise PHP pour développer cet API.
 
 ## Outils utilisés
 
