@@ -35,8 +35,8 @@ const KataPage = ({ allKatas }: KataPageProps) => {
               </Card.Body>
               <Card.Footer>
                 <Grid.Container>
-                  <Grid xs={12}>
-                    <Text h3 size={25}>
+                  <Grid xs={12} justify="center">
+                    <Text h3 size={25} css={{ textAlign: 'center' }}>
                       {title}
                     </Text>
                   </Grid>

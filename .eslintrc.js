@@ -17,6 +17,7 @@ module.exports = {
     },
     rules: {
         'import/extensions': ['error', 'never'],
-        'no-nested-ternary': 'off'
+        'no-nested-ternary': 'off',
+        '@next/next/no-img-element': 'off'
     },
 };

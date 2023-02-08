@@ -15,6 +15,10 @@ type SeoHelperProps = {
     publicationDate: string
     modificationDate: string
   }
+  project?: {
+    publicationDate: string
+    modificationDate: string
+  }
 }
 
 const SeoHelper = ({
@@ -23,6 +27,7 @@ const SeoHelper = ({
   canonical,
   post,
   kata,
+  project,
 }: SeoHelperProps) => {
   const router = useRouter()
 
@@ -159,6 +164,57 @@ const SeoHelper = ({
                     ).toISOString()}",
                     "dateModified": "${new Date(
                       kata.modificationDate,
+                    ).toISOString()}",
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": "${SITE_PROPS.url}${router.asPath}"
+                    },
+                    "@context": "http://schema.org"
+                }`,
+            }}
+            key="ldjson"
+          />
+        </>
+      )}
+      {project && (
+        <>
+          <meta property="og:type" content="article" key="og:type" />
+          <meta
+            property="article:published_time"
+            content={new Date(project.publicationDate).toISOString()}
+            key="article:published_time"
+          />
+          <meta
+            property="article:modified_time"
+            content={new Date(project.modificationDate).toISOString()}
+            key="article:modified_time"
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `{
+                  "description": "${description || SITE_PROPS.description}",
+                    "author": {
+                        "@type": "Person",
+                        "name": "${SITE_PROPS.author}",
+                        "url": "${SITE_PROPS.url}/"
+                    },
+                    "@type": "BlogPosting",
+                    "url": "${SITE_PROPS.url}/",
+                    "publisher": {
+                        "@type": "Person",
+                        "name": "${SITE_PROPS.author}",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "${SITE_PROPS.url}/images/logo-512.png"
+                        }
+                    },
+                    "headline": "${title} | ${SITE_PROPS.siteName}",
+                    "datePublished": "${new Date(
+                      project.publicationDate,
+                    ).toISOString()}",
+                    "dateModified": "${new Date(
+                      project.modificationDate,
                     ).toISOString()}",
                     "mainEntityOfPage": {
                         "@type": "WebPage",
