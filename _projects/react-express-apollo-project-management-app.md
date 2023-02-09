@@ -3,7 +3,16 @@ title: 'Project Management App'
 publicationDate: '2022-12-07'
 modificationDate: '2022-12-07'
 language: 'javascript'
-tools: ['Node.js', 'Express', 'Mongoose', 'React', 'React Router' 'GraphQL', 'Bootstrap']
+tools:
+  [
+    'Node.js',
+    'Express',
+    'Mongoose',
+    'React',
+    'React Router',
+    'GraphQL',
+    'Bootstrap',
+  ]
 status: 'Terminé'
 repositoryUrl: 'https://github.com/gBoole01/react-express-apollo-project-management-app'
 ---
