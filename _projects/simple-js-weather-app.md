@@ -1,7 +1,7 @@
 ---
 title: 'Weather APP'
-publicationDate: '2023-02-07'
-modificationDate: '2023-02-07'
+publicationDate: '2023-01-05'
+modificationDate: '2023-01-05'
 language: 'javascript'
 tools: ['Vite', 'Axios']
 status: 'Terminé'
@@ -21,7 +21,7 @@ J'utilise JavaScript, ce projet n'a pas pour vocation d'évoluer grandement.
 
 L'utilisateur souhaite connaître les prévisions météorologiques à venir.
 
-Pour ce faire, l'application métép va récupérer les données auprès de l'API Open Weather.
+Pour ce faire, l'application météo va récupérer les données auprès de l'API Open Weather.
 
 ## Fonctionnalités implémentées
 

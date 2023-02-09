@@ -1,7 +1,7 @@
 ---
 title: 'Speed Typing Game'
-publicationDate: '2023-02-08'
-modificationDate: '2023-02-08'
+publicationDate: '2023-01-06'
+modificationDate: '2023-01-06'
 language: 'javascript'
 tools: ['Vite']
 status: 'Terminé'
