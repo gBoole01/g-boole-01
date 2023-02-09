@@ -7,7 +7,7 @@ language: 'typescript'
 
 ## Problème
 
-Rédigez une fonction qui prends un nombre entier en argument, et retour le nombre de bit égal à `1` dans la représentation binaire de ce nombre.
+Rédigez une fonction qui prends un nombre entier en argument, et retourne le nombre de bit égal à `1` dans la représentation binaire de ce nombre.
 
 _L'argument de cette fonction est un nombre non-négatif._
 
