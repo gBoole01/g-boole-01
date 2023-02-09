@@ -34,16 +34,14 @@ export function meeting(s: string): string {
   return s
     .toUpperCase()
     .split(';')
-    .map((elem) => elem.replace(/(.*):(.*)/, '$2, $1'))
+    .map((elem) => `(${elem.replace(/(.*):(.*)/, '$2, $1')})`)
     .sort()
-    .map((elem) => `(${elem})`)
     .join('')
 }
 ```
 
 - `toUpperCase()` => Transforme tous les caractères en majuscules
 - `split(';')` => Sépare les noms en éléments de tableau
-- `map((elem) => elem.replace(/(.*):(.*)/, "$2, $1"))` => Inverse les noms et prénoms et remplace les `:` par des `,`
+- `map((elem) => elem.replace(/(.*):(.*)/, "$2, $1"))` => Inverse les noms et prénoms, remplace les `:` par des `,` et ajoute des parenthèses autour de chaque élément.
 - `sort()` => Trie les éléments du tableau _(L'absence d'arguments renvoie une liste triée par ordre croissant et/ou alphabétique)_
-- `map((elem) => \`(\${elem})\`)` => Ajoute des parenthèses autour de chaque élément
 - `join('')` => Transforme le tableau en chaîne de caractère
