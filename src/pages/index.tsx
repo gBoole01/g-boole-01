@@ -396,7 +396,7 @@ export const getStaticProps = () => {
   const featuredProjectsSlug = [
     'node-puppeteer-job-scraper',
     'react-ts-tdd-restaurant-rating-app',
-    'react-ts-note-taking-app',
+    'express-ts-blog-api',
   ]
 
   const featuredProjects = featuredProjectsSlug.map((slug) =>
