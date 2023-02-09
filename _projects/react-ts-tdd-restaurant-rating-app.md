@@ -1,9 +1,9 @@
 ---
 title: 'Restaurant Rating App'
-publicationDate: '2023-02-07'
-modificationDate: '2023-02-07'
+publicationDate: '2023-01-20'
+modificationDate: '2023-01-20'
 language: 'typescript'
-tools: ['React', 'Redux', 'Formik', 'MaterialUI']
+tools: ['React', 'Redux', 'Formik', 'MaterialUI', 'Cypress', 'Testing Library']
 status: 'En pause'
 repositoryUrl: 'https://github.com/gBoole01/react-ts-tdd-restaurant-rating-app'
 ---

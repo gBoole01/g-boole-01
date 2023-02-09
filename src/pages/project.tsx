@@ -106,6 +106,7 @@ export const getStaticProps = async () => {
   const allProjects = getAllProjects([
     'title',
     'slug',
+    'publicationDate',
     'language',
     'status',
     'repositoryUrl',

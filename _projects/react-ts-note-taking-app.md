@@ -1,9 +1,9 @@
 ---
 title: 'Note Taking App'
-publicationDate: '2023-02-07'
-modificationDate: '2023-02-07'
+publicationDate: '2023-01-07'
+modificationDate: '2023-01-07'
 language: 'typescript'
-tools: ['React', 'Bootstrap', 'React Markdown', 'React Router']
+tools: ['React', 'Bootstrap', 'React Markdown', 'React Router', 'UUID']
 status: 'Terminé'
 repositoryUrl: 'https://github.com/gBoole01/react-ts-note-taking-app'
 ---

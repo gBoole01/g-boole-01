@@ -1,7 +1,7 @@
 ---
 title: 'Rock Paper Scissors Game'
-publicationDate: '2023-02-08'
-modificationDate: '2023-02-08'
+publicationDate: '2023-01-05'
+modificationDate: '2023-01-05'
 language: 'javascript'
 tools: ['Vite']
 status: 'Terminé'
