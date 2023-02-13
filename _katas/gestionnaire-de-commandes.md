@@ -18,7 +18,7 @@ Les caractères invalides doivent être ignorés.
 
 ## Solution
 
-Nous allons décomposer la chaîne de caractère passé en argument grĉe à la méthode `split`.
+Nous allons décomposer la chaîne de caractère passé en argument grâce à la méthode `split`.
 Ensuite nous utiliserons la méthode `forEach` pour effectuer une opération par caractère.
 
 La syntaxe la plus claire pour ce genre d'opérations est `switch`.
