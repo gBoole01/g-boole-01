@@ -1,7 +1,7 @@
 ---
 title: 'Job Scraper'
 publicationDate: '2023-02-07'
-modificationDate: '2023-02-07'
+modificationDate: '2023-02-13'
 language: 'javascript'
 tools: ['Node.js', 'Puppeteer']
 status: 'Actif'
@@ -25,7 +25,7 @@ Pour ce faire, le Job Scraper va récupérer le contenu des offres parus sur dif
 
 ## Fonctionnalités implémentées
 
-1. Lorsque le Job Scraper démarre, il se rends sur Indeed et parcours toutes les offres "Développeur Web" à Bordeaux et en télétravail en France paru dans les 7 jours précédent.
+1. Lorsque le Job Scraper démarre, il se rends sur Indeed et LinkedIn et parcours toutes les offres "Développeur Web" à Bordeaux et en télétravail en France paru dans les 7 jours précédent.
 2. Une fois les données collectées, un fichier JSON est généré comportant la totalité des offres.
 
 ## Fonctionnalités à implémenter
