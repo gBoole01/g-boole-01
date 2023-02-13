@@ -2,7 +2,7 @@
 title: 'Décodeur de nombres romains'
 publicationDate: '2023-02-13'
 modificationDate: '2023-02-13'
-language: 'typescript'
+language: 'php'
 ---
 
 ## Problème
@@ -55,5 +55,6 @@ function solution ($roman) {
   }
 
   return $number;
-}```
+}
+```
 ````
