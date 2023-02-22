@@ -121,7 +121,7 @@ const FeaturedPosts = ({ featuredPosts }: FeaturedPostsProps) => {
             <Card.Header>
               <Grid.Container>
                 <Grid xs={12}>
-                  <Text h3 size={25}>
+                  <Text h3 size={25} css={{ minHeight: '80px' }}>
                     {title}
                   </Text>
                 </Grid>
@@ -385,8 +385,8 @@ export default function Home({
 
 export const getStaticProps = () => {
   const featuredPostsSlug = [
+    'l-etat-de-flow',
     'gerer-efficacement-sa-configuration',
-    'les-principes-de-gestalt-partie-1-3',
   ]
 
   const featuredPosts = featuredPostsSlug.map((slug) =>
