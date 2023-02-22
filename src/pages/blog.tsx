@@ -69,6 +69,7 @@ export const getStaticProps = async () => {
   const allPosts = getAllPosts([
     'title',
     'slug',
+    'publicationDate',
     'duration',
     'image',
     'excerpt',

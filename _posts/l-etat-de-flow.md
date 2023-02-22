@@ -1,7 +1,7 @@
 ---
 title: "L'état de flow"
-publicationDate: '2023-06-19'
-modificationDate: '2023-06-21'
+publicationDate: '2023-02-22'
+modificationDate: '2023-02-22'
 duration: '7'
 image: 'state-of-flow.png'
 excerpt: "Le flow est un état dans lequel vous êtes totalement immergé dans ce que vous faites. C'est le moment où tout ce qui vous entoure vous semble naturel et sans effort. Lorsque vous êtes dans cet état, il est facile d'oublier le temps qui passe ou toute autre distraction qui pourrait vous empêcher de vous concentrer sur la tâche à accomplir."
