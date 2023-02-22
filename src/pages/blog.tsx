@@ -29,7 +29,7 @@ const Blog = ({ allPosts }: BlogProps) => {
               <Card.Header>
                 <Grid.Container>
                   <Grid xs={12}>
-                    <Text h2 size={25} css={{ minHeight: '70px' }}>
+                    <Text h2 size={25} css={{ minHeight: '80px' }}>
                       {title}
                     </Text>
                   </Grid>
