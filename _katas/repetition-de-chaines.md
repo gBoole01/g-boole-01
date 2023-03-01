@@ -7,7 +7,7 @@ language: 'csharp'
 
 ## Problème
 
-Rédigez une fonction qui accepte un entier `n` et une chaîne de caractères `s` comme paramètres et renvoie une chaîne de caractères qui répète `s` exactement `n` fois
+Rédigez une fonction qui accepte un entier `n` et une chaîne de caractères `s` comme paramètres et renvoie une chaîne de caractères qui répète `s` exactement `n` fois.
 
 ## Solution
 
