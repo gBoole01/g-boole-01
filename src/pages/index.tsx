@@ -280,7 +280,7 @@ const LatestKatas = ({ latestKatas }: LatestKatasProps) => {
         </Text>
       </Text>
       <Text css={{ paddingRight: '$sm' }}>
-        Je pratique quotidiennement des Katas de code. Ce sont des exercices de
+        Je pratique régulièrement des Katas de code. Ce sont des exercices de
         programmation visant à améliorer les compétences en développement en
         travaillant sur des problèmes précis.
       </Text>
