@@ -74,6 +74,9 @@ const PostLayout = ({
               )
             },
             a({ href, children }) {
+              if (href?.startsWith('https://')) {
+                return (<Link href={href} isExternal target="_blank">{children}</Link>)
+              }
               return (
                 <NextLink href={href || ''}>
                   <Link>{children}</Link>
