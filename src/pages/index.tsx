@@ -385,8 +385,8 @@ export default function Home({
 
 export const getStaticProps = () => {
   const featuredPostsSlug = [
-    'l-etat-de-flow',
     'l-importance-de-la-dactylographie.md',
+    'l-etat-de-flow',
   ]
 
   const featuredPosts = featuredPostsSlug.map((slug) =>
