@@ -7,7 +7,7 @@ language: "csharp"
 
 ## Problème
 
-Rédigez une fonction qui prends en argument une chaîne de caractère rédigé en camelcase et qui renvoie une nouvelle chaîne de caractère séparant chaque terme par un espace.
+Rédigez une fonction qui prends en argument une chaîne de caractère rédigée en camelcase et qui renvoie une nouvelle chaîne de caractère séparant chaque terme par un espace.
 
 ### Exemple
 
