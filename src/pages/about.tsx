@@ -155,7 +155,7 @@ const BioSection = () => (
         défi intellectuel
       </Text>{' '}
       que représente la programmation. J'aime résoudre des problèmes logiques et
-      trouver des moyens de rendre les processus plus efficaces. Cette activité
+      trouver des moyens de rendre les processus plus efficace. Cette activité
       me donne l'occasion de continuer à développer mon esprit critique et de
       tester mes capacités de résolution de problèmes.
     </Text>
