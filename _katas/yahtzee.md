@@ -38,7 +38,7 @@ Ensuite, nous utilisons une boucle `foreach` afin de parcourir le tableau `dice`
 
 Une fois que celà est fait, nous utilisons une boucle `for` pour parcourir les six éléments du tableau `counts` et ajouter les points correspondants au score si au moins trois dés ont la même valeur.
 
-Si c'est le cas, nous ajoutons `(i+1) * 100` points au score (où i est l'indice de l'élément dans le tableau `counts`), et soustrayons `3` de la valeur de l'élément pour indiquer que ces dés ont déjà été pris en compte.
+Si c'est le cas, nous ajoutons `(i+1) * 100` points au score (où i est l'indice de l'élément dans le tableau `counts`) sauf s'il s'agit d'un triple `1` auquel cas nous ajoutons `1000` points. Puis, nous soustrayons `3` de la valeur de l'élément pour indiquer que ces dés ont déjà été pris en compte.
 
 _(`i+1` car le compteur de 1 se situe à l'index 0 de l'array, le 2 à l'index 1, etc.)_
 
@@ -64,12 +64,18 @@ public static class Kata
     {
       if (counts[i] >= 3)
       {
-        result += (i+1) * 100;
-        counts[i] -=3;
+            if (i == 0)
+            {
+                result += 1000;
+            }
+            else
+            {
+                result += (i+1) * 100;
+            }
       }
     }
 
-    result += counts[0] * 100 + counts[4] * 50;
+    result += counts[0] % 3 * 100 + counts[4] % 3 * 50;
 
     return result;
   }
