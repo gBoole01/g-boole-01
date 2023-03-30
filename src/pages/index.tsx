@@ -385,8 +385,8 @@ export default function Home({
 
 export const getStaticProps = () => {
   const featuredPostsSlug = [
-    'l-importance-de-la-dactylographie.md',
-    'l-etat-de-flow',
+    'les-katas',
+    'l-importance-de-la-dactylographie',
   ]
 
   const featuredPosts = featuredPostsSlug.map((slug) =>
