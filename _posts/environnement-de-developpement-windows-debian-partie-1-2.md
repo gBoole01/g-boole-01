@@ -1,5 +1,5 @@
 ---
-title: "Environnement de développement Windows Debian"
+title: "Environnement de développement Windows Debian - Partie 1/2"
 publicationDate: "2023-03-31"
 modificationDate: "2023-03-31"
 duration: "10"
@@ -124,4 +124,4 @@ WSL va alors exécuter l'installation de VS Code Server. Une fois celle-ci termi
 
 Dans cet article, nous avons vu comment installer et configurer WSL2, Debian et le Terminal de Windows. Puis nous avons installé Git et VS Code Server sur notre Debian.
 
-Prochainement, nous verrons comment installer Docker dans Debian afin d'obtenir une expérience de développement optimale et performante !
+La [seconde partie](/blog/environnement-de-developpement-windows-debian-partie-2-2) de cet article est disponible, nous apprendrons comment installer Docker dans Debian afin d'obtenir une expérience de développement optimale et performante ! Ensuite, nous passerons en revue les extensions VSCode permettant de gagner en productivité
